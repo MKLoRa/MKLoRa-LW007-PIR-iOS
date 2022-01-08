@@ -1,0 +1,10 @@
+
+
+//本工程关于页面
+NSString *const kTarget_loRaApp_pir_module = @"LoRaWANPIR_Module";
+NSString *const kAction_loRaApp_pir_aboutPage = @"LoRaWANPIR_Module_AboutController";
+
+
+//壳工程关于页面
+NSString *const kTarget_loRaApp_la_module = @"LoRaWANLA_Module";
+NSString *const kAction_loRaApp_la_aboutPage = @"LoRaWANLA_PIR_AboutController";

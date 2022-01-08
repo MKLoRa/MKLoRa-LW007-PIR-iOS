@@ -1,0 +1,6 @@
+framework module MKLoRaWAN_PIR {
+  umbrella header "MKLoRaWAN-PIR-umbrella.h"
+
+  export *
+  module * { export * }
+}

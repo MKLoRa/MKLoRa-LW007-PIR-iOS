@@ -88,7 +88,7 @@
     __block BOOL success = NO;
     [MKPIRInterface pir_readPIRFunctionStatusWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
-        self.isOn = returnData[@"result"][@"isOn"];
+        self.isOn = [returnData[@"result"][@"isOn"] boolValue];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

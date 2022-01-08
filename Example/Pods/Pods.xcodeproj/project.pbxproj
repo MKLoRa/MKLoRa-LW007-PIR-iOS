@@ -923,7 +923,7 @@
 		04FD0ED67DF11FAEFD85AC29DCD29658 /* MKLoraDeviceTypeCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKLoraDeviceTypeCell.h; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKLoraDeviceTypeCell/MKLoraDeviceTypeCell.h; sourceTree = "<group>"; };
 		052E70E0BE7D42A63E0121EECC4F7F5D /* mk_customUI_sliderMinimumTrackIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_sliderMinimumTrackIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_sliderMinimumTrackIcon@3x.png"; sourceTree = "<group>"; };
 		056CDC6129FF858D299EF76DC2FCDA66 /* mk_customUI_keyboardDelIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_keyboardDelIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_keyboardDelIcon@3x.png"; sourceTree = "<group>"; };
-		05CCF915CDB5CA9948F0AA95329FEBDB /* MKBaseModuleLibrary.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MKBaseModuleLibrary.bundle; path = "MKBaseModuleLibrary-MKBaseModuleLibrary.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		05CCF915CDB5CA9948F0AA95329FEBDB /* MKBaseModuleLibrary.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKBaseModuleLibrary.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		061A0B03D54492F914E714775D7F5393 /* LegacyDFUPeripheralDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUPeripheralDelegate.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Peripherals/LegacyDFUPeripheralDelegate.swift; sourceTree = "<group>"; };
 		0656AF61C01CE5A5623BC085A1E2770F /* mk_customUI_shouceIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_shouceIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_shouceIcon@3x.png"; sourceTree = "<group>"; };
 		06F65D34B46BE0046E189CF6059C8D8D /* NSData+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+MKAdd.m"; path = "MKBaseModuleLibrary/Classes/Category/NSData+MKAdd.m"; sourceTree = "<group>"; };
@@ -990,7 +990,7 @@
 		1FA341D61DA01A852F701048367D7148 /* MBProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-prefix.pch"; sourceTree = "<group>"; };
 		1FBF5D9F4A49D1D9769EE429896D3E12 /* HHPresentFlipTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHPresentFlipTransition.m; path = HHTransition/HHPresentFlipTransition.m; sourceTree = "<group>"; };
 		1FE8627BD61BF02075F9E2B49F7B8B2D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		201746F6B25F3ABC300DC61B426E0758 /* MKBaseCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKBaseCell.m; path = MKBaseModuleLibrary/Classes/Base/Cell/MKBaseCell/MKBaseCell.m; sourceTree = "<group>"; };
 		2024B7626B3DA40D1A2CDCB04E112516 /* pir_bleSettings_tabBarSelected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_bleSettings_tabBarSelected@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_bleSettings_tabBarSelected@3x.png"; sourceTree = "<group>"; };
 		205B8A74452508218F23F6D388D7775F /* mk_customUI_aboutIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_aboutIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_aboutIcon@2x.png"; sourceTree = "<group>"; };
@@ -999,7 +999,7 @@
 		2115BF389C41B746BC0F2937511A9777 /* DFUStream.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStream.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStream.swift; sourceTree = "<group>"; };
 		215CADF2DE66DDC3953F8AD0F6D4197C /* CircleProgressBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CircleProgressBar-Info.plist"; sourceTree = "<group>"; };
 		2181FD9E621685EA74C9EE2A3476AE7D /* MKCAFileSelectController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKCAFileSelectController.m; path = MKCustomUIModule/Classes/Controller/CASelectPage/Controller/MKCAFileSelectController.m; sourceTree = "<group>"; };
-		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = iOSDFULibrary.framework; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21B1375088A0310C7AE2BE4C8188D12F /* iOSDFULibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iOSDFULibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D7114F0BE8A0B18442D59AEA9C29FD /* MKHudManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKHudManager.h; path = MKCustomUIModule/Classes/View/MKHudManager/MKHudManager.h; sourceTree = "<group>"; };
 		22264B8D956603C7F19805532C9DAAEC /* mk_customUI_shouceIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_shouceIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_shouceIcon@2x.png"; sourceTree = "<group>"; };
 		2230C091344C4053E6BBD0B7A4A1F276 /* MKCustomUIModule-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MKCustomUIModule-dummy.m"; sourceTree = "<group>"; };
@@ -1016,7 +1016,7 @@
 		25331051A0A688474A4E5F5ADC170489 /* MJRefreshBackNormalFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackNormalFooter.m; path = MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.m; sourceTree = "<group>"; };
 		2569CB632061BA7FDB0744B4CB0F0F63 /* MKLoRaWAN-PIR-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MKLoRaWAN-PIR-umbrella.h"; sourceTree = "<group>"; };
 		258CEA72DE962BE4D7BA810CBAB6E7DF /* MKHaveRefreshCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKHaveRefreshCollectionView.h; path = MKCustomUIModule/Classes/View/HaveRefreshView/MKHaveRefreshCollectionView.h; sourceTree = "<group>"; };
-		2607EE853833050B3E9A5C78A8B0F771 /* MKBaseModuleLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKBaseModuleLibrary.framework; path = MKBaseModuleLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2607EE853833050B3E9A5C78A8B0F771 /* MKBaseModuleLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKBaseModuleLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2655B6D9A736E98AFB4BE70CD97B927A /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
 		268A38110C1A576564B8DBE0A4DD7C2D /* UIScrollView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+MJExtension.h"; path = "MJRefresh/UIScrollView+MJExtension.h"; sourceTree = "<group>"; };
 		26BD0B847802243A81F50FC9D0037E9F /* MKHaveRefreshViewProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKHaveRefreshViewProtocol.h; path = MKCustomUIModule/Classes/View/HaveRefreshView/MKHaveRefreshViewProtocol.h; sourceTree = "<group>"; };
@@ -1049,7 +1049,7 @@
 		323EB06C70FCE235207167E0480BC225 /* CTMediator+HandyTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CTMediator+HandyTools.h"; path = "CTMediator/CTMediator/CTMediator+HandyTools.h"; sourceTree = "<group>"; };
 		32522B075971E2105AB711F3110917BC /* MKPIRSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRSDK.h; path = "MKLoRaWAN-PIR/Classes/SDK/MKPIRSDK.h"; sourceTree = "<group>"; };
 		32A608BA81C4CCEF5EBE9675A33AF32B /* MKSlider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKSlider.h; path = MKCustomUIModule/Classes/View/MKSlider/MKSlider.h; sourceTree = "<group>"; };
-		3341AA51FE8AF36DF37590425D188F14 /* HHTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = HHTransition.framework; path = HHTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3341AA51FE8AF36DF37590425D188F14 /* HHTransition.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHTransition.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		337BB3FD7581E5994D781109B9924C5A /* MKPIRAboutController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRAboutController.m; path = "MKLoRaWAN-PIR/Classes/Functions/AboutPage/Controller/MKPIRAboutController.m"; sourceTree = "<group>"; };
 		33A9F7CF31E541CE77598FF3CDADAEC8 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MJRefresh.m"; path = "MJRefresh/UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		33E16A91F39C5BA8E8422D8478DD117C /* NSObject+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+MKAdd.m"; path = "MKBaseModuleLibrary/Classes/Category/NSObject+MKAdd.m"; sourceTree = "<group>"; };
@@ -1100,7 +1100,7 @@
 		47CA9AAAD5810A2B8D2ACA518360D66F /* mk_customUI_switchSelectedIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_switchSelectedIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_switchSelectedIcon@2x.png"; sourceTree = "<group>"; };
 		485B77544B7CC197DCA21CB42228DD0C /* Masonry.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Masonry.modulemap; sourceTree = "<group>"; };
 		4867442F9D94B169A42B8074F4FE2B59 /* ButtonlessDFU.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ButtonlessDFU.swift; path = iOSDFULibrary/Classes/Implementation/SecureDFU/Characteristics/ButtonlessDFU.swift; sourceTree = "<group>"; };
-		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ZIPFoundation.framework; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48A4A6EDC08C8AC933D0DCD507E9D173 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		48B43444186F7E185BB226249423E4BF /* pir_position_tabBarUnselected@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_position_tabBarUnselected@2x.png"; path = "MKLoRaWAN-PIR/Assets/pir_position_tabBarUnselected@2x.png"; sourceTree = "<group>"; };
 		493A6D8EB8FF78C1D026938D6D2AB08F /* MKAddsHeader.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKAddsHeader.h; path = MKBaseModuleLibrary/Classes/Category/MKAddsHeader.h; sourceTree = "<group>"; };
 		4986C8D98447AFBAA49B68A039359904 /* MKPIRBleTxPowerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRBleTxPowerCell.h; path = "MKLoRaWAN-PIR/Classes/Functions/BleSettingPage/View/MKPIRBleTxPowerCell.h"; sourceTree = "<group>"; };
@@ -1145,7 +1145,7 @@
 		55B8131AC33D95699F27D970A863A9A3 /* NSBundle+MJRefresh.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+MJRefresh.h"; path = "MJRefresh/NSBundle+MJRefresh.h"; sourceTree = "<group>"; };
 		55B828BC51748121EFD7D73FC0034733 /* Pods-MKLoRaWAN-PIR_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MKLoRaWAN-PIR_Example-Info.plist"; sourceTree = "<group>"; };
 		55CAE2E77BBBB725FA23AC9571715D6B /* DFUStreamZip.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUStreamZip.swift; path = iOSDFULibrary/Classes/Utilities/Streams/DFUStreamZip.swift; sourceTree = "<group>"; };
-		55E0AFD333353D71ACC2207149E879D6 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Toast.framework; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55E0AFD333353D71ACC2207149E879D6 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F1D16E0FC911D75F902B8CA859B02A /* MKSlider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKSlider.m; path = MKCustomUIModule/Classes/View/MKSlider/MKSlider.m; sourceTree = "<group>"; };
 		55FB08CD296E320C645FB1D937371110 /* Masonry-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Masonry-dummy.m"; sourceTree = "<group>"; };
 		55FB9B3B52F3BC98F6D7831FBE064102 /* LegacyDFUExecutor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LegacyDFUExecutor.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/DFU/LegacyDFUExecutor.swift; sourceTree = "<group>"; };
@@ -1181,7 +1181,7 @@
 		5F4F1ED5646073EA876117440C60BAFA /* MKPIRInterface.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRInterface.h; path = "MKLoRaWAN-PIR/Classes/SDK/MKPIRInterface.h"; sourceTree = "<group>"; };
 		5FCBA6A16D0DFF1502B1680A9B08F0AD /* pir_scan_refreshIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_scan_refreshIcon@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_scan_refreshIcon@3x.png"; sourceTree = "<group>"; };
 		601A93C0F580EDA6EDFF2D6145AC653D /* Pods-MKLoRaWAN-PIR_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MKLoRaWAN-PIR_Example-dummy.m"; sourceTree = "<group>"; };
-		6036CFB8309B6E6B968A6958CEFA113E /* MKLoRaWAN_PIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKLoRaWAN_PIR.framework; path = "MKLoRaWAN-PIR.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6036CFB8309B6E6B968A6958CEFA113E /* MKLoRaWAN_PIR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKLoRaWAN_PIR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		60737DB242445B9CB98E4B7B37893423 /* MKAboutCellModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKAboutCellModel.h; path = MKCustomUIModule/Classes/Controller/MKAboutPage/Model/MKAboutCellModel.h; sourceTree = "<group>"; };
 		60AB5F237D6B7DD148E6DF6FD1C6867C /* UIView+MKAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MKAdd.h"; path = "MKBaseModuleLibrary/Classes/Category/UIView+MKAdd.h"; sourceTree = "<group>"; };
 		6128CEABF87DB20291D50A376E719544 /* mk_customUI_sliderThumbIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_sliderThumbIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_sliderThumbIcon@3x.png"; sourceTree = "<group>"; };
@@ -1191,7 +1191,7 @@
 		63A84706C969A8ABEBD5A78CB9D56610 /* mk_customUI_addIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_addIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_addIcon@2x.png"; sourceTree = "<group>"; };
 		6439FA9136ED3EC1A9C92F91443537E3 /* MKPIRPirSettingController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRPirSettingController.h; path = "MKLoRaWAN-PIR/Classes/Functions/PIRSettingsPage/Controller/MKPIRPirSettingController.h"; sourceTree = "<group>"; };
 		644C90F3AA1AEF95C6F97C60FB6CFB7C /* MKPIRUpdateController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRUpdateController.m; path = "MKLoRaWAN-PIR/Classes/Functions/UpdatePage/Controller/MKPIRUpdateController.m"; sourceTree = "<group>"; };
-		644F8C4FBD8D01EAACD38A18B7F5DAD0 /* MKLoRaWAN-PIR.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = "MKLoRaWAN-PIR.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		644F8C4FBD8D01EAACD38A18B7F5DAD0 /* MKLoRaWAN-PIR.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = "MKLoRaWAN-PIR.podspec"; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		655A42116CF83E496B526BC54D6BEB9C /* MKPIRAboutController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRAboutController.h; path = "MKLoRaWAN-PIR/Classes/Functions/AboutPage/Controller/MKPIRAboutController.h"; sourceTree = "<group>"; };
 		65C405A706D919EF5F470C9E01743B72 /* Toast-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Toast-prefix.pch"; sourceTree = "<group>"; };
 		65D25632A7678CAAB49D71F67B114A4A /* pir_switchUnselectedIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_switchUnselectedIcon@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_switchUnselectedIcon@3x.png"; sourceTree = "<group>"; };
@@ -1207,9 +1207,9 @@
 		683FBF276B20E4A8F7E7D5AE2D433E6D /* MKProgressView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKProgressView.h; path = MKCustomUIModule/Classes/View/MKProgressView/MKProgressView.h; sourceTree = "<group>"; };
 		685AC4E7919D3E5C06EDF20B785D1626 /* HHInteractionDrawerTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHInteractionDrawerTransition.m; path = HHTransition/HHInteractionDrawerTransition.m; sourceTree = "<group>"; };
 		68B72159629994ADD92A74B660004252 /* MKFilterRawAdvDataCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKFilterRawAdvDataCell.h; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKFilterRawAdvDataCell/MKFilterRawAdvDataCell.h; sourceTree = "<group>"; };
-		68FD71EBA2CC98523D3AACCE8A0D43C8 /* CTMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CTMediator.framework; path = CTMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68FD71EBA2CC98523D3AACCE8A0D43C8 /* CTMediator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CTMediator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69F9EB6A505EFD6D868BAFF997136883 /* mk_customUI_listButtonUnselectedIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_listButtonUnselectedIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_listButtonUnselectedIcon@2x.png"; sourceTree = "<group>"; };
-		6A4760E35D539813793A6F6521499AB5 /* MKLoRaWAN-PIR.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "MKLoRaWAN-PIR.bundle"; path = "MKLoRaWAN-PIR-MKLoRaWAN-PIR.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A4760E35D539813793A6F6521499AB5 /* MKLoRaWAN-PIR.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MKLoRaWAN-PIR.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A695413B4741EC87692ED8B3A0C0809 /* DFUService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUService.swift; path = iOSDFULibrary/Classes/Implementation/GenericDFU/DFUService.swift; sourceTree = "<group>"; };
 		6A8AC5DE75157539B1EF02A9D78CACE4 /* mk_customUI_sliderMinimumTrackIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_sliderMinimumTrackIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_sliderMinimumTrackIcon@2x.png"; sourceTree = "<group>"; };
 		6ABD4554E9B5BA696F5B2E8A8B3F9105 /* ZIPFoundation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ZIPFoundation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1239,7 +1239,7 @@
 		70C20A64E22DE3A79CA6430803641A5C /* MKPIRHallSettingsModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRHallSettingsModel.m; path = "MKLoRaWAN-PIR/Classes/Functions/HallSettingsPage/Model/MKPIRHallSettingsModel.m"; sourceTree = "<group>"; };
 		70ED9FC233D56BFB83260097B7E0DAE3 /* mk_customUI_faxIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_faxIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_faxIcon@3x.png"; sourceTree = "<group>"; };
 		70F3BA2695D43E26B2979C4503C1AE46 /* MKPIRConnectModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRConnectModel.m; path = "MKLoRaWAN-PIR/Classes/ConnectModule/MKPIRConnectModel.m"; sourceTree = "<group>"; };
-		710EF7C3AF5ECB09279A51A65FF4BA8D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		710EF7C3AF5ECB09279A51A65FF4BA8D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		71332EF88790731672EA1CAE84CBFA93 /* CircleProgressBar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CircleProgressBar.h; path = CircleProgressBarDemo/CircleProgressBar/CircleProgressBar.h; sourceTree = "<group>"; };
 		71AC98F70DF57516AB86BCA167464C2E /* mk_customUI_wifisignalIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_wifisignalIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_wifisignalIcon@2x.png"; sourceTree = "<group>"; };
 		71C0632649638B8F372E05B1067834E6 /* CBPeripheral+MKPIRAdd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CBPeripheral+MKPIRAdd.h"; path = "MKLoRaWAN-PIR/Classes/SDK/CBPeripheral+MKPIRAdd.h"; sourceTree = "<group>"; };
@@ -1262,8 +1262,8 @@
 		76D21550B1418D7289EAC5DA46AA7266 /* Pods-MKLoRaWAN-PIR_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MKLoRaWAN-PIR_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		77F0A98202EA6146EA5BD044934C27F5 /* HHPresentErectedTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHPresentErectedTransition.m; path = HHTransition/HHPresentErectedTransition.m; sourceTree = "<group>"; };
 		78DA0A7911E3E9EB54367149FD678242 /* MKPIRSDKDataAdopter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRSDKDataAdopter.m; path = "MKLoRaWAN-PIR/Classes/SDK/MKPIRSDKDataAdopter.m"; sourceTree = "<group>"; };
-		7948FA343D314AE2DEBBA7CA6076F151 /* CircleProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CircleProgressBar.framework; path = CircleProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		795D65D255D403824054D0CBE90E32B9 /* MKCustomUIModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKCustomUIModule.framework; path = MKCustomUIModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7948FA343D314AE2DEBBA7CA6076F151 /* CircleProgressBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircleProgressBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		795D65D255D403824054D0CBE90E32B9 /* MKCustomUIModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKCustomUIModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79DE9825FFF218831E324FC9BD7A7F44 /* MLInputDodger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MLInputDodger.m; path = Classes/MLInputDodger.m; sourceTree = "<group>"; };
 		79E0E361686C5F869E88BEA231646C16 /* MKFilterDataCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKFilterDataCell.m; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKFilterDataCell/MKFilterDataCell.m; sourceTree = "<group>"; };
 		7AA2ACDCCA33625BC96A4210C5A782E1 /* MKDateFormatter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKDateFormatter.m; path = MKBaseModuleLibrary/Classes/Tools/MKDateFormatter/MKDateFormatter.m; sourceTree = "<group>"; };
@@ -1311,7 +1311,7 @@
 		8AC18B52A20BE2B57A75E38B8E53C986 /* DFUVersion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUVersion.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Characteristics/DFUVersion.swift; sourceTree = "<group>"; };
 		8AEAB5B47E6A70D4FA5CC4425091AD46 /* Toast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Toast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B879B6541D494BBC39BC0F8BA762308 /* pir_bleSettings_tabBarUnselected@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_bleSettings_tabBarUnselected@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_bleSettings_tabBarUnselected@3x.png"; sourceTree = "<group>"; };
-		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MBProgressHUD.framework; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8B8FAB0D627B17EDE1366984278705D9 /* MBProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MBProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C282246917BFDF30FA95A30893236F7 /* DFUPeripheralSelectorDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUPeripheralSelectorDelegate.swift; path = iOSDFULibrary/Classes/Implementation/DFUPeripheralSelectorDelegate.swift; sourceTree = "<group>"; };
 		8CF7E8E93C187D8DD3D098D436991753 /* MKPIRTabBarController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRTabBarController.m; path = "MKLoRaWAN-PIR/Classes/Functions/TabBarPage/Controller/MKPIRTabBarController.m"; sourceTree = "<group>"; };
 		8D59C2760AEF76D493D0844F0046D785 /* WRNavigationBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "WRNavigationBar-dummy.m"; sourceTree = "<group>"; };
@@ -1359,7 +1359,7 @@
 		9D2353A9D9894862956305625FB7F11C /* HHTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = HHTransition.release.xcconfig; sourceTree = "<group>"; };
 		9D268E248C8E67516401B95E4DC16D52 /* MKTextSwitchCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKTextSwitchCell.h; path = MKCustomUIModule/Classes/Cell/NormalCell/MKTextSwitchCell/MKTextSwitchCell.h; sourceTree = "<group>"; };
 		9D5F392EE8E7C483F103AA322349345A /* MKPIRDebuggerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRDebuggerController.h; path = "MKLoRaWAN-PIR/Classes/Functions/DebuggerPage/Controller/MKPIRDebuggerController.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DA136A7AA2809DC8B4E1BFFA9336583 /* WRNavigationBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "WRNavigationBar-Info.plist"; sourceTree = "<group>"; };
 		9EBF2BEF633D48519B62BB0DE0D50A55 /* MKLoRaWAN-PIR.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "MKLoRaWAN-PIR.modulemap"; sourceTree = "<group>"; };
 		9EE679EE227D70C92358B53B81A45A18 /* MJRefreshBackFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshBackFooter.m; path = MJRefresh/Base/MJRefreshBackFooter.m; sourceTree = "<group>"; };
@@ -1374,7 +1374,7 @@
 		A2B57DED8C9D7BDA88C3C8B926B2D908 /* MKPIROperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIROperation.h; path = "MKLoRaWAN-PIR/Classes/SDK/MKPIROperation.h"; sourceTree = "<group>"; };
 		A32DB02FFA8AEC23896020DCDB57295C /* MASViewConstraint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewConstraint.h; path = Masonry/MASViewConstraint.h; sourceTree = "<group>"; };
 		A3A1E1384C4F003D40FBD9A3AB90FC3C /* MKPIRScanController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRScanController.h; path = "MKLoRaWAN-PIR/Classes/Functions/ScanPage/Controller/MKPIRScanController.h"; sourceTree = "<group>"; };
-		A3A80BA70CFB7F75C5391BEBBBA8C9DA /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = FMDB.framework; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3A80BA70CFB7F75C5391BEBBBA8C9DA /* FMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3BD1E566068ADADBC55AD24FC2C5569 /* mk_customUI_switchSelectedIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_switchSelectedIcon@3x.png"; path = "MKCustomUIModule/Assets/mk_customUI_switchSelectedIcon@3x.png"; sourceTree = "<group>"; };
 		A40E91768BAB37D4FDF9A9417235149B /* HHInteractionMotionTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHInteractionMotionTransition.h; path = HHTransition/HHInteractionMotionTransition.h; sourceTree = "<group>"; };
 		A4329270BC949A54A269DF3E319F5927 /* HHPresentTiltedTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHPresentTiltedTransition.h; path = HHTransition/HHPresentTiltedTransition.h; sourceTree = "<group>"; };
@@ -1400,7 +1400,7 @@
 		AA5838941112ADB9C96A8CFF1617BBF2 /* pir_scanRightAboutIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_scanRightAboutIcon@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_scanRightAboutIcon@3x.png"; sourceTree = "<group>"; };
 		AA8E871160731E440AD9BAB0682E8861 /* mk_customUI_listButtonSelectedIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_listButtonSelectedIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_listButtonSelectedIcon@2x.png"; sourceTree = "<group>"; };
 		AABEDC45A74181DDDE236CD1D997B8BC /* MBProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MBProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
-		AAFBDEEB00477ACEC53719DCF3767608 /* Pods_MKLoRaWAN_PIR_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MKLoRaWAN_PIR_Example.framework; path = "Pods-MKLoRaWAN-PIR_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AAFBDEEB00477ACEC53719DCF3767608 /* Pods_MKLoRaWAN_PIR_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MKLoRaWAN_PIR_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA212F23A308C23B649F1E0FE2B208E /* UIView+MJExtension.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+MJExtension.h"; path = "MJRefresh/UIView+MJExtension.h"; sourceTree = "<group>"; };
 		AC60A2883B6A9F9BE18D0D59BA765CD0 /* MLInputDodger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MLInputDodger.release.xcconfig; sourceTree = "<group>"; };
 		AC755935FC243D00BB2FDA26EA7AE5D1 /* MKPIRTHSettingsCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRTHSettingsCell.h; path = "MKLoRaWAN-PIR/Classes/Functions/THSettingsPage/View/MKPIRTHSettingsCell.h"; sourceTree = "<group>"; };
@@ -1439,7 +1439,7 @@
 		B52ADB029036AD82934378D6502B7B50 /* pir_wifisignalIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_wifisignalIcon@2x.png"; path = "MKLoRaWAN-PIR/Assets/pir_wifisignalIcon@2x.png"; sourceTree = "<group>"; };
 		B53D83DD559E59A569F681F01E1A2872 /* MASConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraint.m; path = Masonry/MASConstraint.m; sourceTree = "<group>"; };
 		B5511353F49C318D47C9D1921DF6B6C5 /* DFUControlPoint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUControlPoint.swift; path = iOSDFULibrary/Classes/Implementation/LegacyDFU/Characteristics/DFUControlPoint.swift; sourceTree = "<group>"; };
-		B558AD58183C7859004AD2D69E181FEA /* MKBaseBleModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MKBaseBleModule.framework; path = MKBaseBleModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B558AD58183C7859004AD2D69E181FEA /* MKBaseBleModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKBaseBleModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B638FFD2833C0C8EE6547216F8101E71 /* MBProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD-umbrella.h"; sourceTree = "<group>"; };
 		B63F598AE556FFDBD14E1D3E8CB9875A /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6B646B66784AB9E08A72BE7493E20C1 /* CTMediator-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CTMediator-prefix.pch"; sourceTree = "<group>"; };
@@ -1468,7 +1468,7 @@
 		BE41C5BD1EBC2B33BA4E4C412E1F2284 /* mk_customUI_config_certAddIcon@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "mk_customUI_config_certAddIcon@2x.png"; path = "MKCustomUIModule/Assets/mk_customUI_config_certAddIcon@2x.png"; sourceTree = "<group>"; };
 		BE5A4B0F7C23022FB1D353B6EA19971A /* MKBaseModuleLibrary.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MKBaseModuleLibrary.modulemap; sourceTree = "<group>"; };
 		BE921531E3F89B268C51012B5C153324 /* MBProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MBProgressHUD.modulemap; sourceTree = "<group>"; };
-		BE9D1138367D0846F9A030F471AFBB9E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		BE9D1138367D0846F9A030F471AFBB9E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BED77788CC89ADDE57A100B2DA31DEE6 /* MKPIRDeviceInfoController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRDeviceInfoController.m; path = "MKLoRaWAN-PIR/Classes/Functions/DeviceInfoPage/Controller/MKPIRDeviceInfoController.m"; sourceTree = "<group>"; };
 		BF0604211BCB5203CCF9A13032A9C055 /* MKAboutCellModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKAboutCellModel.m; path = MKCustomUIModule/Classes/Controller/MKAboutPage/Model/MKAboutCellModel.m; sourceTree = "<group>"; };
 		BF320CEA7C54A3910297832260205FF5 /* UIScrollView+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+MKAdd.m"; path = "MKBaseModuleLibrary/Classes/Category/UIScrollView+MKAdd.m"; sourceTree = "<group>"; };
@@ -1485,7 +1485,7 @@
 		C1CE5B2952BC14A8367BA17E31F1B013 /* MKPIRGeneralModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRGeneralModel.h; path = "MKLoRaWAN-PIR/Classes/Functions/GeneralPage/Model/MKPIRGeneralModel.h"; sourceTree = "<group>"; };
 		C207AF1DB6A89E40236F52AB2DC90BAA /* MKLoRaWAN-PIR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "MKLoRaWAN-PIR.debug.xcconfig"; sourceTree = "<group>"; };
 		C24AB4F8518F06E2D65E0DA8B2385717 /* MKCustomUIModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MKCustomUIModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C291AC0DBEA2986CD250F2466A26691D /* MLInputDodger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MLInputDodger.framework; path = MLInputDodger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C291AC0DBEA2986CD250F2466A26691D /* MLInputDodger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MLInputDodger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D46930B5F07EDA2A8C78458DFB0F60 /* iOSDFULibrary-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iOSDFULibrary-umbrella.h"; sourceTree = "<group>"; };
 		C2D7D2930D6AD9078B4F1F25538A1E92 /* pir_slotSaveIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_slotSaveIcon@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_slotSaveIcon@3x.png"; sourceTree = "<group>"; };
 		C2F61122FD0223A38EE71B350EE678E9 /* MKPIRLoRaSettingModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIRLoRaSettingModel.h; path = "MKLoRaWAN-PIR/Classes/Functions/LoRaSettingPage/Model/MKPIRLoRaSettingModel.h"; sourceTree = "<group>"; };
@@ -1526,7 +1526,7 @@
 		CFB7BA02765D9090E0AED81470DD49C5 /* HHInteractionTopBackTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HHInteractionTopBackTransition.h; path = HHTransition/HHInteractionTopBackTransition.h; sourceTree = "<group>"; };
 		CFDD9F2B453DCB7E8BE3A21B6E427A51 /* MJRefresh.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = MJRefresh.bundle; path = MJRefresh/MJRefresh.bundle; sourceTree = "<group>"; };
 		CFECBFC3AE5B274818C4B5B97E32423F /* MJRefreshFooter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MJRefreshFooter.m; path = MJRefresh/Base/MJRefreshFooter.m; sourceTree = "<group>"; };
-		D299E571E016B9E6B94A53EE5C782D2B /* MKCustomUIModule.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = MKCustomUIModule.bundle; path = "MKCustomUIModule-MKCustomUIModule.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D299E571E016B9E6B94A53EE5C782D2B /* MKCustomUIModule.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MKCustomUIModule.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30E75B7D89EE17BF1F15B997448C0C2 /* FMDatabasePool.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = src/fmdb/FMDatabasePool.h; sourceTree = "<group>"; };
 		D4174B17B6D3CA631EB04829E6F9D9D8 /* DFUServiceInitiator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DFUServiceInitiator.swift; path = iOSDFULibrary/Classes/Implementation/DFUServiceInitiator.swift; sourceTree = "<group>"; };
 		D48B25021E53CD1D682D35FB020387D6 /* MBProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -1548,7 +1548,7 @@
 		DE1A5F41047DCB2004C26E0582C9A8C6 /* MKPIROperationID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKPIROperationID.h; path = "MKLoRaWAN-PIR/Classes/SDK/MKPIROperationID.h"; sourceTree = "<group>"; };
 		DE399875B3BEA34254464F58A529DD15 /* MKPIRCentralManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRCentralManager.m; path = "MKLoRaWAN-PIR/Classes/SDK/MKPIRCentralManager.m"; sourceTree = "<group>"; };
 		DEF902ABF377A2E84177DA8401954DD2 /* MASLayoutConstraint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASLayoutConstraint.m; path = Masonry/MASLayoutConstraint.m; sourceTree = "<group>"; };
-		DF1910F703AB9A9A05DDD9333F8D0EF9 /* WRNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = WRNavigationBar.framework; path = WRNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1910F703AB9A9A05DDD9333F8D0EF9 /* WRNavigationBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WRNavigationBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF2FEF1362F0F8F3CFBF6B305D5D95EF /* MKPIRLoRaSettingController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKPIRLoRaSettingController.m; path = "MKLoRaWAN-PIR/Classes/Functions/LoRaSettingPage/Controller/MKPIRLoRaSettingController.m"; sourceTree = "<group>"; };
 		DF76216EE9F383B8487B0E745483691E /* MKNormalSliderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKNormalSliderCell.m; path = MKCustomUIModule/Classes/Cell/NormalCell/MKNormalSliderCell/MKNormalSliderCell.m; sourceTree = "<group>"; };
 		E03AE4A2FD53B3B571789BDF49B693B1 /* MKMixedChoiceCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MKMixedChoiceCell.m; path = MKCustomUIModule/Classes/Cell/LoRaCell/MKMixedChoiceCell/MKMixedChoiceCell.m; sourceTree = "<group>"; };
@@ -1563,7 +1563,7 @@
 		E3B723C415A5F20FF59E322287C912FA /* NirKxMenu.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = NirKxMenu.m; path = MKCustomUIModule/Classes/View/NirKxMenu/NirKxMenu.m; sourceTree = "<group>"; };
 		E4583555D806F8AFB355104E0AAF7695 /* MKAboutPageCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MKAboutPageCell.h; path = MKCustomUIModule/Classes/Controller/MKAboutPage/View/MKAboutPageCell.h; sourceTree = "<group>"; };
 		E467269431EA49F419AEC8FA8E03ADBA /* HHInteractionTopBackTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = HHInteractionTopBackTransition.m; path = HHTransition/HHInteractionTopBackTransition.m; sourceTree = "<group>"; };
-		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MJRefresh.framework; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E49D6D248DD1CEE584E6776B9164A1B2 /* MJRefresh.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MJRefresh.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B0295F8AC5CB9CFB49185BC3210E5F /* NSInvocation+MKAdd.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+MKAdd.m"; path = "MKBaseModuleLibrary/Classes/Category/NSInvocation+MKAdd.m"; sourceTree = "<group>"; };
 		E4DCAFCD17D3561492D0486159BFA205 /* WRNavigationBar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WRNavigationBar.m; path = Demo/CodeDemo/WRNavigationBar/WRNavigationBar.m; sourceTree = "<group>"; };
 		E506E34E49DDF8B14A612F6481F6E944 /* pir_hallSettings_doorStatusIcon@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "pir_hallSettings_doorStatusIcon@3x.png"; path = "MKLoRaWAN-PIR/Assets/pir_hallSettings_doorStatusIcon@3x.png"; sourceTree = "<group>"; };
@@ -2371,7 +2371,6 @@
 				CD5FA299A757BB7A650AF9528C5F30E8 /* standard */,
 				CF905839738F7CAA12EB4CB81357CCB6 /* Support Files */,
 			);
-			name = FMDB;
 			path = FMDB;
 			sourceTree = "<group>";
 		};
@@ -2426,7 +2425,6 @@
 				FADB4BEC110952C743D886937877D75F /* Resources */,
 				F471A6E11B69F028B21652B4A1B1ADD4 /* Support Files */,
 			);
-			name = MLInputDodger;
 			path = MLInputDodger;
 			sourceTree = "<group>";
 		};
@@ -2452,7 +2450,6 @@
 				452A4DBB38EDF88F1613A8ED28048479 /* FileManager+ZIP.swift */,
 				2110DDFB5BFF1BA63EC2485BE127048E /* Support Files */,
 			);
-			name = ZIPFoundation;
 			path = ZIPFoundation;
 			sourceTree = "<group>";
 		};
@@ -2612,7 +2609,6 @@
 				0BE9DDA19DD2E18A2831779E588101D6 /* Support Files */,
 				A04AB528400E77A5192F7D7CD8EEA804 /* Tools */,
 			);
-			name = MKBaseModuleLibrary;
 			path = MKBaseModuleLibrary;
 			sourceTree = "<group>";
 		};
@@ -2627,7 +2623,6 @@
 				B69626BCD4DDD80A7D7D0516CA93B444 /* UIAdopter */,
 				CB7F6DF93E039B4F1C97A6A1D6B39DF9 /* View */,
 			);
-			name = MKCustomUIModule;
 			path = MKCustomUIModule;
 			sourceTree = "<group>";
 		};
@@ -2694,7 +2689,6 @@
 				E5E0F0EEBFB689945622DC6671EABB2A /* ViewController+MASAdditions.m */,
 				7B728A0415BE1F1E988426A2FC40CC76 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -2817,7 +2811,6 @@
 				6E15BAD28345D8AE991D11EF258559A4 /* UIViewController+HHTransitionProperty.m */,
 				E5A7467769E21DBC230C3DA19BF58149 /* Support Files */,
 			);
-			name = HHTransition;
 			path = HHTransition;
 			sourceTree = "<group>";
 		};
@@ -2843,7 +2836,6 @@
 				CD631C994EA63C578669036C554589A2 /* MKBLEBaseSDKDefines.h */,
 				F93ABB50D4812C6BFF62662208557239 /* Support Files */,
 			);
-			name = MKBaseBleModule;
 			path = MKBaseBleModule;
 			sourceTree = "<group>";
 		};
@@ -2906,7 +2898,6 @@
 				0A5FBB3D3CB25E1FB4D0257557F51F15 /* UIView+Toast.m */,
 				824A5023FF7812D8226BFD5188AA8228 /* Support Files */,
 			);
-			name = Toast;
 			path = Toast;
 			sourceTree = "<group>";
 		};
@@ -2969,7 +2960,6 @@
 				82131EA10987AB6767D416F3320E7D10 /* ZipArchive.swift */,
 				A5447FA1805DB0817C23889E4E3CD0CA /* Support Files */,
 			);
-			name = iOSDFULibrary;
 			path = iOSDFULibrary;
 			sourceTree = "<group>";
 		};
@@ -3065,7 +3055,6 @@
 				A54CE134076C3122F51EE523E58AED20 /* MBProgressHUD.m */,
 				741AC48CE72C2EEBBFE0F1ECEC568B84 /* Support Files */,
 			);
-			name = MBProgressHUD;
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -3207,7 +3196,6 @@
 				E4DCAFCD17D3561492D0486159BFA205 /* WRNavigationBar.m */,
 				90B4E5FD32A0F8BED704B0D7C5707757 /* Support Files */,
 			);
-			name = WRNavigationBar;
 			path = WRNavigationBar;
 			sourceTree = "<group>";
 		};
@@ -3414,7 +3402,6 @@
 				2714B46E9A3D36C7E9937DF12FE5981C /* CircleProgressBar.m */,
 				44936E9644C37F08D2CEFDBFDC572730 /* Support Files */,
 			);
-			name = CircleProgressBar;
 			path = CircleProgressBar;
 			sourceTree = "<group>";
 		};
@@ -3688,7 +3675,6 @@
 				6AB2330F3D56FC540FF4DB35E3D33155 /* Resources */,
 				3B4B80FB96229BAEBB28DA4EE4CC2A06 /* Support Files */,
 			);
-			name = MJRefresh;
 			path = MJRefresh;
 			sourceTree = "<group>";
 		};
@@ -3817,7 +3803,6 @@
 				EB5A3CBAF2DB9AB357BFCC0F21165209 /* CTMediator+HandyTools.m */,
 				5FCBFBD4D8057DACBE047DA41F5232C1 /* Support Files */,
 			);
-			name = CTMediator;
 			path = CTMediator;
 			sourceTree = "<group>";
 		};
@@ -4659,7 +4644,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1310;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -5582,7 +5567,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9D2353A9D9894862956305625FB7F11C /* HHTransition.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5638,6 +5622,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -5665,8 +5650,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -5676,7 +5660,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7679569257BE0483AD67920E7114C0CA /* MKCustomUIModule.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5709,7 +5692,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F7982580B23A607C419AF97ED18C8321 /* MJRefresh.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5742,7 +5724,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E506F63A22783E8CA7CFF27DB5F71487 /* CTMediator.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5775,7 +5756,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5BDFE33511B02DADBB472FF205B1B7FD /* Masonry.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5808,7 +5788,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A984DF8F9A67826AF54FB7CDC7874B4E /* WRNavigationBar.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5841,7 +5820,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1F48A931C74DFE775B24675BB12D5CB9 /* Toast.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5873,7 +5851,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 88B6D2C2741ECADD739CBF75F8CD14EB /* MKBaseModuleLibrary.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5908,7 +5885,6 @@
 			baseConfigurationReference = 76D21550B1418D7289EAC5DA46AA7266 /* Pods-MKLoRaWAN-PIR_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -5959,7 +5935,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5615F14AE124BABED9F3F4266410FF57 /* MBProgressHUD.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -5992,7 +5967,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BF63C1B4A7AC4830D5A64A55010E03B8 /* MKLoRaWAN-PIR.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6026,7 +6000,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 992A74EA57291E36037D7BCAE0856172 /* CTMediator.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6058,7 +6031,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39E09ABA15F29DD219D0009D65440007 /* MKBaseModuleLibrary.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6091,7 +6063,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35F564F9CCAD151FED3929B23A946273 /* MKBaseBleModule.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6125,7 +6096,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 536696CCC0D6CC8235DB7AE97284EFC2 /* iOSDFULibrary.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6158,7 +6128,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E6F02FAE52CAD51E1B750D819D4072C /* MKCustomUIModule.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6209,7 +6178,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0EE0F7621706D113E83CAE57EA5B27CC /* MJRefresh.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6241,7 +6209,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A1B9DF3A3640D11FEAE84BF05A2418FE /* Toast.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6291,7 +6258,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5CBA35200E4E20F993F23F87D4BE009E /* iOSDFULibrary.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6323,7 +6289,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7EA2A2B821530F19171DE1FEEEE6AF3B /* FMDB.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6356,7 +6321,6 @@
 			baseConfigurationReference = 4D0A502EB4A5C896EC5446A0E993EBCE /* Pods-MKLoRaWAN-PIR_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6391,7 +6355,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A4F69B99245503185BA55FF647DD3597 /* HHTransition.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6423,7 +6386,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AABEDC45A74181DDDE236CD1D997B8BC /* MBProgressHUD.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6455,7 +6417,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B9581C3F7E9F53374CD127A16E3E5FF9 /* FMDB.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6505,7 +6466,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1921366296DE8BA9BDDCA0F0B4101B2B /* MLInputDodger.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6537,7 +6497,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F0D7D51858C7D83A471E21B2D8C4B834 /* ZIPFoundation.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6570,7 +6529,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C207AF1DB6A89E40236F52AB2DC90BAA /* MKLoRaWAN-PIR.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6603,7 +6561,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62F6D1EA4D636BCB4F5C98A436149028 /* ZIPFoundation.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6652,7 +6609,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3D36FD8CB088088D16E589A21B57E45A /* MKBaseBleModule.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -6685,7 +6641,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 82FDF82E66FBEDC7362B348587CB1614 /* CircleProgressBar.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6718,7 +6673,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 72686BAB9F1FFA870B9D36B5A71E93E2 /* WRNavigationBar.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6750,7 +6704,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2F0D54B854D8BC59A46A50B9D17839E2 /* Masonry.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6799,7 +6752,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FA7D545651104CEABF154626EE7F1975 /* CircleProgressBar.debug.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6831,7 +6783,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC60A2883B6A9F9BE18D0D59BA765CD0 /* MLInputDodger.release.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -6887,6 +6838,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

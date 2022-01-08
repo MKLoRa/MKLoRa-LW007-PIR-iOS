@@ -24,6 +24,7 @@
 #import "MKTextSwitchCell.h"
 
 #import "MKPIRCentralManager.h"
+#import "MKPIRInterface.h"
 
 #import "MKPIRHallSettingsModel.h"
 
@@ -173,6 +174,7 @@ mk_textSwitchCellDelegate>
                                                      selector:@selector(receiveDoorSensorStatus:)
                                                          name:mk_pir_doorSensorDatasNotification
                                                        object:nil];
+            [self readDoorSensorDatas];
         }else {
             MKNormalTextCellModel *cellModel1 = self.section1List[0];
             cellModel1.rightMsg = @"";
@@ -184,6 +186,23 @@ mk_textSwitchCellDelegate>
         }
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)readDoorSensorDatas {
+    [MKPIRInterface pir_readDoorSensorDatasWithSucBlock:^(id  _Nonnull returnData) {
+        self.dataModel.open = [returnData[@"result"][@"open"] boolValue];
+        self.dataModel.times = returnData[@"result"][@"times"];
+        MKNormalTextCellModel *cellModel1 = self.section1List[0];
+        cellModel1.rightMsg = (self.dataModel.open ? @"Open" : @"Closed");
+        
+        MKNormalTextCellModel *cellModel2 = self.section1List[1];
+        cellModel2.rightMsg = self.dataModel.times;
+        
+        [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
+    } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
     }];

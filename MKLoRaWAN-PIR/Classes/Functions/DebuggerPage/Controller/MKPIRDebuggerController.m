@@ -52,6 +52,9 @@ MKPIRDebuggerCellDelegate>
 
 @property (nonatomic, strong)NSDateFormatter *formatter;
 
+/// 用户是否是点击了返回按钮
+@property (nonatomic, assign)BOOL leftAction;
+
 @end
 
 @implementation MKPIRDebuggerController
@@ -94,7 +97,15 @@ MKPIRDebuggerCellDelegate>
         return;
     }
     //当前设备正常连接，返回上一级页面
-    [super leftButtonMethod];
+    self.leftAction = YES;
+    [[MKPIRCentralManager shared] notifyLogData:NO];
+    if (self.contentList.count > 0) {
+        //将当前contentList数据保存到本地
+        [self saveConteneDatas];
+    }else {
+        //当前没有需要保存的数据，则直接返回
+        [super leftButtonMethod];
+    }
 }
 
 #pragma mark - UITableViewDelegate
@@ -317,8 +328,13 @@ MKPIRDebuggerCellDelegate>
     }
     [MKPIRDatabaseManager insertLogDatas:tempList macAddress:self.macAddress sucBlock:^{
         [[MKHudManager share] hide];
-        [self updateTopButtonState];
-        [self.tableView reloadData];
+        if (self.leftAction) {
+            //用户点击返回按钮，由于有未保存的数据，所以走数据保存流程，保存成功才会返回上一级页面
+            [super leftButtonMethod];
+        }else {
+            [self updateTopButtonState];
+            [self.tableView reloadData];
+        }
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];

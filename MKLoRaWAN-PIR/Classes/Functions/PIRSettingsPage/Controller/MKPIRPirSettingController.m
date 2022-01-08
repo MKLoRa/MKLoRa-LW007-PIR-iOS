@@ -25,6 +25,7 @@
 #import "MKTextSwitchCell.h"
 
 #import "MKPIRCentralManager.h"
+#import "MKPIRInterface.h"
 
 #import "MKPIRPirSettingsModel.h"
 
@@ -236,6 +237,7 @@ MKPIRPirSettingsPickerCellDelegate>
                                                      selector:@selector(receivePIRStatus:)
                                                          name:mk_pir_pirStatusNotification
                                                        object:nil];
+            [self readPIRStatus];
         }else {
             //关闭状态
             MKNormalTextCellModel *statusModel = self.section3List[0];
@@ -244,6 +246,20 @@ MKPIRPirSettingsPickerCellDelegate>
         }
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)readPIRStatus {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    [MKPIRInterface pir_readPIRStatusWithSucBlock:^(id  _Nonnull returnData) {
+        [[MKHudManager share] hide];
+        self.dataModel.detected = [returnData[@"result"][@"detected"] boolValue];
+        MKNormalTextCellModel *statusModel = self.section3List[0];
+        statusModel.rightMsg = (self.dataModel.detected ? @"Motion detected" : @"Motion not detected");
+        [self.tableView mk_reloadSection:3 withRowAnimation:UITableViewRowAnimationNone];
+    } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
     }];

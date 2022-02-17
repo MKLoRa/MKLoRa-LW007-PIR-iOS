@@ -520,14 +520,14 @@ static dispatch_once_t onceToken;
     BOOL alarm = [[binary substringWithRange:NSMakeRange(0, 1)] isEqualToString:@"1"];
     
     NSString *temperature = [content substringWithRange:NSMakeRange(2, 4)];
-    if (![temperature isEqualToString:@"FFFF"]) {
+    if (![temperature isEqualToString:@"ffff"]) {
         //温度功能启用
         NSInteger temperatureValue = [MKBLEBaseSDKAdopter getDecimalWithHex:temperature range:NSMakeRange(0, 4)];
         temperature = [NSString stringWithFormat:@"%.1f",(temperatureValue * 0.1 - 30.f)];
     }
     
     NSString *humidity = [content substringWithRange:NSMakeRange(6, 4)];
-    if (![humidity isEqualToString:@"FFFF"]) {
+    if (![humidity isEqualToString:@"ffff"]) {
         //温度功能启用
         NSInteger humidityValue = [MKBLEBaseSDKAdopter getDecimalWithHex:humidity range:NSMakeRange(0, 4)];
         humidity = [NSString stringWithFormat:@"%.1f",(humidityValue * 0.1)];

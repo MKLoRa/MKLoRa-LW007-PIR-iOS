@@ -242,8 +242,22 @@ static CGFloat const batteryIconHeight = 12.f;
     
     //下面的参数
     self.voltageView.msgLabel.text = [_dataModel.battery stringByAppendingString:@" V"];
-    self.temperatureView.msgLabel.text = [_dataModel.temperature stringByAppendingString:@" °C"];
-    self.humidityView.msgLabel.text = [_dataModel.humidity stringByAppendingString:@" %RH"];
+    if ([_dataModel.temperature isEqualToString:@"ffff"]) {
+        //数据无效
+        self.temperatureView.icon.hidden = YES;
+        self.temperatureView.msgLabel.text = @"";
+    }else {
+        self.temperatureView.icon.hidden = NO;
+        self.temperatureView.msgLabel.text = [_dataModel.temperature stringByAppendingString:@" °C"];
+    }
+    if ([_dataModel.humidity isEqualToString:@"ffff"]) {
+        //数据无效
+        self.humidityView.icon.hidden = YES;
+        self.humidityView.msgLabel.text = @"";
+    }else {
+        self.humidityView.icon.hidden = NO;
+        self.humidityView.msgLabel.text = [_dataModel.humidity stringByAppendingString:@" %RH"];
+    }
 }
 
 #pragma mark - getter

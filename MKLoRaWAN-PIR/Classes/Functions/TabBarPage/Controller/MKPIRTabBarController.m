@@ -27,6 +27,7 @@
 /// 02:修改密码成功后，返回结果，断开连接
 /// 03:连续三分钟设备没有数据通信断开，返回结果，断开连接
 /// 04:重启设备，就不需要显示断开连接的弹窗了，只需要显示对应的弹窗
+/// 05:恢复出厂设置
 @property (nonatomic, assign)BOOL disconnectType;
 
 /// 产品要求，进入debugger模式之后，设备断开连接也要停留在当前页面，只有退出debugger模式才进行正常模式通信
@@ -111,7 +112,7 @@
     //02:修改密码成功后，返回结果，断开连接
     //03:连续两分钟设备没有数据通信断开，返回结果，断开连接
     //04:重启设备
-    //05:设备变为不可连接状态
+    //05:恢复出厂设置
     self.disconnectType = YES;
     if ([type isEqualToString:@"02"]) {
         [self showAlertWithMsg:@"Password changed successfully! Please reconnect the device." title:@"Change Password"];
@@ -123,6 +124,10 @@
     }
     if ([type isEqualToString:@"04"]) {
         [self showAlertWithMsg:@"Reboot successfully!Please reconnect the device." title:@"Dismiss"];
+        return;
+    }
+    if ([type isEqualToString:@"05"]) {
+        [self showAlertWithMsg:@"Factory reset successfully!Please reconnect the device." title:@"Factory Reset"];
         return;
     }
 }

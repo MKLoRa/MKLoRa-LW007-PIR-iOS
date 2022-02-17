@@ -83,6 +83,10 @@
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
     dispatch_async(self.readQueue, ^{
+        if (![self validParams]) {
+            [self operationFailedBlockWithMsg:@"Opps！Save failed. Please check the input characters and try again." block:failedBlock];
+            return;
+        }
         if (![self configSwitchStatus]) {
             [self operationFailedBlockWithMsg:@"Config Function Switch Error" block:failedBlock];
             return;
@@ -450,6 +454,37 @@
                                                 userInfo:@{@"errorInfo":msg}];
         block(error);
     })
+}
+
+- (BOOL)validParams {
+    if (!ValidStr(self.sampleRate) || [self.sampleRate integerValue] < 1 || [self.sampleRate integerValue] > 60) {
+        return NO;
+    }
+    if (!ValidStr(self.tempMax) || !ValidStr(self.tempMin)) {
+        return NO;
+    }
+    if ([self.tempMin integerValue] < -30 || [self.tempMax integerValue] > 60 || [self.tempMin integerValue] >= [self.tempMax integerValue]) {
+        return NO;
+    }
+    if (!ValidStr(self.tempDuration) || [self.tempDuration integerValue] < 1 || [self.tempDuration integerValue] > 24) {
+        return NO;
+    }
+    if (!ValidStr(self.tempChangeValueThreshold) || [self.tempChangeValueThreshold integerValue] < 1 || [self.tempChangeValueThreshold integerValue] > 20) {
+        return NO;
+    }
+    if (!ValidStr(self.rhMax) || !ValidStr(self.rhMin)) {
+        return NO;
+    }
+    if ([self.rhMin integerValue] < 0 || [self.rhMax integerValue] > 100 || [self.rhMin integerValue] >= [self.rhMax integerValue]) {
+        return NO;
+    }
+    if (!ValidStr(self.rhDuration) || [self.rhDuration integerValue] < 1 || [self.rhDuration integerValue] > 24) {
+        return NO;
+    }
+    if (!ValidStr(self.rhChangeValueThreshold) || [self.rhChangeValueThreshold integerValue] < 1 || [self.rhChangeValueThreshold integerValue] > 100) {
+        return NO;
+    }
+    return YES;
 }
 
 #pragma mark - getter

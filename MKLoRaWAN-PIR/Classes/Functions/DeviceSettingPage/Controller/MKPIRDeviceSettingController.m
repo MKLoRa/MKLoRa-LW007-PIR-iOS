@@ -352,7 +352,7 @@ mk_textSwitchCellDelegate>
                               isPenetration:NO];
     [MKPIRInterface pir_factoryResetWithSucBlock:^{
         [[MKHudManager share] hide];
-        [self.view showCentralToast:@"Factory reset successfully!Please reconnect the device."];
+//        [self.view showCentralToast:@"Factory reset successfully!Please reconnect the device."];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];

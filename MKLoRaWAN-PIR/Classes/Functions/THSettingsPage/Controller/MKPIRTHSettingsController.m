@@ -27,14 +27,19 @@
 
 #import "MKPIRTHSettingsModel.h"
 
-#import "MKPIRTHSettingsCell.h"
+#import "MKPIRTHSettingsHeaderView.h"
 #import "MKPIRTHAlarmCell.h"
 
 @interface MKPIRTHSettingsController ()<UITableViewDelegate,
 UITableViewDataSource,
 mk_textSwitchCellDelegate,
 MKTextFieldCellDelegate,
-MKPIRTHAlarmCellDelegate>
+MKPIRTHAlarmCellDelegate,
+MKPIRTHSettingsHeaderViewDelegate>
+
+@property (nonatomic, strong)MKPIRTHSettingsHeaderView *tableHeaderView;
+
+@property (nonatomic, strong)MKPIRTHSettingsHeaderViewModel *headerDataModel;
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 
@@ -53,12 +58,6 @@ MKPIRTHAlarmCellDelegate>
 @property (nonatomic, strong)NSMutableArray *section6List;
 
 @property (nonatomic, strong)NSMutableArray *section7List;
-
-@property (nonatomic, strong)NSMutableArray *section8List;
-
-@property (nonatomic, strong)NSMutableArray *section9List;
-
-@property (nonatomic, strong)NSMutableArray *section10List;
 
 @property (nonatomic, strong)NSMutableArray *headerList;
 
@@ -96,7 +95,7 @@ MKPIRTHAlarmCellDelegate>
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0 || section == 2 || section == 3 || section == 5 || section == 7 || section == 9) {
+    if (section == 0 || section == 2 || section == 4 || section == 6) {
         return 10.f;
     }
     return 0.f;
@@ -127,37 +126,30 @@ MKPIRTHAlarmCellDelegate>
 /// @param index 当前cell所在的index
 - (void)mk_textSwitchCellStatusChanged:(BOOL)isOn index:(NSInteger)index {
     if (index == 0) {
-        //Function Switch
-        self.dataModel.isOn = isOn;
+        //Temp Threshold Alarm
+        self.dataModel.tempThresholdAlarm = isOn;
         MKTextSwitchCellModel *cellModel = self.section0List[0];
         cellModel.isOn = isOn;
         return;
     }
     if (index == 1) {
-        //Temp Threshold Alarm
-        self.dataModel.tempThresholdAlarm = isOn;
-        MKTextSwitchCellModel *cellModel = self.section3List[0];
+        //Temp Change Alarm
+        self.dataModel.tempChangeAlarm = isOn;
+        MKTextSwitchCellModel *cellModel = self.section2List[0];
         cellModel.isOn = isOn;
         return;
     }
     if (index == 2) {
-        //Temp Change Alarm
-        self.dataModel.tempChangeAlarm = isOn;
-        MKTextSwitchCellModel *cellModel = self.section5List[0];
+        //RH Threshold Alarm
+        self.dataModel.rhThresholdAlarm = isOn;
+        MKTextSwitchCellModel *cellModel = self.section4List[0];
         cellModel.isOn = isOn;
         return;
     }
     if (index == 3) {
-        //RH Threshold Alarm
-        self.dataModel.rhThresholdAlarm = isOn;
-        MKTextSwitchCellModel *cellModel = self.section7List[0];
-        cellModel.isOn = isOn;
-        return;
-    }
-    if (index == 4) {
         //RH Change Alarm
         self.dataModel.rhChangeAlarm = isOn;
-        MKTextSwitchCellModel *cellModel = self.section9List[0];
+        MKTextSwitchCellModel *cellModel = self.section6List[0];
         cellModel.isOn = isOn;
         return;
     }
@@ -169,54 +161,58 @@ MKPIRTHAlarmCellDelegate>
 /// @param value 当前textField的值
 - (void)mk_deviceTextCellValueChanged:(NSInteger)index textValue:(NSString *)value {
     if (index == 0) {
-        //Sample Rate
-        self.dataModel.sampleRate = value;
-        MKTextFieldCellModel *cellModel = self.section1List[0];
+        //Temp Change Alarm/Duration Condition
+        self.dataModel.tempDuration = value;
+        MKTextFieldCellModel *cellModel = self.section3List[0];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 1) {
-        //Temp Change Alarm/Duration Condition
-        self.dataModel.tempDuration = value;
-        MKTextFieldCellModel *cellModel = self.section6List[0];
+        //Temp Change Alarm/Change Value Threshold
+        self.dataModel.tempChangeValueThreshold = value;
+        MKTextFieldCellModel *cellModel = self.section3List[1];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 2) {
-        //Temp Change Alarm/Change Value Threshold
-        self.dataModel.tempChangeValueThreshold = value;
-        MKTextFieldCellModel *cellModel = self.section6List[1];
+        //RH Threshold Alarm Max.
+        self.dataModel.rhMax = value;
+        MKTextFieldCellModel *cellModel = self.section5List[0];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 3) {
-        //RH Threshold Alarm Max.
-        self.dataModel.rhMax = value;
-        MKTextFieldCellModel *cellModel = self.section8List[0];
+        //RH Threshold Alarm Min.
+        self.dataModel.rhMin = value;
+        MKTextFieldCellModel *cellModel = self.section5List[1];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 4) {
-        //RH Threshold Alarm Min.
-        self.dataModel.rhMin = value;
-        MKTextFieldCellModel *cellModel = self.section8List[1];
+        //RH Change Alarm/Duration Condition
+        self.dataModel.rhDuration = value;
+        MKTextFieldCellModel *cellModel = self.section7List[0];
         cellModel.textFieldValue = value;
         return;
     }
     if (index == 5) {
-        //RH Change Alarm/Duration Condition
-        self.dataModel.rhDuration = value;
-        MKTextFieldCellModel *cellModel = self.section10List[0];
-        cellModel.textFieldValue = value;
-        return;
-    }
-    if (index == 6) {
         //RH Change Alarm/Change Value Threshold
         self.dataModel.rhChangeValueThreshold = value;
-        MKTextFieldCellModel *cellModel = self.section10List[1];
+        MKTextFieldCellModel *cellModel = self.section7List[1];
         cellModel.textFieldValue = value;
         return;
     }
+}
+
+#pragma mark - MKPIRTHSettingsHeaderViewDelegate
+- (void)mk_pir_functionSwitchChanged:(BOOL)isOn {
+    self.headerDataModel.isOn = isOn;
+    self.dataModel.isOn = isOn;
+}
+
+- (void)mk_pir_sampleRateChanged:(NSString *)sampleRate {
+    self.headerDataModel.sampleRate = sampleRate;
+    self.dataModel.sampleRate = sampleRate;
 }
 
 #pragma mark - MKPIRTHAlarmCellDelegate
@@ -224,14 +220,14 @@ MKPIRTHAlarmCellDelegate>
     if (index == 0) {
         //Temp Threshold Alarm Max.
         self.dataModel.tempMax = value;
-        MKPIRTHAlarmCellModel *cellModel = self.section4List[0];
+        MKPIRTHAlarmCellModel *cellModel = self.section1List[0];
         cellModel.textValue = value;
         return;
     }
     if (index == 1) {
         //Temp Threshold Alarm Min.
         self.dataModel.tempMin = value;
-        MKPIRTHAlarmCellModel *cellModel = self.section4List[1];
+        MKPIRTHAlarmCellModel *cellModel = self.section1List[1];
         cellModel.textValue = value;
         return;
     }
@@ -243,10 +239,9 @@ MKPIRTHAlarmCellDelegate>
     if (!ValidDict(userInfo) || !self.dataModel.isOn) {
         return;
     }
-    MKPIRTHSettingsCellModel *cellModel = self.section2List[0];
-    cellModel.temperature = userInfo[@"temperature"];
-    cellModel.humidity = userInfo[@"humidity"];
-    [self.tableView mk_reloadSection:2 withRowAnimation:UITableViewRowAnimationNone];
+    self.headerDataModel.temperature = userInfo[@"temperature"];
+    self.headerDataModel.humidity = userInfo[@"humidity"];
+    self.tableHeaderView.dataModel = self.headerDataModel;
 }
 
 #pragma mark - interface
@@ -285,10 +280,9 @@ MKPIRTHAlarmCellDelegate>
                                                          name:mk_pir_thSensorDatasNotification
                                                        object:nil];
         }else {
-            MKPIRTHSettingsCellModel *cellModel = self.section2List[0];
-            cellModel.temperature = @"";
-            cellModel.humidity = @"";
-            [self.tableView mk_reloadSection:2 withRowAnimation:UITableViewRowAnimationNone];
+            self.headerDataModel.temperature = @"";
+            self.headerDataModel.humidity = @"";
+            self.tableHeaderView.dataModel = self.headerDataModel;
         }
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
@@ -323,15 +317,6 @@ MKPIRTHAlarmCellDelegate>
     if (section == 7) {
         return self.section7List.count;
     }
-    if (section == 8) {
-        return self.section8List.count;
-    }
-    if (section == 9) {
-        return self.section9List.count;
-    }
-    if (section == 10) {
-        return self.section10List.count;
-    }
     return 0;
 }
 
@@ -343,66 +328,50 @@ MKPIRTHAlarmCellDelegate>
         return cell;
     }
     if (indexPath.section == 1) {
-        MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
+        MKPIRTHAlarmCell *cell = [MKPIRTHAlarmCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section1List[indexPath.row];
         cell.delegate = self;
         return cell;
     }
     if (indexPath.section == 2) {
-        MKPIRTHSettingsCell *cell = [MKPIRTHSettingsCell initCellWithTableView:self.tableView];
+        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section2List[indexPath.row];
+        cell.delegate = self;
         return cell;
     }
     if (indexPath.section == 3) {
-        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
+        MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section3List[indexPath.row];
         cell.delegate = self;
         return cell;
     }
     if (indexPath.section == 4) {
-        MKPIRTHAlarmCell *cell = [MKPIRTHAlarmCell initCellWithTableView:self.tableView];
+        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section4List[indexPath.row];
         cell.delegate = self;
         return cell;
     }
     if (indexPath.section == 5) {
-        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
+        MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section5List[indexPath.row];
         cell.delegate = self;
         return cell;
     }
     if (indexPath.section == 6) {
-        MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
+        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
         cell.dataModel = self.section6List[indexPath.row];
         cell.delegate = self;
         return cell;
     }
-    if (indexPath.section == 7) {
-        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
-        cell.dataModel = self.section7List[indexPath.row];
-        cell.delegate = self;
-        return cell;
-    }
-    if (indexPath.section == 8) {
-        MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
-        cell.dataModel = self.section8List[indexPath.row];
-        cell.delegate = self;
-        return cell;
-    }
-    if (indexPath.section == 9) {
-        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:self.tableView];
-        cell.dataModel = self.section9List[indexPath.row];
-        cell.delegate = self;
-        return cell;
-    }
     MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:self.tableView];
-    cell.dataModel = self.section10List[indexPath.row];
+    cell.dataModel = self.section7List[indexPath.row];
     cell.delegate = self;
     return cell;
 }
 
 #pragma mark - loadSectionDatas
 - (void)loadSectionDatas {
+    [self loadHeaderDatas];
     [self loadSection0Datas];
     [self loadSection1Datas];
     [self loadSection2Datas];
@@ -411,11 +380,8 @@ MKPIRTHAlarmCellDelegate>
     [self loadSection5Datas];
     [self loadSection6Datas];
     [self loadSection7Datas];
-    [self loadSection8Datas];
-    [self loadSection9Datas];
-    [self loadSection10Datas];
     
-    for (NSInteger i = 0; i < 11; i ++) {
+    for (NSInteger i = 0; i < 8; i ++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         [self.headerList addObject:headerModel];
     }
@@ -423,76 +389,57 @@ MKPIRTHAlarmCellDelegate>
     [self.tableView reloadData];
 }
 
+- (void)loadHeaderDatas {
+    self.headerDataModel.isOn = self.dataModel.isOn;
+    self.headerDataModel.sampleRate = self.dataModel.sampleRate;
+    self.headerDataModel.temperature = (self.dataModel.isOn ? self.dataModel.temperature : @"");
+    self.headerDataModel.humidity = (self.dataModel.isOn ? self.dataModel.humidity : @"");
+    self.tableHeaderView.dataModel = self.headerDataModel;
+}
+
 - (void)loadSection0Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
     cellModel.index = 0;
-    cellModel.msg = @"Function Switch";
-    cellModel.isOn = self.dataModel.isOn;
+    cellModel.msg = @"Temp Threshold Alarm";
+    cellModel.isOn = self.dataModel.tempThresholdAlarm;
     [self.section0List addObject:cellModel];
 }
 
 - (void)loadSection1Datas {
-    MKTextFieldCellModel *cellModel = [[MKTextFieldCellModel alloc] init];
-    cellModel.index = 0;
-    cellModel.msg = @"Sample Rate";
-    cellModel.textPlaceholder = @"1 ~ 60";
-    cellModel.textFieldType = mk_realNumberOnly;
-    cellModel.textFieldValue = self.dataModel.sampleRate;
-    cellModel.maxLength = 2;
-    cellModel.unit = @"S";
-    [self.section1List addObject:cellModel];
-}
-
-- (void)loadSection2Datas {
-    MKPIRTHSettingsCellModel *cellModel = [[MKPIRTHSettingsCellModel alloc] init];
-    cellModel.temperature = (self.dataModel.isOn ? self.dataModel.temperature : @"");
-    cellModel.humidity = (self.dataModel.isOn ? self.dataModel.humidity : @"");
-    [self.section2List addObject:cellModel];
-}
-
-- (void)loadSection3Datas {
-    MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 1;
-    cellModel.msg = @"Temp Threshold Alarm";
-    cellModel.isOn = self.dataModel.tempThresholdAlarm;
-    [self.section3List addObject:cellModel];
-}
-
-- (void)loadSection4Datas {
     MKPIRTHAlarmCellModel *cellModel1 = [[MKPIRTHAlarmCellModel alloc] init];
     cellModel1.index = 0;
     cellModel1.msg = @"Max.";
     cellModel1.textValue = self.dataModel.tempMax;
-    [self.section4List addObject:cellModel1];
+    [self.section1List addObject:cellModel1];
     
     MKPIRTHAlarmCellModel *cellModel2 = [[MKPIRTHAlarmCellModel alloc] init];
     cellModel2.index = 1;
     cellModel2.msg = @"Min.";
     cellModel2.textValue = self.dataModel.tempMin;
-    [self.section4List addObject:cellModel2];
+    [self.section1List addObject:cellModel2];
 }
 
-- (void)loadSection5Datas {
+- (void)loadSection2Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 2;
+    cellModel.index = 1;
     cellModel.msg = @"Temp Change Alarm";
     cellModel.isOn = self.dataModel.tempChangeAlarm;
-    [self.section5List addObject:cellModel];
+    [self.section2List addObject:cellModel];
 }
 
-- (void)loadSection6Datas {
+- (void)loadSection3Datas {
     MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
-    cellModel1.index = 1;
+    cellModel1.index = 0;
     cellModel1.msg = @"Duration Condition";
     cellModel1.textPlaceholder = @"1 ~ 24";
     cellModel1.textFieldType = mk_realNumberOnly;
     cellModel1.textFieldValue = self.dataModel.tempDuration;
     cellModel1.maxLength = 2;
     cellModel1.unit = @"H";
-    [self.section6List addObject:cellModel1];
+    [self.section3List addObject:cellModel1];
     
     MKTextFieldCellModel *cellModel2 = [[MKTextFieldCellModel alloc] init];
-    cellModel2.index = 2;
+    cellModel2.index = 1;
     cellModel2.msg = @"Change Value Threshold";
     cellModel2.msgFont = MKFont(14.f);
     cellModel2.textPlaceholder = @"1 ~ 20";
@@ -500,60 +447,60 @@ MKPIRTHAlarmCellDelegate>
     cellModel2.textFieldValue = self.dataModel.tempChangeValueThreshold;
     cellModel2.maxLength = 2;
     cellModel2.unit = @"℃";
-    [self.section6List addObject:cellModel2];
+    [self.section3List addObject:cellModel2];
 }
 
-- (void)loadSection7Datas {
+- (void)loadSection4Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 3;
+    cellModel.index = 4;
     cellModel.msg = @"RH Threshold Alarm";
     cellModel.isOn = self.dataModel.rhThresholdAlarm;
-    [self.section7List addObject:cellModel];
+    [self.section4List addObject:cellModel];
 }
 
-- (void)loadSection8Datas {
+- (void)loadSection5Datas {
     MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
-    cellModel1.index = 3;
+    cellModel1.index = 2;
     cellModel1.msg = @"Max.";
     cellModel1.textPlaceholder = @"0 ~ 100";
     cellModel1.textFieldType = mk_realNumberOnly;
     cellModel1.textFieldValue = self.dataModel.rhMax;
     cellModel1.maxLength = 3;
     cellModel1.unit = @"%";
-    [self.section8List addObject:cellModel1];
+    [self.section5List addObject:cellModel1];
     
     MKTextFieldCellModel *cellModel2 = [[MKTextFieldCellModel alloc] init];
-    cellModel2.index = 4;
+    cellModel2.index = 3;
     cellModel2.msg = @"Min.";
     cellModel2.textPlaceholder = @"0 ~ 100";
     cellModel2.textFieldType = mk_realNumberOnly;
     cellModel2.textFieldValue = self.dataModel.rhMin;
     cellModel2.maxLength = 3;
     cellModel2.unit = @"%";
-    [self.section8List addObject:cellModel2];
+    [self.section5List addObject:cellModel2];
 }
 
-- (void)loadSection9Datas {
+- (void)loadSection6Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 4;
+    cellModel.index = 5;
     cellModel.msg = @"RH Change Alarm";
     cellModel.isOn = self.dataModel.rhChangeAlarm;
-    [self.section9List addObject:cellModel];
+    [self.section6List addObject:cellModel];
 }
 
-- (void)loadSection10Datas {
+- (void)loadSection7Datas {
     MKTextFieldCellModel *cellModel1 = [[MKTextFieldCellModel alloc] init];
-    cellModel1.index = 5;
+    cellModel1.index = 4;
     cellModel1.msg = @"Duration Condition";
     cellModel1.textPlaceholder = @"1 ~ 24";
     cellModel1.textFieldType = mk_realNumberOnly;
     cellModel1.textFieldValue = self.dataModel.rhDuration;
     cellModel1.maxLength = 2;
     cellModel1.unit = @"H";
-    [self.section10List addObject:cellModel1];
+    [self.section7List addObject:cellModel1];
     
     MKTextFieldCellModel *cellModel2 = [[MKTextFieldCellModel alloc] init];
-    cellModel2.index = 6;
+    cellModel2.index = 5;
     cellModel2.msg = @"Change Value Threshold";
     cellModel2.msgFont = MKFont(14.f);
     cellModel2.textPlaceholder = @"1 ~ 100";
@@ -561,7 +508,7 @@ MKPIRTHAlarmCellDelegate>
     cellModel2.textFieldValue = self.dataModel.rhChangeValueThreshold;
     cellModel2.maxLength = 3;
     cellModel2.unit = @"%";
-    [self.section10List addObject:cellModel2];
+    [self.section7List addObject:cellModel2];
 }
 
 #pragma mark - UI
@@ -583,7 +530,7 @@ MKPIRTHAlarmCellDelegate>
         _tableView = [[MKBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        
+        _tableView.tableHeaderView = self.tableHeaderView;
         _tableView.backgroundColor = RGBCOLOR(242, 242, 242);
     }
     return _tableView;
@@ -645,24 +592,19 @@ MKPIRTHAlarmCellDelegate>
     return _section7List;
 }
 
-- (NSMutableArray *)section8List {
-    if (!_section8List) {
-        _section8List = [NSMutableArray array];
+- (MKPIRTHSettingsHeaderView *)tableHeaderView {
+    if (!_tableHeaderView) {
+        _tableHeaderView = [[MKPIRTHSettingsHeaderView alloc] initWithFrame:CGRectMake(0, 0, kViewWidth, 152)];
+        _tableHeaderView.delegate = self;
     }
-    return _section8List;
+    return _tableHeaderView;
 }
 
-- (NSMutableArray *)section9List {
-    if (!_section9List) {
-        _section9List = [NSMutableArray array];
+- (MKPIRTHSettingsHeaderViewModel *)headerDataModel {
+    if (!_headerDataModel) {
+        _headerDataModel = [[MKPIRTHSettingsHeaderViewModel alloc] init];
     }
-    return _section9List;
-}
-- (NSMutableArray *)section10List {
-    if (!_section10List) {
-        _section10List = [NSMutableArray array];
-    }
-    return _section10List;
+    return _headerDataModel;
 }
 
 - (NSMutableArray *)headerList {

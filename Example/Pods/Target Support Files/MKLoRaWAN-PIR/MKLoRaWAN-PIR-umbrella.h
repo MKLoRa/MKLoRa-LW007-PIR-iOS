@@ -45,7 +45,7 @@
 #import "MKPIRTHSettingsController.h"
 #import "MKPIRTHSettingsModel.h"
 #import "MKPIRTHAlarmCell.h"
-#import "MKPIRTHSettingsCell.h"
+#import "MKPIRTHSettingsHeaderView.h"
 #import "MKPIRTabBarController.h"
 #import "MKPIRUpdateController.h"
 #import "MKPIRDFUModule.h"

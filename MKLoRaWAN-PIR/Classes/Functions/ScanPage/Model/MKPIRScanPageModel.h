@@ -41,10 +41,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// 低电报警功能
 @property (nonatomic, assign)BOOL alarm;
 
-/// 温度，FFFF表示未启用
+/// 温度，ffff表示未启用
 @property (nonatomic, copy)NSString *temperature;
 
-/// 湿度，FFFF表示未启用
+/// 湿度，ffff表示未启用
 @property (nonatomic, copy)NSString *humidity;
 
 /// 是否可连接

@@ -294,7 +294,7 @@
 }
 
 - (BOOL)validParams {
-    if (!ValidStr(self.advName) || self.advName.length > 16) {
+    if (ValidStr(self.advName) && self.advName.length > 16) {
         return NO;
     }
     if (!self.beaconMode && (!ValidStr(self.broadcast) || [self.broadcast integerValue] < 1 || [self.broadcast integerValue] > 60)) {

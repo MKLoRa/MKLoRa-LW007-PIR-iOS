@@ -99,8 +99,8 @@ typedef NS_ENUM(NSInteger, mk_pir_productModel) {
                                                                                     11:Door sensor is not enabled.
      @"lowPower":@(lowPower),                       //Whether the battery level is too low.
      @"alarm":@(alarm),                             //Whether the device has turned on the low battery alarm function.
-     @"temperature":temperature,                    //If the temperature value is FFFF, it means that the function is not turned on.
-     @"humidity":humidity,                          //If the humidity value is FFFF, it means that the function is not turned on.
+     @"temperature":temperature,                    //If the temperature value is ffff, it means that the function is not turned on.
+     @"humidity":humidity,                          //If the humidity value is ffff, it means that the function is not turned on.
      @"battery":battery,                            //battery voltage.
      @"txPower":txPower,
      @"connectable":advDic[CBAdvertisementDataIsConnectable],

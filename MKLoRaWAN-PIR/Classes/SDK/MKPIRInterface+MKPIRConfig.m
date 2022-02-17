@@ -435,7 +435,7 @@
                    minThreshold:(NSInteger)minThreshold
                        sucBlock:(void (^)(void))sucBlock
                     failedBlock:(void (^)(NSError *error))failedBlock {
-    if (minThreshold < -30 || minThreshold > maxThreshold || maxThreshold > 60) {
+    if (minThreshold < -30 || minThreshold >= maxThreshold || maxThreshold > 60) {
         [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
         return;
     }
@@ -502,7 +502,7 @@
                  minThreshold:(NSInteger)minThreshold
                      sucBlock:(void (^)(void))sucBlock
                   failedBlock:(void (^)(NSError *error))failedBlock {
-    if (minThreshold < 0 || minThreshold > maxThreshold || maxThreshold > 100) {
+    if (minThreshold < 0 || minThreshold >= maxThreshold || maxThreshold > 100) {
         [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
         return;
     }

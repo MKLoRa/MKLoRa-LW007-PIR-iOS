@@ -47,7 +47,7 @@
 + (void)pir_readSoftwareWithSucBlock:(void (^)(id returnData))sucBlock
                          failedBlock:(void (^)(NSError *error))failedBlock {
     [centralManager addReadTaskWithTaskID:mk_pir_taskReadSoftwareOperation
-                           characteristic:peripheral.pir_sofeware
+                           characteristic:peripheral.pir_software
                              successBlock:sucBlock
                              failureBlock:failedBlock];
 }

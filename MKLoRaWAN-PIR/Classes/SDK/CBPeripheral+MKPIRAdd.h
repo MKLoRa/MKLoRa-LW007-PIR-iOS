@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly)CBCharacteristic *pir_hardware;
 
 /// R
-@property (nonatomic, strong, readonly)CBCharacteristic *pir_sofeware;
+@property (nonatomic, strong, readonly)CBCharacteristic *pir_software;
 
 /// R
 @property (nonatomic, strong, readonly)CBCharacteristic *pir_firmware;

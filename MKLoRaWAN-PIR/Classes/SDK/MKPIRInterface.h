@@ -424,7 +424,7 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_readLorawanNetworkStatusWithSucBlock:(void (^)(id returnData))sucBlock
                                      failedBlock:(void (^)(NSError *error))failedBlock;
 
-/// Read the mac address of the device.
+/// Read battery voltage.
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
 + (void)pir_readBatteryVoltageWithSucBlock:(void (^)(id returnData))sucBlock

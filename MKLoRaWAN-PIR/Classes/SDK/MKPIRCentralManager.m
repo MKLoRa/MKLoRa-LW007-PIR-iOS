@@ -31,17 +31,17 @@ NSString *const mk_pir_thSensorDatasNotification = @"mk_pir_thSensorDatasNotific
 static MKPIRCentralManager *manager = nil;
 static dispatch_once_t onceToken;
 
-@interface NSObject (MKPIRCentralManager)
-
-@end
-
-@implementation NSObject (MKPIRCentralManager)
-
-+ (void)load{
-    [MKPIRCentralManager shared];
-}
-
-@end
+//@interface NSObject (MKPIRCentralManager)
+//
+//@end
+//
+//@implementation NSObject (MKPIRCentralManager)
+//
+//+ (void)load{
+//    [MKPIRCentralManager shared];
+//}
+//
+//@end
 
 @interface MKPIRCentralManager ()
 

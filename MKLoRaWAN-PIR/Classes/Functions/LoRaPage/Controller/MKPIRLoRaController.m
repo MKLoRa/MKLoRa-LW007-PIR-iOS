@@ -70,6 +70,7 @@
         //Application Settings
         MKPIRLoRaAppSettingController *vc = [[MKPIRLoRaAppSettingController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+        return;
     }
 }
 

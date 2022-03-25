@@ -103,7 +103,7 @@ static const char *pir_stateNotifySuccessKey = "pir_stateNotifySuccessKey";
     if (![objc_getAssociatedObject(self, &pir_configNotifySuccessKey) boolValue] || ![objc_getAssociatedObject(self, &pir_passwordNotifySuccessKey) boolValue] || ![objc_getAssociatedObject(self, &pir_disconnectTypeNotifySuccessKey) boolValue] || ![objc_getAssociatedObject(self, &pir_stateNotifySuccessKey) boolValue]) {
         return NO;
     }
-    if (!self.pir_manufacturer || !self.pir_deviceModel || !self.pir_hardware || !self.pir_sofeware || !self.pir_firmware) {
+    if (!self.pir_manufacturer || !self.pir_deviceModel || !self.pir_hardware || !self.pir_software || !self.pir_firmware) {
         return NO;
     }
     if (!self.pir_password || !self.pir_disconnectType || !self.pir_pirSensorData || !self.pir_doorSensorData || !self.pir_thSensorData || !self.pir_config || !self.pir_state || !self.pir_log) {
@@ -148,7 +148,7 @@ static const char *pir_stateNotifySuccessKey = "pir_stateNotifySuccessKey";
     return objc_getAssociatedObject(self, &pir_hardwareKey);
 }
 
-- (CBCharacteristic *)pir_sofeware {
+- (CBCharacteristic *)pir_software {
     return objc_getAssociatedObject(self, &pir_softwareKey);
 }
 

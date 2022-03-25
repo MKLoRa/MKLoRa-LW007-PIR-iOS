@@ -353,7 +353,6 @@ MKPIRTabBarControllerDelegate>
 }
 
 #pragma mark - 连接部分
-#pragma mark - 连接部分
 - (void)connectDeviceWithModel:(MKPIRScanPageModel *)scanDataModel {
     //停止扫描
     [self.refreshIcon.layer removeAnimationForKey:@"mk_refreshAnimationKey"];

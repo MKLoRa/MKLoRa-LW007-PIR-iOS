@@ -189,7 +189,10 @@ static dispatch_once_t onceToken;
     }
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"AA07"]]) {
         //日志
-        NSString *content = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
+        NSString *content = [[NSString alloc] initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+        if (!MKValidStr(content)) {
+            return;
+        }
         if ([self.logDelegate respondsToSelector:@selector(mk_pir_receiveLog:)]) {
             [self.logDelegate mk_pir_receiveLog:content];
         }

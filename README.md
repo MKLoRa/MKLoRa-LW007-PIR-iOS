@@ -1,8 +1,8 @@
- # LW007-PIR iOS Software Development Kit Guide
+# LW007-PIR iOS Software Development Kit Guide
 
 * This SDK only support devices based on LW007-PIR.
 
-# Design instructions
+## Design instructions
 
 * We divide the communications between SDK and devices into two stages: Scanning stage, Connection stage.For ease of understanding, let’s take a look at the related classes and the relationships between them.
 

@@ -284,14 +284,19 @@ MKPIRDebuggerCellDelegate>
 }
 
 - (void)loadTableViewDatas:(NSArray *)logList {
+    NSMutableArray *tempDataList = [NSMutableArray array];
     for (NSInteger i = 0; i < logList.count; i ++) {
         NSDictionary *dic = logList[i];
         MKPIRDebuggerCellModel *cellModel = [[MKPIRDebuggerCellModel alloc] init];
-        cellModel.index = [dic[@"key"] integerValue];
+        cellModel.index = logList.count - 1 - i;
         cellModel.logInfo = dic[@"logDetails"];
         cellModel.timeMsg = dic[@"date"];
-        [self.dataList addObject:cellModel];
+        [tempDataList addObject:cellModel];
     }
+    
+    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:@"timeMsg" ascending:YES];
+    NSArray *tempArray = [tempDataList sortedArrayUsingDescriptors:@[descriptor]];
+    [self.dataList addObjectsFromArray:tempArray];
     
     [self.tableView reloadData];
 }
@@ -322,7 +327,6 @@ MKPIRDebuggerCellDelegate>
     for (NSInteger i = 0; i < self.dataList.count; i ++) {
         MKPIRDebuggerCellModel *cellModel = self.dataList[i];
         NSDictionary *dic = @{
-            @"key":[NSString stringWithFormat:@"%ld",(long)cellModel.index],
             @"date":cellModel.timeMsg,
             @"logDetails":cellModel.logInfo,
         };

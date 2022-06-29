@@ -426,6 +426,13 @@
             @"times":times,
         };
         operationID = mk_pir_taskReadDoorSensorDatasOperation;
+    }else if ([cmd isEqualToString:@"5c"]) {
+        //读取产测状态
+        NSString *status = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)];
+        resultDic = @{
+            @"status":status,
+        };
+        operationID = mk_pir_taskReadPCBAStatusOperation;
     }else if ([cmd isEqualToString:@"68"]) {
         //读取MAC地址
         NSString *macAddress = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[content substringWithRange:NSMakeRange(0, 2)],[content substringWithRange:NSMakeRange(2, 2)],[content substringWithRange:NSMakeRange(4, 2)],[content substringWithRange:NSMakeRange(6, 2)],[content substringWithRange:NSMakeRange(8, 2)],[content substringWithRange:NSMakeRange(10, 2)]];

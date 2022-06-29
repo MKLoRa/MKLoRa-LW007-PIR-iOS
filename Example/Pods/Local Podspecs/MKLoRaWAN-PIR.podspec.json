@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "summary": "A short description of MKLoRaWAN-PIR.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/aadyx2007@163.com/MKLoRaWAN-PIR",
+  "homepage": "https://github.com/MKLoRa/MKLoRa-LW007-PIR-iOS",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,7 +12,7 @@
     "aadyx2007@163.com": "aadyx2007@163.com"
   },
   "source": {
-    "git": "https://github.com/aadyx2007@163.com/MKLoRaWAN-PIR.git",
+    "git": "https://github.com/MKLoRa/MKLoRa-LW007-PIR-iOS.git",
     "tag": "1.0.0"
   },
   "platforms": {
@@ -195,6 +195,9 @@
 
                 ],
                 "MKLoRaWAN-PIR/Functions/UpdatePage/Controller": [
+
+                ],
+                "MKLoRaWAN-PIR/Functions/SelftestPage/Controller": [
 
                 ]
               }
@@ -386,6 +389,31 @@
             {
               "name": "Model",
               "source_files": "MKLoRaWAN-PIR/Classes/Functions/ScanPage/Model/**"
+            }
+          ]
+        },
+        {
+          "name": "SelftestPage",
+          "subspecs": [
+            {
+              "name": "Controller",
+              "source_files": "MKLoRaWAN-PIR/Classes/Functions/SelftestPage/Controller/**",
+              "dependencies": {
+                "MKLoRaWAN-PIR/Functions/SelftestPage/Model": [
+
+                ],
+                "MKLoRaWAN-PIR/Functions/SelftestPage/View": [
+
+                ]
+              }
+            },
+            {
+              "name": "View",
+              "source_files": "MKLoRaWAN-PIR/Classes/Functions/SelftestPage/View/**"
+            },
+            {
+              "name": "Model",
+              "source_files": "MKLoRaWAN-PIR/Classes/Functions/SelftestPage/Model/**"
             }
           ]
         },

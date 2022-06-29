@@ -17,6 +17,7 @@
 #import "MKPIROperation.h"
 #import "CBPeripheral+MKPIRAdd.h"
 
+static NSString *const mk_pir_logName = @"mk_pir_bleLog";
 
 NSString *const mk_pir_peripheralConnectStateChangedNotification = @"mk_pir_peripheralConnectStateChangedNotification";
 NSString *const mk_pir_centralManagerStateChangedNotification = @"mk_pir_centralManagerStateChangedNotification";
@@ -57,8 +58,14 @@ static dispatch_once_t onceToken;
 
 @implementation MKPIRCentralManager
 
+- (void)dealloc {
+    NSLog(@"MKPIRCentralManager销毁");
+    [self logToLocal:@"MKPIRCentralManager销毁"];
+}
+
 - (instancetype)init {
     if (self = [super init]) {
+        [self logToLocal:@"MKPIRCentralManager初始化"];
         [[MKBLEBaseCentralManager shared] loadDataManager:self];
     }
     return self;
@@ -104,12 +111,14 @@ static dispatch_once_t onceToken;
 }
 
 - (void)MKBLEBaseCentralManagerStartScan {
+    [self logToLocal:@"开始扫描"];
     if ([self.delegate respondsToSelector:@selector(mk_pir_startScan)]) {
         [self.delegate mk_pir_startScan];
     }
 }
 
 - (void)MKBLEBaseCentralManagerStopScan {
+    [self logToLocal:@"停止扫描"];
     if ([self.delegate respondsToSelector:@selector(mk_pir_stopScan)]) {
         [self.delegate mk_pir_stopScan];
     }
@@ -118,6 +127,8 @@ static dispatch_once_t onceToken;
 #pragma mark - MKBLEBaseCentralManagerStateProtocol
 - (void)MKBLEBaseCentralManagerStateChanged:(MKCentralManagerState)centralManagerState {
     NSLog(@"蓝牙中心改变");
+    NSString *string = [NSString stringWithFormat:@"蓝牙中心改变:%@",@(centralManagerState)];
+    [self logToLocal:string];
     [[NSNotificationCenter defaultCenter] postNotificationName:mk_pir_centralManagerStateChangedNotification object:nil];
 }
 
@@ -133,6 +144,8 @@ static dispatch_once_t onceToken;
         self.connectStatus = mk_pir_centralConnectStatusDisconnect;
     }
     NSLog(@"当前连接状态发生改变了:%@",@(connectState));
+    NSString *string = [NSString stringWithFormat:@"连接状态发生改变:%@",@(connectState)];
+    [self logToLocal:string];
     [[NSNotificationCenter defaultCenter] postNotificationName:mk_pir_peripheralConnectStateChangedNotification object:nil];
 }
 
@@ -140,7 +153,13 @@ static dispatch_once_t onceToken;
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error {
     if (error) {
         NSLog(@"+++++++++++++++++接收数据出错");
+        [self logToLocal:@"+++++++++++++++++接收数据出错"];
         return;
+    }
+    if (![characteristic.UUID isEqual:[CBUUID UUIDWithString:@"AA07"]]) {
+        //非日志
+        NSString *string = [MKBLEBaseSDKAdopter hexStringFromData:characteristic.value];
+        [self saveToLogData:string appToDevice:NO];
     }
     if ([characteristic.UUID isEqual:[CBUUID UUIDWithString:@"AA01"]]) {
         //引起设备断开连接的类型
@@ -193,6 +212,7 @@ static dispatch_once_t onceToken;
         if (!MKValidStr(content)) {
             return;
         }
+        [self saveToLogData:content appToDevice:NO];
         if ([self.logDelegate respondsToSelector:@selector(mk_pir_receiveLog:)]) {
             [self.logDelegate mk_pir_receiveLog:content];
         }
@@ -202,6 +222,7 @@ static dispatch_once_t onceToken;
 - (void)peripheral:(CBPeripheral *)peripheral didWriteValueForCharacteristic:(CBCharacteristic *)characteristic error:(nullable NSError *)error {
     if (error) {
         NSLog(@"+++++++++++++++++发送数据出错");
+        [self logToLocal:@"发送数据出错"];
         return;
     }
     
@@ -366,10 +387,12 @@ static dispatch_once_t onceToken;
     [[MKBLEBaseCentralManager shared] connectDevice:trackerPeripheral sucBlock:^(CBPeripheral * _Nonnull peripheral) {
         if (MKValidStr(self.password) && self.password.length == 8) {
             //需要密码登录
+            [self logToLocal:@"密码登录"];
             [self sendPasswordToDevice];
             return;
         }
         //免密登录
+        [self logToLocal:@"免密登录"];
         MKBLEBase_main_safe(^{
             self.connectStatus = mk_pir_centralConnectStatusConnected;
             [[NSNotificationCenter defaultCenter] postNotificationName:mk_pir_peripheralConnectStateChangedNotification object:nil];
@@ -388,6 +411,8 @@ static dispatch_once_t onceToken;
     }
     __weak typeof(self) weakSelf = self;
     MKPIROperation *operation = [[MKPIROperation alloc] initOperationWithID:mk_pir_connectPasswordOperation commandBlock:^{
+        __strong typeof(self) sself = weakSelf;
+        [sself saveToLogData:commandData appToDevice:YES];
         [[MKBLEBaseCentralManager shared] sendDataToPeripheral:commandData characteristic:[MKBLEBaseCentralManager shared].peripheral.pir_password type:CBCharacteristicWriteWithResponse];
     } completeBlock:^(NSError * _Nullable error, id  _Nullable returnData) {
         __strong typeof(self) sself = weakSelf;
@@ -428,6 +453,8 @@ static dispatch_once_t onceToken;
     }
     __weak typeof(self) weakSelf = self;
     MKPIROperation <MKBLEBaseOperationProtocol>*operation = [[MKPIROperation alloc] initOperationWithID:operationID commandBlock:^{
+        __strong typeof(self) sself = weakSelf;
+        [sself saveToLogData:commandData appToDevice:YES];
         [[MKBLEBaseCentralManager shared] sendDataToPeripheral:commandData characteristic:characteristic type:CBCharacteristicWriteWithResponse];
     } completeBlock:^(NSError * _Nullable error, id  _Nullable returnData) {
         __strong typeof(self) sself = weakSelf;
@@ -554,6 +581,8 @@ static dispatch_once_t onceToken;
     NSString *tempBinary = [MKBLEBaseSDKAdopter binaryByhex:tempState];
     BOOL needPassword = [[tempBinary substringWithRange:NSMakeRange(7, 1)] isEqualToString:@"1"];
     
+    [self logToLocal:[@"扫描到设备:" stringByAppendingString:content]];
+    
     return @{
         @"rssi":rssi,
         @"peripheral":peripheral,
@@ -582,6 +611,22 @@ static dispatch_once_t onceToken;
             failedBlock(error);
         }
     });
+}
+
+- (void)saveToLogData:(NSString *)string appToDevice:(BOOL)app {
+    if (!MKValidStr(string)) {
+        return;
+    }
+    NSString *fuction = (app ? @"App To Device" : @"Device To App");
+    NSString *recordString = [NSString stringWithFormat:@"%@---->%@",fuction,string];
+    [self logToLocal:recordString];
+}
+
+- (void)logToLocal:(NSString *)string {
+    if (!MKValidStr(string)) {
+        return;
+    }
+    [MKBLEBaseLogManager saveDataWithFileName:mk_pir_logName dataList:@[string]];
 }
 
 @end

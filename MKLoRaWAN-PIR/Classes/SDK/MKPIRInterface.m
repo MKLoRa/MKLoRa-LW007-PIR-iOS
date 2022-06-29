@@ -466,6 +466,14 @@
                               failedBlock:failedBlock];
 }
 
++ (void)pir_readPCBAStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDeviceControlDataWithTaskID:mk_pir_taskReadPCBAStatusOperation
+                                  cmdFlag:@"5c"
+                                 sucBlock:sucBlock
+                              failedBlock:failedBlock];
+}
+
 #pragma mark - private method
 
 + (void)readDataWithTaskID:(mk_pir_taskOperationID)taskID

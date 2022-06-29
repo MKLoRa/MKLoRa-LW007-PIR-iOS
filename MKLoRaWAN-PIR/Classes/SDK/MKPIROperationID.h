@@ -71,6 +71,7 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskReadMacAddressOperation,              //读取mac地址
     mk_pir_taskReadPIRStatusOperation,               //读取PIR状态
     mk_pir_taskReadDoorSensorDatasOperation,         //读取门磁传感器数据
+    mk_pir_taskReadPCBAStatusOperation,              //读取产测标志
     
 #pragma mark - 设备LoRa参数配置
     mk_pir_taskConfigRegionOperation,                    //配置LoRaWAN的region

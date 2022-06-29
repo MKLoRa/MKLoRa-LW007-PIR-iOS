@@ -448,6 +448,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_readDoorSensorDatasWithSucBlock:(void (^)(id returnData))sucBlock
                                 failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Read the PCBA Status of the device.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readPCBAStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                           failedBlock:(void (^)(NSError *error))failedBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

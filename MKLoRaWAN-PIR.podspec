@@ -128,6 +128,7 @@ TODO: Add long description of the pod here.
         
         ssss.dependency 'MKLoRaWAN-PIR/Functions/DebuggerPage/Controller'
         ssss.dependency 'MKLoRaWAN-PIR/Functions/UpdatePage/Controller'
+        ssss.dependency 'MKLoRaWAN-PIR/Functions/SelftestPage/Controller'
       end
     
       sss.subspec 'Model' do |ssss|
@@ -251,6 +252,23 @@ TODO: Add long description of the pod here.
     
       sss.subspec 'Model' do |ssss|
         ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/ScanPage/Model/**'
+      end
+    end
+    
+    ss.subspec 'SelftestPage' do |sss|
+      sss.subspec 'Controller' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/SelftestPage/Controller/**'
+      
+        ssss.dependency 'MKLoRaWAN-PIR/Functions/SelftestPage/Model'
+        ssss.dependency 'MKLoRaWAN-PIR/Functions/SelftestPage/View'
+      end
+      
+      sss.subspec 'View' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/SelftestPage/View/**'
+      end
+    
+      sss.subspec 'Model' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/SelftestPage/Model/**'
       end
     end
     

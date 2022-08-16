@@ -233,7 +233,7 @@
     [super layoutSubviews];
     [self.tempLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(15.f);
-        make.width.mas_equalTo(95.f);
+        make.width.mas_equalTo(65.f);
         make.centerY.mas_equalTo(self.mas_centerY);
         make.height.mas_equalTo(MKFont(15.f).lineHeight);
     }];
@@ -276,7 +276,7 @@
         _tempLabel.textAlignment = NSTextAlignmentLeft;
         _tempLabel.textColor = DEFAULT_TEXT_COLOR;
         _tempLabel.font = MKFont(15.f);
-        _tempLabel.text = @"Temperature:";
+        _tempLabel.text = @"Temp:";
     }
     return _tempLabel;
 }

@@ -452,7 +452,7 @@ MKPIRTHSettingsHeaderViewDelegate>
 
 - (void)loadSection4Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 4;
+    cellModel.index = 2;
     cellModel.msg = @"RH Threshold Alarm";
     cellModel.isOn = self.dataModel.rhThresholdAlarm;
     [self.section4List addObject:cellModel];
@@ -482,7 +482,7 @@ MKPIRTHSettingsHeaderViewDelegate>
 
 - (void)loadSection6Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 5;
+    cellModel.index = 3;
     cellModel.msg = @"RH Change Alarm";
     cellModel.isOn = self.dataModel.rhChangeAlarm;
     [self.section6List addObject:cellModel];

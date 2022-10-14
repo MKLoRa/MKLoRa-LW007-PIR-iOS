@@ -426,6 +426,17 @@
             @"times":times,
         };
         operationID = mk_pir_taskReadDoorSensorDatasOperation;
+    }else if ([cmd isEqualToString:@"5a"]) {
+        //读取温湿度传感器数据
+        NSInteger temperature = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(0, 4)];
+        NSString *tempValue = [NSString stringWithFormat:@"%.1f",(temperature * 0.1 - 30.f)];
+        NSInteger humidity = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(4, 4)];
+        NSString *humidityValue = [NSString stringWithFormat:@"%.1f",(humidity * 0.1)];
+        resultDic = @{
+            @"temperature":tempValue,
+            @"humidity":humidityValue,
+        };
+        operationID = mk_pir_taskReadTHDatasSensorDatasOperation;
     }else if ([cmd isEqualToString:@"5c"]) {
         //读取产测状态
         NSString *status = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)];

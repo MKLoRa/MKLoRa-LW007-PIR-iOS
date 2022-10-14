@@ -442,6 +442,12 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_readPIRStatusWithSucBlock:(void (^)(id returnData))sucBlock
                           failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Read T&H sensor data.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readTHDatasWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock;
+
 /// Read door magnetic sensor data.
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback

@@ -466,6 +466,14 @@
                               failedBlock:failedBlock];
 }
 
++ (void)pir_readTHDatasWithSucBlock:(void (^)(id returnData))sucBlock
+                        failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDeviceControlDataWithTaskID:mk_pir_taskReadTHDatasSensorDatasOperation
+                                  cmdFlag:@"5a"
+                                 sucBlock:sucBlock
+                              failedBlock:failedBlock];
+}
+
 + (void)pir_readPCBAStatusWithSucBlock:(void (^)(id returnData))sucBlock
                            failedBlock:(void (^)(NSError *error))failedBlock {
     [self readDeviceControlDataWithTaskID:mk_pir_taskReadPCBAStatusOperation

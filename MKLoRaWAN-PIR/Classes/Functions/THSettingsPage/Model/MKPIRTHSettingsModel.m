@@ -33,6 +33,10 @@
             [self operationFailedBlockWithMsg:@"Read Sample Rate Error" block:failedBlock];
             return;
         }
+        if (![self readHTDatas]) {
+            [self operationFailedBlockWithMsg:@"Read HT Data Error" block:failedBlock];
+            return;
+        }
         if (![self readTempThresholdAlarm]) {
             [self operationFailedBlockWithMsg:@"Read Temp Threshold Alarm Error" block:failedBlock];
             return;
@@ -186,6 +190,20 @@
     __block BOOL success = NO;
     [MKPIRInterface pir_configHTSampleRate:[self.sampleRate integerValue] sucBlock:^{
         success = YES;
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readHTDatas {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_readTHDatasWithSucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.temperature = returnData[@"result"][@"temperature"];
+        self.humidity = returnData[@"result"][@"humidity"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

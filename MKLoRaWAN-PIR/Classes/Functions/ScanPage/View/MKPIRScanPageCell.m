@@ -241,7 +241,8 @@ static CGFloat const batteryIconHeight = 12.f;
     self.batteryLabel.text = (_dataModel.lowPower ? @"Low" : @"Normal");
     
     //下面的参数
-    self.voltageView.msgLabel.text = [_dataModel.battery stringByAppendingString:@" V"];
+    self.voltageView.hidden = YES;
+//    self.voltageView.msgLabel.text = [_dataModel.battery stringByAppendingString:@" V"];
     if ([_dataModel.temperature isEqualToString:@"ffff"]) {
         //数据无效
         self.temperatureView.icon.hidden = YES;

@@ -73,6 +73,7 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskReadDoorSensorDatasOperation,         //读取门磁传感器数据
     mk_pir_taskReadTHDatasSensorDatasOperation,     //读取温湿度数据
     mk_pir_taskReadPCBAStatusOperation,              //读取产测标志
+    mk_pir_taskReadBatteryInformationOperation,     //读取电池信息
     
 #pragma mark - 设备LoRa参数配置
     mk_pir_taskConfigRegionOperation,                    //配置LoRaWAN的region
@@ -130,4 +131,5 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskFactoryResetOperation,                    //恢复出厂设置
     mk_pir_taskPowerOffOperation,                        //关机
     mk_pir_taskConfigDeviceTimeOperation,                //同步时间
+    mk_pir_taskBatteryResetOperation,                   //清除电池数据
 };

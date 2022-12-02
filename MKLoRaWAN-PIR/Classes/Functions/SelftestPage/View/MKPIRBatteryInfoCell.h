@@ -1,18 +1,16 @@
 //
-//  MKPIRSelftestModel.h
+//  MKPIRBatteryInfoCell.h
 //  MKLoRaWAN-PIR_Example
 //
-//  Created by aa on 2022/5/26.
-//  Copyright © 2022 aadyx2007@163.com. All rights reserved.
+//  Created by aa on 2021/5/24.
+//  Copyright © 2021 aadyx2007@163.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <MKBaseModuleLibrary/MKBaseCell.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPIRSelftestModel : NSObject
-
-@property (nonatomic, copy)NSString *pcbaStatus;
+@interface MKPIRBatteryInfoCellModel : NSObject
 
 @property (nonatomic, copy)NSString *workTimes;
 
@@ -26,7 +24,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *batteryPower;
 
-- (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;;
+@end
+
+@interface MKPIRBatteryInfoCell : MKBaseCell
+
+@property (nonatomic, strong)MKPIRBatteryInfoCellModel *dataModel;
+
++ (MKPIRBatteryInfoCell *)initCellWithTableView:(UITableView *)tableView;
 
 @end
 

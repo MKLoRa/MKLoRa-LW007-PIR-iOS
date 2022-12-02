@@ -218,6 +218,9 @@
                 "MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model": [
 
                 ],
+                "MKLoRaWAN-PIR/Functions/DeviceSettingPage/View": [
+
+                ],
                 "MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller": [
 
                 ]
@@ -226,6 +229,10 @@
             {
               "name": "Model",
               "source_files": "MKLoRaWAN-PIR/Classes/Functions/DeviceSettingPage/Model/**"
+            },
+            {
+              "name": "View",
+              "source_files": "MKLoRaWAN-PIR/Classes/Functions/DeviceSettingPage/View/**"
             }
           ]
         },

@@ -279,11 +279,27 @@ MKPIRTHSettingsHeaderViewDelegate>
                                                      selector:@selector(receiveTHDatas:)
                                                          name:mk_pir_thSensorDatasNotification
                                                        object:nil];
+            [self readHTDatas];
         }else {
             self.headerDataModel.temperature = @"";
             self.headerDataModel.humidity = @"";
             self.tableHeaderView.dataModel = self.headerDataModel;
         }
+    } failedBlock:^(NSError * _Nonnull error) {
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
+- (void)readHTDatas {
+    [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
+    @weakify(self);
+    [self.dataModel readTHDatasWithSucBlock:^{
+        @strongify(self);
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:@"Success"];
+        [self loadHeaderDatas];
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
         [[MKHudManager share] hide];

@@ -21,6 +21,7 @@
 #import "MKNormalTextCell.h"
 #import "MKTextButtonCell.h"
 #import "MKTextSwitchCell.h"
+#import "MKPIRButtonMsgCell.h"
 #import "MKAlertController.h"
 
 #import "MKPIRInterface+MKPIRConfig.h"
@@ -32,7 +33,8 @@
 @interface MKPIRDeviceSettingController ()<UITableViewDelegate,
 UITableViewDataSource,
 MKTextButtonCellDelegate,
-mk_textSwitchCellDelegate>
+mk_textSwitchCellDelegate,
+MKPIRButtonMsgCellDelegate>
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 
@@ -78,17 +80,14 @@ mk_textSwitchCellDelegate>
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
-        MKTextButtonCellModel *cellModel = self.section1List[indexPath.row];
+    if (indexPath.section == 5) {
+        MKPIRButtonMsgCellModel *cellModel = self.section5List[indexPath.row];
         return [cellModel cellHeightWithContentWidth:kViewWidth];
     }
     return 44.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 2) {
-        return 0.f;
-    }
     return 10.f;
 }
 
@@ -99,12 +98,12 @@ mk_textSwitchCellDelegate>
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 4 && indexPath.row == 0) {
+    if (indexPath.section == 3 && indexPath.row == 0) {
         //恢复出厂设置
         [self factoryReset];
         return;
     }
-    if (indexPath.section == 5 && indexPath.row == 0) {
+    if (indexPath.section == 4 && indexPath.row == 0) {
         //Device Infomation
         MKPIRDeviceInfoController *vc = [[MKPIRDeviceInfoController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
@@ -147,7 +146,7 @@ mk_textSwitchCellDelegate>
         return cell;
     }
     if (indexPath.section == 1) {
-        MKTextButtonCell *cell = [MKTextButtonCell initCellWithTableView:tableView];
+        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:tableView];
         cell.dataModel = self.section1List[indexPath.row];
         cell.delegate = self;
         return cell;
@@ -159,9 +158,8 @@ mk_textSwitchCellDelegate>
         return cell;
     }
     if (indexPath.section == 3) {
-        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:tableView];
+        MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
         cell.dataModel = self.section3List[indexPath.row];
-        cell.delegate = self;
         return cell;
     }
     if (indexPath.section == 4) {
@@ -169,8 +167,9 @@ mk_textSwitchCellDelegate>
         cell.dataModel = self.section4List[indexPath.row];
         return cell;
     }
-    MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
+    MKPIRButtonMsgCell *cell = [MKPIRButtonMsgCell initCellWithTableView:tableView];
     cell.dataModel = self.section5List[indexPath.row];
+    cell.delegate = self;
     return cell;
 }
 
@@ -185,11 +184,6 @@ mk_textSwitchCellDelegate>
     if (index == 0) {
         //Current Time Zone
         [self configTimeZone:dataListIndex];
-        return;
-    }
-    if (index == 1) {
-        //Low Power Prompt
-        [self configLowPowerPrompt:dataListIndex];
         return;
     }
 }
@@ -211,6 +205,17 @@ mk_textSwitchCellDelegate>
     }
 }
 
+#pragma mark - MKPIRButtonMsgCellDelegate
+/// 右侧按钮点击事件
+/// @param index 当前cell所在index
+- (void)mk_buttonMsgCellButtonPressed:(NSInteger)index {
+    if (index == 0) {
+        //Battery Reset
+        [self batteryReset];
+        return;
+    }
+}
+
 #pragma mark - interface
 - (void)readDatasFromDevice {
     [[MKHudManager share] showHUDWithTitle:@"Reading..." inView:self.view isPenetration:NO];
@@ -221,12 +226,8 @@ mk_textSwitchCellDelegate>
         MKTextButtonCellModel *cellModel1 = self.section0List[0];
         cellModel1.dataListIndex = self.dataModel.timeZone;
         
-        MKTextButtonCellModel *cellModel2 = self.section1List[0];
-        cellModel2.dataListIndex = self.dataModel.lowPowerPrompt;
-        cellModel2.noteMsg = [NSString stringWithFormat:@"*When the battery is less than or equal to %@, the red LED will flash once every 10 seconds.",(self.dataModel.lowPowerPrompt == 0 ? @"5%" : @"10%")];
-        
-        MKTextSwitchCellModel *cellModel3 = self.section2List[0];
-        cellModel3.isOn = self.dataModel.payload;
+        MKTextSwitchCellModel *cellModel2 = self.section1List[0];
+        cellModel2.isOn = self.dataModel.payload;
         
         [self.tableView reloadData];
     } failedBlock:^(NSError * _Nonnull error) {
@@ -253,25 +254,6 @@ mk_textSwitchCellDelegate>
     }];
 }
 
-- (void)configLowPowerPrompt:(NSInteger)prompt {
-    [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
-    @weakify(self);
-    [MKPIRInterface pir_configLowPowerPrompt:prompt sucBlock:^{
-        @strongify(self);
-        [[MKHudManager share] hide];
-        [self.view showCentralToast:@"Success"];
-        MKTextButtonCellModel *cellModel = self.section1List[0];
-        cellModel.dataListIndex = prompt;
-        self.dataModel.lowPowerPrompt = prompt;
-        cellModel.noteMsg = [NSString stringWithFormat:@"*When the battery is less than or equal to %@, the red LED will flash once every 10 seconds.",(self.dataModel.lowPowerPrompt == 0 ? @"5%" : @"10%")];
-        [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
-    } failedBlock:^(NSError * _Nonnull error) {
-        @strongify(self);
-        [[MKHudManager share] hide];
-        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
-    }];
-}
-
 - (void)configLowPowerPayload:(BOOL)isOn {
     [[MKHudManager share] showHUDWithTitle:@"Config..." inView:self.view isPenetration:NO];
     @weakify(self);
@@ -279,7 +261,7 @@ mk_textSwitchCellDelegate>
         @strongify(self);
         [[MKHudManager share] hide];
         [self.view showCentralToast:@"Success"];
-        MKTextSwitchCellModel *cellModel = self.section2List[0];
+        MKTextSwitchCellModel *cellModel = self.section1List[0];
         cellModel.isOn = isOn;
         self.dataModel.payload = isOn;
     } failedBlock:^(NSError * _Nonnull error) {
@@ -299,9 +281,9 @@ mk_textSwitchCellDelegate>
     @weakify(self);
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         @strongify(self);
-        MKTextSwitchCellModel *cellModel = self.section3List[0];
+        MKTextSwitchCellModel *cellModel = self.section2List[0];
         cellModel.isOn = NO;
-        [self.tableView mk_reloadSection:3 withRowAnimation:UITableViewRowAnimationNone];
+        [self.tableView mk_reloadSection:2 withRowAnimation:UITableViewRowAnimationNone];
     }];
     [alertView addAction:cancelAction];
     
@@ -359,6 +341,39 @@ mk_textSwitchCellDelegate>
     }];
 }
 
+#pragma mark - 清除电池数据
+- (void)batteryReset {
+    NSString *msg = @"Are you sure to reset battery?";
+    MKAlertController *alertView = [MKAlertController alertControllerWithTitle:@"Warning!"
+                                                                       message:msg
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+    alertView.notificationName = @"mk_pir_needDismissAlert";
+    @weakify(self);
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    }];
+    [alertView addAction:cancelAction];
+    
+    UIAlertAction *moreAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        @strongify(self);
+        [self sendBatteryResetCommandToDevice];
+    }];
+    [alertView addAction:moreAction];
+    
+    [self presentViewController:alertView animated:YES completion:nil];
+}
+
+- (void)sendBatteryResetCommandToDevice {
+    [[MKHudManager share] showHUDWithTitle:@"Setting..."
+                                     inView:self.view
+                              isPenetration:NO];
+    [MKPIRInterface pir_batteryResetWithSucBlock:^{
+        [[MKHudManager share] hide];
+    } failedBlock:^(NSError * _Nonnull error) {
+        [[MKHudManager share] hide];
+        [self.view showCentralToast:error.userInfo[@"errorInfo"]];
+    }];
+}
+
 #pragma mark - loadSectionDatas
 - (void)loadSectionDatas {
     [self loadSection0Datas];
@@ -385,39 +400,40 @@ mk_textSwitchCellDelegate>
 }
 
 - (void)loadSection1Datas {
-    MKTextButtonCellModel *cellModel1 = [[MKTextButtonCellModel alloc] init];
-    cellModel1.index = 1;
-    cellModel1.msg = @"Low Power Prompt";
-    cellModel1.dataList = @[@"5%",@"10%"];
-    cellModel1.noteMsg = @"*When the battery is less than or equal to 5%, the red LED will flash once every 10 seconds.";
-    [self.section1List addObject:cellModel1];
+    MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
+    cellModel.index = 0;
+    cellModel.msg = @"Low Power Payload";
+    [self.section1List addObject:cellModel];
 }
 
 - (void)loadSection2Datas {
     MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 0;
-    cellModel.msg = @"Low Power Payload";
+    cellModel.index = 1;
+    cellModel.msg = @"Power Off";
     [self.section2List addObject:cellModel];
 }
 
 - (void)loadSection3Datas {
-    MKTextSwitchCellModel *cellModel = [[MKTextSwitchCellModel alloc] init];
-    cellModel.index = 1;
-    cellModel.msg = @"Power Off";
+    MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
+    cellModel.leftMsg = @"Factory Reset";
+    cellModel.showRightIcon = YES;
     [self.section3List addObject:cellModel];
 }
 
 - (void)loadSection4Datas {
     MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
-    cellModel.leftMsg = @"Factory Reset";
+    cellModel.leftMsg = @"Device Information";
     cellModel.showRightIcon = YES;
     [self.section4List addObject:cellModel];
 }
 
 - (void)loadSection5Datas {
-    MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
-    cellModel.leftMsg = @"Device Information";
-    cellModel.showRightIcon = YES;
+    MKPIRButtonMsgCellModel *cellModel = [[MKPIRButtonMsgCellModel alloc] init];
+    cellModel.index = 0;
+    cellModel.msg = @"Battery Reset";
+    cellModel.buttonTitle = @"Reset";
+    cellModel.noteMsg = @"*After replace with the new battery, need to click \"Reset\", otherwise the low power prompt will be unnormal.";
+    cellModel.noteMsgColor = RGBCOLOR(102, 102, 102);
     [self.section5List addObject:cellModel];
 }
 

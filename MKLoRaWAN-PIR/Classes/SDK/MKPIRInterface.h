@@ -404,8 +404,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Read Low Power Prompt.
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
-+ (void)pir_readLowPowerPromptWithSucBlock:(void (^)(id returnData))sucBlock
-                               failedBlock:(void (^)(NSError *error))failedBlock;
+//+ (void)pir_readLowPowerPromptWithSucBlock:(void (^)(id returnData))sucBlock
+//                               failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Read Low Power Payload.
 /// @param sucBlock Success callback
@@ -427,8 +427,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Read battery voltage.
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
-+ (void)pir_readBatteryVoltageWithSucBlock:(void (^)(id returnData))sucBlock
-                               failedBlock:(void (^)(NSError *error))failedBlock;
+//+ (void)pir_readBatteryVoltageWithSucBlock:(void (^)(id returnData))sucBlock
+//                               failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Read the mac address of the device.
 /// @param sucBlock Success callback
@@ -459,6 +459,22 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param failedBlock Failure callback
 + (void)pir_readPCBAStatusWithSucBlock:(void (^)(id returnData))sucBlock
                            failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Information of the battery.
+/*
+ @{
+     @"workTimes":@"65535",         //Device working times.(Unit:s)
+     @"advCount":@"65535",          //The number of Bluetooth broadcasts by the device.
+     @"thSamplingCount":@"3000",    //The temperature and humidity sampling times of the equipment.
+     @"loraPowerConsumption":@"50000",      //Power consumption of LoRaWAN sending and receiving data.(Unit:mAS)
+     @"loraSendCount":@"10000",     //Number of LoRaWAN transmissions.
+     @"batteryPower":@"33500"       //Total battery power consumption.(Unit:0.001mAH)
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
+                                   failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

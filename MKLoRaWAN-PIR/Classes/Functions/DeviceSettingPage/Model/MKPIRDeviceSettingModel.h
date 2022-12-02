@@ -14,8 +14,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign)NSInteger timeZone;
 
-@property (nonatomic, assign)NSInteger lowPowerPrompt;
-
 @property (nonatomic, assign)BOOL payload;
 
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;

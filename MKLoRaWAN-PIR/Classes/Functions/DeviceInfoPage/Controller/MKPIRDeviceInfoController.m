@@ -124,7 +124,7 @@ MKPIRTextButtonCellDelegate>
         return self.section2List.count;
     }
     if (section == 3) {
-        return self.section3List.count;
+        return 0;
     }
     if (section == 4) {
         return self.section4List.count;
@@ -221,10 +221,10 @@ MKPIRTextButtonCellDelegate>
         MKNormalTextCellModel *hardware = self.section2List[0];
         hardware.rightMsg = self.dataModel.hardware;
     }
-    if (ValidStr(self.dataModel.voltage)) {
-        MKNormalTextCellModel *hardware = self.section3List[0];
-        hardware.rightMsg = [self.dataModel.voltage stringByAppendingString:@"V"];
-    }
+//    if (ValidStr(self.dataModel.voltage)) {
+//        MKNormalTextCellModel *hardware = self.section3List[0];
+//        hardware.rightMsg = [self.dataModel.voltage stringByAppendingString:@"V"];
+//    }
     
     if (ValidStr(self.dataModel.macAddress)) {
         MKNormalTextCellModel *mac = self.section4List[0];

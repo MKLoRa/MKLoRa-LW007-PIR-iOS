@@ -27,10 +27,6 @@
             [self operationFailedBlockWithMsg:@"Read mac address error" block:failedBlock];
             return ;
         }
-        if (![self readBatteryVoltage]) {
-            [self operationFailedBlockWithMsg:@"Read battery voltage error" block:failedBlock];
-            return ;
-        }
         if (![self readDeviceModel]) {
             [self operationFailedBlockWithMsg:@"Read device model error" block:failedBlock];
             return ;
@@ -63,19 +59,6 @@
     [MKPIRInterface pir_readMacAddressWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
         self.macAddress = returnData[@"result"][@"macAddress"];
-        dispatch_semaphore_signal(self.semaphore);
-    } failedBlock:^(NSError * _Nonnull error) {
-        dispatch_semaphore_signal(self.semaphore);
-    }];
-    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
-    return success;
-}
-
-- (BOOL)readBatteryVoltage {
-    __block BOOL success = NO;
-    [MKPIRInterface pir_readBatteryVoltageWithSucBlock:^(id  _Nonnull returnData) {
-        success = YES;
-        self.voltage = returnData[@"result"][@"voltage"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

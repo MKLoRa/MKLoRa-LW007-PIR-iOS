@@ -665,6 +665,15 @@
                                 failedBlock:failedBlock];
 }
 
++ (void)pir_batteryResetWithSucBlock:(void (^)(void))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = @"ed015f00";
+    [self configDeviceControlDataWithTaskID:mk_pir_taskBatteryResetOperation
+                                       data:commandString
+                                   sucBlock:sucBlock
+                                failedBlock:failedBlock];
+}
+
 #pragma mark - private method
 + (void)configDataWithTaskID:(mk_pir_taskOperationID)taskID
                         data:(NSString *)data

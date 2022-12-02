@@ -18,7 +18,7 @@
 
 #import "MKPIRSelftestModel.h"
 
-#import "MKPIRSelftestCell.h"
+#import "MKPIRBatteryInfoCell.h"
 #import "MKPIRPCBAStatusCell.h"
 
 @interface MKPIRSelftestController ()<UITableViewDelegate,
@@ -48,8 +48,8 @@ UITableViewDataSource>
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 0) {
-        return 60.f;
+    if (indexPath.section == 1) {
+        return 200.f;
     }
     return 44.f;
 }
@@ -61,7 +61,7 @@ UITableViewDataSource>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return 0;
+        return self.section0List.count;
     }
     if (section == 1) {
         return self.section1List.count;
@@ -71,11 +71,11 @@ UITableViewDataSource>
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 0) {
-        MKPIRSelftestCell *cell = [MKPIRSelftestCell initCellWithTableView:tableView];
+        MKPIRPCBAStatusCell *cell = [MKPIRPCBAStatusCell initCellWithTableView:tableView];
         cell.dataModel = self.section0List[indexPath.row];
         return cell;
     }
-    MKPIRPCBAStatusCell *cell = [MKPIRPCBAStatusCell initCellWithTableView:tableView];
+    MKPIRBatteryInfoCell *cell = [MKPIRBatteryInfoCell initCellWithTableView:tableView];
     cell.dataModel = self.section1List[indexPath.row];
     return cell;
 }
@@ -104,20 +104,21 @@ UITableViewDataSource>
 }
 
 - (void)loadSection0Datas {
-    MKPIRSelftestCellModel *cellModel = [[MKPIRSelftestCellModel alloc] init];
-    
-//    cellModel.value0 = (([self.dataModel.bit0 integerValue] == 0 && [self.dataModel.bit1 integerValue] == 0) ? @"0" : @"");
-//    cellModel.value1 = ([self.dataModel.bit0 integerValue] == 1 ? @"1" : @"");
-//    cellModel.value2 = ([self.dataModel.bit1 integerValue] == 1 ? @"2" : @"");
-    
-    [self.section0List addObject:cellModel];
-}
-
-- (void)loadSection1Datas {
     MKPIRPCBAStatusCellModel *cellModel = [[MKPIRPCBAStatusCellModel alloc] init];
     cellModel.value0 = (([self.dataModel.pcbaStatus integerValue] == 0) ? @"0" : @"");
     cellModel.value1 = (([self.dataModel.pcbaStatus integerValue] == 1) ? @"1" : @"");
     cellModel.value2 = (([self.dataModel.pcbaStatus integerValue] == 2) ? @"2" : @"");
+    [self.section0List addObject:cellModel];
+}
+
+- (void)loadSection1Datas {
+    MKPIRBatteryInfoCellModel *cellModel = [[MKPIRBatteryInfoCellModel alloc] init];
+    cellModel.workTimes = self.dataModel.workTimes;
+    cellModel.advCount = self.dataModel.advCount;
+    cellModel.thSamplingCount = self.dataModel.thSamplingCount;
+    cellModel.loraPowerConsumption = self.dataModel.loraPowerConsumption;
+    cellModel.loraSendCount = self.dataModel.loraSendCount;
+    cellModel.batteryPower = self.dataModel.batteryPower;
     [self.section1List addObject:cellModel];
 }
 

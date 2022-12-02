@@ -147,6 +147,20 @@
     });
 }
 
+- (void)readTHDatasWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock {
+    dispatch_async(self.readQueue, ^{
+        if (![self readHTDatas]) {
+            [self operationFailedBlockWithMsg:@"Read HT Data Error" block:failedBlock];
+            return;
+        }
+        moko_dispatch_main_safe(^{
+            if (sucBlock) {
+                sucBlock();
+            }
+        });
+    });
+}
+
 #pragma mark - interface
 - (BOOL)readSwitchStatus {
     __block BOOL success = NO;

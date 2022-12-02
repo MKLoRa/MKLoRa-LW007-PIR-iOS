@@ -416,6 +416,12 @@ NS_ASSUME_NONNULL_BEGIN
                     sucBlock:(void (^)(void))sucBlock
                  failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Battery Reset.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_batteryResetWithSucBlock:(void (^)(void))sucBlock
+                         failedBlock:(void (^)(NSError *error))failedBlock;
+
 @end
 
 NS_ASSUME_NONNULL_END

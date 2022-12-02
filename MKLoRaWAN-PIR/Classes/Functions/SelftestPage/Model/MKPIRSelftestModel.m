@@ -27,6 +27,10 @@
             [self operationFailedBlockWithMsg:@"Read PCBA Status Error" block:failedBlock];
             return;
         }
+        if (![self readBatteryDatas]) {
+            [self operationFailedBlockWithMsg:@"Read Battery Datas Error" block:failedBlock];
+            return;
+        }
         moko_dispatch_main_safe(^{
             sucBlock();
         });
@@ -39,6 +43,24 @@
     [MKPIRInterface pir_readPCBAStatusWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
         self.pcbaStatus = returnData[@"result"][@"status"];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readBatteryDatas {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_readBatteryInformationWithSucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.workTimes = returnData[@"result"][@"workTimes"];
+        self.advCount = returnData[@"result"][@"advCount"];
+        self.thSamplingCount = returnData[@"result"][@"thSamplingCount"];
+        self.loraPowerConsumption = returnData[@"result"][@"loraPowerConsumption"];
+        self.loraSendCount = returnData[@"result"][@"loraSendCount"];
+        self.batteryPower = returnData[@"result"][@"batteryPower"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

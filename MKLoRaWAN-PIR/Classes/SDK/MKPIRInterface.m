@@ -482,6 +482,14 @@
                               failedBlock:failedBlock];
 }
 
++ (void)pir_readBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
+                                   failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDeviceControlDataWithTaskID:mk_pir_taskReadBatteryInformationOperation
+                                  cmdFlag:@"5e"
+                                 sucBlock:sucBlock
+                              failedBlock:failedBlock];
+}
+
 #pragma mark - private method
 
 + (void)readDataWithTaskID:(mk_pir_taskOperationID)taskID

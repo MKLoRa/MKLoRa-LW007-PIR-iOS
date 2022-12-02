@@ -444,6 +444,24 @@
             @"status":status,
         };
         operationID = mk_pir_taskReadPCBAStatusOperation;
+    }else if ([cmd isEqualToString:@"5e"]) {
+        //读取电池信息
+        NSString *workTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, 8)];
+        NSString *advCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(8, 8)];
+        NSString *thSamplingCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(16, 8)];
+        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(24, 8)];
+        NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(32, 8)];
+        NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(40, 8)];
+        
+        resultDic = @{
+            @"workTimes":workTimes,
+            @"advCount":advCount,
+            @"thSamplingCount":thSamplingCount,
+            @"loraPowerConsumption":loraPowerConsumption,
+            @"loraSendCount":loraSendCount,
+            @"batteryPower":batteryPower
+        };
+        operationID = mk_pir_taskReadBatteryInformationOperation;
     }else if ([cmd isEqualToString:@"68"]) {
         //读取MAC地址
         NSString *macAddress = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[content substringWithRange:NSMakeRange(0, 2)],[content substringWithRange:NSMakeRange(2, 2)],[content substringWithRange:NSMakeRange(4, 2)],[content substringWithRange:NSMakeRange(6, 2)],[content substringWithRange:NSMakeRange(8, 2)],[content substringWithRange:NSMakeRange(10, 2)]];
@@ -605,6 +623,9 @@
     }else if ([cmd isEqualToString:@"53"]) {
         //同步时间
         operationID = mk_pir_taskConfigDeviceTimeOperation;
+    }else if ([cmd isEqualToString:@"5f"]) {
+        //清除电池信息
+        operationID = mk_pir_taskBatteryResetOperation;
     }
     
     return [self dataParserGetDataSuccess:@{@"success":@(success)} operationID:operationID];

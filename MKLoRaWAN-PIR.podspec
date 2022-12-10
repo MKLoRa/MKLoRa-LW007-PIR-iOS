@@ -141,17 +141,12 @@ TODO: Add long description of the pod here.
         ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/DeviceSettingPage/Controller/**'
       
         ssss.dependency 'MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model'
-        ssss.dependency 'MKLoRaWAN-PIR/Functions/DeviceSettingPage/View'
         
         ssss.dependency 'MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller'
       end
     
       sss.subspec 'Model' do |ssss|
         ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/DeviceSettingPage/Model/**'
-      end
-      
-      sss.subspec 'View' do |ssss|
-        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/DeviceSettingPage/View/**'
       end
     end
     

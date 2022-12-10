@@ -26,7 +26,6 @@
 #import "MKPIRDeviceInfoModel.h"
 #import "MKPIRDeviceSettingController.h"
 #import "MKPIRDeviceSettingModel.h"
-#import "MKPIRButtonMsgCell.h"
 #import "MKPIRGeneralController.h"
 #import "MKPIRGeneralModel.h"
 #import "MKPIRHallSettingsController.h"

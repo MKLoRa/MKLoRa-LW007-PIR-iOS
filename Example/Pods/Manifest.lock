@@ -613,7 +613,6 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (= 1.0.0)
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (= 1.0.0)
-    - MKLoRaWAN-PIR/Functions/DeviceSettingPage/View (= 1.0.0)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (1.0.0):
@@ -625,19 +624,9 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model
-    - MKLoRaWAN-PIR/Functions/DeviceSettingPage/View
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (1.0.0):
-    - HHTransition
-    - MKBaseModuleLibrary
-    - MKCustomUIModule
-    - MKLoRaWAN-PIR/ConnectModule
-    - MKLoRaWAN-PIR/CTMediator
-    - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/SDK
-    - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceSettingPage/View (1.0.0):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -1069,7 +1058,7 @@ SPEC CHECKSUMS:
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
   MKBaseModuleLibrary: 6de43aeeb519d1c5f3aa94ebaffe8b3a57351312
   MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
-  MKLoRaWAN-PIR: 0071263bd4d2dd8c4585042cc358c87a76e4bd7b
+  MKLoRaWAN-PIR: f1bf3a0b70481aaea185cb2352b9f8a04829620c
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10

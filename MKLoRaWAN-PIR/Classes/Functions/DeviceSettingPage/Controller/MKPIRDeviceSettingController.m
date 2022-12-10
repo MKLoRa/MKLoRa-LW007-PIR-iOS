@@ -21,7 +21,7 @@
 #import "MKNormalTextCell.h"
 #import "MKTextButtonCell.h"
 #import "MKTextSwitchCell.h"
-#import "MKPIRButtonMsgCell.h"
+#import "MKButtonMsgCell.h"
 #import "MKAlertController.h"
 
 #import "MKPIRInterface+MKPIRConfig.h"
@@ -34,7 +34,7 @@
 UITableViewDataSource,
 MKTextButtonCellDelegate,
 mk_textSwitchCellDelegate,
-MKPIRButtonMsgCellDelegate>
+MKButtonMsgCellDelegate>
 
 @property (nonatomic, strong)MKBaseTableView *tableView;
 
@@ -81,7 +81,7 @@ MKPIRButtonMsgCellDelegate>
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 5) {
-        MKPIRButtonMsgCellModel *cellModel = self.section5List[indexPath.row];
+        MKButtonMsgCellModel *cellModel = self.section5List[indexPath.row];
         return [cellModel cellHeightWithContentWidth:kViewWidth];
     }
     return 44.f;
@@ -167,7 +167,7 @@ MKPIRButtonMsgCellDelegate>
         cell.dataModel = self.section4List[indexPath.row];
         return cell;
     }
-    MKPIRButtonMsgCell *cell = [MKPIRButtonMsgCell initCellWithTableView:tableView];
+    MKButtonMsgCell *cell = [MKButtonMsgCell initCellWithTableView:tableView];
     cell.dataModel = self.section5List[indexPath.row];
     cell.delegate = self;
     return cell;
@@ -205,7 +205,7 @@ MKPIRButtonMsgCellDelegate>
     }
 }
 
-#pragma mark - MKPIRButtonMsgCellDelegate
+#pragma mark - MKButtonMsgCellDelegate
 /// 右侧按钮点击事件
 /// @param index 当前cell所在index
 - (void)mk_buttonMsgCellButtonPressed:(NSInteger)index {
@@ -368,6 +368,7 @@ MKPIRButtonMsgCellDelegate>
                               isPenetration:NO];
     [MKPIRInterface pir_batteryResetWithSucBlock:^{
         [[MKHudManager share] hide];
+        [self readDatasFromDevice];
     } failedBlock:^(NSError * _Nonnull error) {
         [[MKHudManager share] hide];
         [self.view showCentralToast:error.userInfo[@"errorInfo"]];
@@ -428,7 +429,7 @@ MKPIRButtonMsgCellDelegate>
 }
 
 - (void)loadSection5Datas {
-    MKPIRButtonMsgCellModel *cellModel = [[MKPIRButtonMsgCellModel alloc] init];
+    MKButtonMsgCellModel *cellModel = [[MKButtonMsgCellModel alloc] init];
     cellModel.index = 0;
     cellModel.msg = @"Battery Reset";
     cellModel.buttonTitle = @"Reset";

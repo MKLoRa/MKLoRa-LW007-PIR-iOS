@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKLoRaWAN-PIR'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'A short description of MKLoRaWAN-PIR.'
 
 # This description is used to generate tags and improve search results.
@@ -28,7 +28,7 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/MKLoRa/MKLoRa-LW007-PIR-iOS.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '12.0'
+  s.ios.deployment_target = '14.0'
   
   s.resource_bundles = {
     'MKLoRaWAN-PIR' => ['MKLoRaWAN-PIR/Assets/*.png']
@@ -311,7 +311,7 @@ TODO: Add long description of the pod here.
         ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/UpdatePage/Model/**'
       end
     
-      sss.dependency 'iOSDFULibrary'
+      sss.dependency 'iOSDFULibrary',     '4.13.0'
     end
     
     ss.dependency 'MKLoRaWAN-PIR/SDK'

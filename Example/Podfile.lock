@@ -10,91 +10,88 @@ PODS:
   - libxlsxwriter (1.1.5)
   - Masonry (1.1.0)
   - MBProgressHUD (1.2.0)
-  - MJRefresh (3.7.5)
+  - MJRefresh (3.7.6)
   - MKBaseBleModule (1.1.4)
-  - MKBaseModuleLibrary (1.1.7):
-    - MKBaseModuleLibrary/Base (= 1.1.7)
-    - MKBaseModuleLibrary/Category (= 1.1.7)
-    - MKBaseModuleLibrary/Defines (= 1.1.7)
-    - MKBaseModuleLibrary/Tools (= 1.1.7)
-  - MKBaseModuleLibrary/Base (1.1.7):
-    - MKBaseModuleLibrary/Base/Cell (= 1.1.7)
-    - MKBaseModuleLibrary/Base/Controller (= 1.1.7)
-    - MKBaseModuleLibrary/Base/NavigationController (= 1.1.7)
-    - MKBaseModuleLibrary/Base/View (= 1.1.7)
-  - MKBaseModuleLibrary/Base/Cell (1.1.7):
-    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.1.7)
-  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.1.7):
+  - MKBaseModuleLibrary (2.0.9):
+    - MKBaseModuleLibrary/Base (= 2.0.9)
+    - MKBaseModuleLibrary/Category (= 2.0.9)
+    - MKBaseModuleLibrary/Defines (= 2.0.9)
+    - MKBaseModuleLibrary/Tools (= 2.0.9)
+  - MKBaseModuleLibrary/Base (2.0.9):
+    - MKBaseModuleLibrary/Base/Cell (= 2.0.9)
+    - MKBaseModuleLibrary/Base/Controller (= 2.0.9)
+    - MKBaseModuleLibrary/Base/NavigationController (= 2.0.9)
+    - MKBaseModuleLibrary/Base/View (= 2.0.9)
+  - MKBaseModuleLibrary/Base/Cell (2.0.9):
+    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 2.0.9)
+  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (2.0.9):
     - Masonry
     - MKBaseModuleLibrary/Defines
-  - MKBaseModuleLibrary/Base/Controller (1.1.7):
+  - MKBaseModuleLibrary/Base/Controller (2.0.9):
     - MKBaseModuleLibrary/Category
     - MKBaseModuleLibrary/Defines
     - WRNavigationBar
-  - MKBaseModuleLibrary/Base/NavigationController (1.1.7)
-  - MKBaseModuleLibrary/Base/View (1.1.7):
-    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.1.7)
-    - MKBaseModuleLibrary/Base/View/TableView (= 1.1.7)
-  - MKBaseModuleLibrary/Base/View/CollectionView (1.1.7)
-  - MKBaseModuleLibrary/Base/View/TableView (1.1.7)
-  - MKBaseModuleLibrary/Category (1.1.7):
+  - MKBaseModuleLibrary/Base/NavigationController (2.0.9)
+  - MKBaseModuleLibrary/Base/View (2.0.9):
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 2.0.9)
+    - MKBaseModuleLibrary/Base/View/TableView (= 2.0.9)
+  - MKBaseModuleLibrary/Base/View/CollectionView (2.0.9)
+  - MKBaseModuleLibrary/Base/View/TableView (2.0.9)
+  - MKBaseModuleLibrary/Category (2.0.9):
     - MKBaseModuleLibrary/Defines
     - MKBaseModuleLibrary/Tools/MKClassInfo
     - Toast
-  - MKBaseModuleLibrary/Defines (1.1.7)
-  - MKBaseModuleLibrary/Tools (1.1.7):
-    - MKBaseModuleLibrary/Tools/MKClassInfo (= 1.1.7)
-    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.1.7)
-    - MKBaseModuleLibrary/Tools/MKExcelManager (= 1.1.7)
-    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.1.7)
-  - MKBaseModuleLibrary/Tools/MKClassInfo (1.1.7)
-  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.1.7)
-  - MKBaseModuleLibrary/Tools/MKExcelManager (1.1.7):
+  - MKBaseModuleLibrary/Defines (2.0.9)
+  - MKBaseModuleLibrary/Tools (2.0.9):
+    - MKBaseModuleLibrary/Tools/MKClassInfo (= 2.0.9)
+    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 2.0.9)
+    - MKBaseModuleLibrary/Tools/MKExcelManager (= 2.0.9)
+  - MKBaseModuleLibrary/Tools/MKClassInfo (2.0.9)
+  - MKBaseModuleLibrary/Tools/MKDateFormatter (2.0.9)
+  - MKBaseModuleLibrary/Tools/MKExcelManager (2.0.9):
     - libxlsxwriter
     - MKBaseModuleLibrary/Defines
     - SSZipArchive
-  - MKBaseModuleLibrary/Tools/MKModuleManager (1.1.7)
-  - MKCustomUIModule (1.4.4):
+  - MKCustomUIModule (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell (= 1.4.4)
-    - MKCustomUIModule/Controller (= 1.4.4)
-    - MKCustomUIModule/MQTTServerView (= 1.4.4)
-    - MKCustomUIModule/UIAdopter (= 1.4.4)
-    - MKCustomUIModule/View (= 1.4.4)
-  - MKCustomUIModule/Cell (1.4.4):
+    - MKCustomUIModule/Cell (= 2.1.1)
+    - MKCustomUIModule/Controller (= 2.1.1)
+    - MKCustomUIModule/MQTTServerView (= 2.1.1)
+    - MKCustomUIModule/UIAdopter (= 2.1.1)
+    - MKCustomUIModule/View (= 2.1.1)
+  - MKCustomUIModule/Cell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/LoRaCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell (= 1.4.4)
-  - MKCustomUIModule/Cell/LoRaCell (1.4.4):
+    - MKCustomUIModule/Cell/LoRaCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell (= 2.1.1)
+  - MKCustomUIModule/Cell/LoRaCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterConditionCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (= 1.4.4)
-    - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (= 1.4.4)
-  - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (1.4.4):
+    - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterConditionCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (= 2.1.1)
+    - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (= 2.1.1)
+  - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterConditionCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterConditionCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -102,34 +99,28 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (1.4.4):
-    - CircleProgressBar
-    - Masonry
-    - MBProgressHUD
-    - MJRefresh
-    - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -137,38 +128,38 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (1.4.4):
+  - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/NormalCell/MKButtonMsgCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell/MKSettingTextCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (= 1.4.4)
-    - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (= 1.4.4)
-  - MKCustomUIModule/Cell/NormalCell/MKButtonMsgCell (1.4.4):
+    - MKCustomUIModule/Cell/NormalCell/MKButtonMsgCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell/MKSettingTextCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (= 2.1.1)
+    - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (= 2.1.1)
+  - MKCustomUIModule/Cell/NormalCell/MKButtonMsgCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -176,73 +167,72 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell/MKSettingTextCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell/MKSettingTextCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (1.4.4):
+  - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller (1.4.4):
+  - MKCustomUIModule/Controller (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/CASelectPage (= 1.4.4)
-    - MKCustomUIModule/Controller/MKAboutPage (= 1.4.4)
-    - MKCustomUIModule/Controller/MKAlertController (= 1.4.4)
-    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 1.4.4)
-    - MKCustomUIModule/Controller/MKTrackerLogPage (= 1.4.4)
-  - MKCustomUIModule/Controller/CASelectPage (1.4.4):
+    - MKCustomUIModule/Controller/CASelectPage (= 2.1.1)
+    - MKCustomUIModule/Controller/MKAboutPage (= 2.1.1)
+    - MKCustomUIModule/Controller/MKAlertController (= 2.1.1)
+    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 2.1.1)
+  - MKCustomUIModule/Controller/CASelectPage (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/CASelectPage/Controller (= 1.4.4)
-  - MKCustomUIModule/Controller/CASelectPage/Controller (1.4.4):
+    - MKCustomUIModule/Controller/CASelectPage/Controller (= 2.1.1)
+  - MKCustomUIModule/Controller/CASelectPage/Controller (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell
-  - MKCustomUIModule/Controller/MKAboutPage (1.4.4):
+  - MKCustomUIModule/Controller/MKAboutPage (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKAboutPage/Controller (= 1.4.4)
-    - MKCustomUIModule/Controller/MKAboutPage/Model (= 1.4.4)
-    - MKCustomUIModule/Controller/MKAboutPage/View (= 1.4.4)
-  - MKCustomUIModule/Controller/MKAboutPage/Controller (1.4.4):
+    - MKCustomUIModule/Controller/MKAboutPage/Controller (= 2.1.1)
+    - MKCustomUIModule/Controller/MKAboutPage/Model (= 2.1.1)
+    - MKCustomUIModule/Controller/MKAboutPage/View (= 2.1.1)
+  - MKCustomUIModule/Controller/MKAboutPage/Controller (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -250,254 +240,241 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/Controller/MKAboutPage/Model
     - MKCustomUIModule/Controller/MKAboutPage/View
-  - MKCustomUIModule/Controller/MKAboutPage/Model (1.4.4):
+  - MKCustomUIModule/Controller/MKAboutPage/Model (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller/MKAboutPage/View (1.4.4):
+  - MKCustomUIModule/Controller/MKAboutPage/View (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/Controller/MKAboutPage/Model
-  - MKCustomUIModule/Controller/MKAlertController (1.4.4):
+  - MKCustomUIModule/Controller/MKAlertController (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller/MKTrackerAboutPage (1.4.4):
+  - MKCustomUIModule/Controller/MKTrackerAboutPage (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 1.4.4)
-  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (1.4.4):
+    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 2.1.1)
+  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller/MKTrackerLogPage (1.4.4):
+  - MKCustomUIModule/MQTTServerView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (= 1.4.4)
-  - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (1.4.4):
-    - CircleProgressBar
-    - Masonry
-    - MBProgressHUD
-    - MJRefresh
-    - MKBaseModuleLibrary
-  - MKCustomUIModule/MQTTServerView (1.4.4):
-    - CircleProgressBar
-    - Masonry
-    - MBProgressHUD
-    - MJRefresh
-    - MKBaseModuleLibrary
-    - MKCustomUIModule/MQTTServerView/GeneralParams (= 1.4.4)
-    - MKCustomUIModule/MQTTServerView/SSL (= 1.4.4)
-    - MKCustomUIModule/MQTTServerView/UserCredentials (= 1.4.4)
-  - MKCustomUIModule/MQTTServerView/GeneralParams (1.4.4):
+    - MKCustomUIModule/MQTTServerView/GeneralParams (= 2.1.1)
+    - MKCustomUIModule/MQTTServerView/SSL (= 2.1.1)
+    - MKCustomUIModule/MQTTServerView/UserCredentials (= 2.1.1)
+  - MKCustomUIModule/MQTTServerView/GeneralParams (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/MQTTServerView/SSL (1.4.4):
+  - MKCustomUIModule/MQTTServerView/SSL (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/MQTTServerView/UserCredentials (1.4.4):
+  - MKCustomUIModule/MQTTServerView/UserCredentials (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/UIAdopter (1.4.4):
+  - MKCustomUIModule/UIAdopter (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View
-  - MKCustomUIModule/View (1.4.4):
+  - MKCustomUIModule/View (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/View/HaveRefreshView (= 1.4.4)
-    - MKCustomUIModule/View/MKAlertView (= 1.4.4)
-    - MKCustomUIModule/View/MKHexKeyBoard (= 1.4.4)
-    - MKCustomUIModule/View/MKHudManager (= 1.4.4)
-    - MKCustomUIModule/View/MKPageControl (= 1.4.4)
-    - MKCustomUIModule/View/MKPickerView (= 1.4.4)
-    - MKCustomUIModule/View/MKProgressView (= 1.4.4)
-    - MKCustomUIModule/View/MKSearchButton (= 1.4.4)
-    - MKCustomUIModule/View/MKSearchConditionsView (= 1.4.4)
-    - MKCustomUIModule/View/MKSlider (= 1.4.4)
-    - MKCustomUIModule/View/MKTableSectionHeader (= 1.4.4)
-    - MKCustomUIModule/View/MKTextField (= 1.4.4)
-    - MKCustomUIModule/View/NirKxMenu (= 1.4.4)
-    - MKCustomUIModule/View/WifiAlertView (= 1.4.4)
-  - MKCustomUIModule/View/HaveRefreshView (1.4.4):
+    - MKCustomUIModule/View/HaveRefreshView (= 2.1.1)
+    - MKCustomUIModule/View/MKAlertView (= 2.1.1)
+    - MKCustomUIModule/View/MKHexKeyBoard (= 2.1.1)
+    - MKCustomUIModule/View/MKHudManager (= 2.1.1)
+    - MKCustomUIModule/View/MKPageControl (= 2.1.1)
+    - MKCustomUIModule/View/MKPickerView (= 2.1.1)
+    - MKCustomUIModule/View/MKProgressView (= 2.1.1)
+    - MKCustomUIModule/View/MKSearchButton (= 2.1.1)
+    - MKCustomUIModule/View/MKSearchConditionsView (= 2.1.1)
+    - MKCustomUIModule/View/MKSlider (= 2.1.1)
+    - MKCustomUIModule/View/MKTableSectionHeader (= 2.1.1)
+    - MKCustomUIModule/View/MKTextField (= 2.1.1)
+    - MKCustomUIModule/View/NirKxMenu (= 2.1.1)
+    - MKCustomUIModule/View/WifiAlertView (= 2.1.1)
+  - MKCustomUIModule/View/HaveRefreshView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKAlertView (1.4.4):
+  - MKCustomUIModule/View/MKAlertView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/View/MKHexKeyBoard (1.4.4):
+  - MKCustomUIModule/View/MKHexKeyBoard (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKHudManager (1.4.4):
+  - MKCustomUIModule/View/MKHudManager (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKPageControl (1.4.4):
+  - MKCustomUIModule/View/MKPageControl (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKPickerView (1.4.4):
+  - MKCustomUIModule/View/MKPickerView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKProgressView (1.4.4):
+  - MKCustomUIModule/View/MKProgressView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKSearchButton (1.4.4):
+  - MKCustomUIModule/View/MKSearchButton (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKSearchConditionsView (1.4.4):
+  - MKCustomUIModule/View/MKSearchConditionsView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/View/MKSlider (1.4.4):
+  - MKCustomUIModule/View/MKSlider (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKTableSectionHeader (1.4.4):
+  - MKCustomUIModule/View/MKTableSectionHeader (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKTextField (1.4.4):
+  - MKCustomUIModule/View/MKTextField (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/NirKxMenu (1.4.4):
+  - MKCustomUIModule/View/NirKxMenu (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/WifiAlertView (1.4.4):
+  - MKCustomUIModule/View/WifiAlertView (2.1.1):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKLoRaWAN-PIR (1.0.3):
-    - MKLoRaWAN-PIR/ConnectModule (= 1.0.3)
-    - MKLoRaWAN-PIR/CTMediator (= 1.0.3)
-    - MKLoRaWAN-PIR/Expand (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions (= 1.0.3)
-    - MKLoRaWAN-PIR/SDK (= 1.0.3)
-    - MKLoRaWAN-PIR/Target (= 1.0.3)
-  - MKLoRaWAN-PIR/ConnectModule (1.0.3):
+  - MKLoRaWAN-PIR (1.0.4):
+    - MKLoRaWAN-PIR/ConnectModule (= 1.0.4)
+    - MKLoRaWAN-PIR/CTMediator (= 1.0.4)
+    - MKLoRaWAN-PIR/Expand (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions (= 1.0.4)
+    - MKLoRaWAN-PIR/SDK (= 1.0.4)
+    - MKLoRaWAN-PIR/Target (= 1.0.4)
+  - MKLoRaWAN-PIR/ConnectModule (1.0.4):
     - MKBaseModuleLibrary
     - MKLoRaWAN-PIR/SDK
-  - MKLoRaWAN-PIR/CTMediator (1.0.3):
+  - MKLoRaWAN-PIR/CTMediator (1.0.4):
     - CTMediator
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PIR/Expand (1.0.3):
-    - MKLoRaWAN-PIR/Expand/Cell (= 1.0.3)
-    - MKLoRaWAN-PIR/Expand/DatabaseManager (= 1.0.3)
-  - MKLoRaWAN-PIR/Expand/Cell (1.0.3):
-    - MKLoRaWAN-PIR/Expand/Cell/TextButtonCell (= 1.0.3)
-  - MKLoRaWAN-PIR/Expand/Cell/TextButtonCell (1.0.3):
+  - MKLoRaWAN-PIR/Expand (1.0.4):
+    - MKLoRaWAN-PIR/Expand/Cell (= 1.0.4)
+    - MKLoRaWAN-PIR/Expand/DatabaseManager (= 1.0.4)
+  - MKLoRaWAN-PIR/Expand/Cell (1.0.4):
+    - MKLoRaWAN-PIR/Expand/Cell/TextButtonCell (= 1.0.4)
+  - MKLoRaWAN-PIR/Expand/Cell/TextButtonCell (1.0.4):
     - MKBaseModuleLibrary
     - MKCustomUIModule
-  - MKLoRaWAN-PIR/Expand/DatabaseManager (1.0.3):
+  - MKLoRaWAN-PIR/Expand/DatabaseManager (1.0.4):
     - FMDB
     - MKBaseModuleLibrary
-  - MKLoRaWAN-PIR/Functions (1.0.3):
+  - MKLoRaWAN-PIR/Functions (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/AboutPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/BleSettingPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/DebuggerPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/DeviceInfoPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/DeviceSettingPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/GeneralPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/HallSettingsPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/LoRaApplicationPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/LoRaPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/LoRaSettingPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/PIRSettingsPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/ScanPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/SelftestPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/TabBarPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/THSettingsPage (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/UpdatePage (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/AboutPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/BleSettingPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/DebuggerPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/DeviceInfoPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/DeviceSettingPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/GeneralPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/HallSettingsPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaApplicationPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaSettingPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/PIRSettingsPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/ScanPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/SelftestPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/TabBarPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/THSettingsPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/UpdatePage (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/AboutPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/AboutPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/AboutPage/Controller (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/AboutPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/AboutPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/AboutPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -506,19 +483,19 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/BleSettingPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/BleSettingPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/BleSettingPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/BleSettingPage/Model (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/BleSettingPage/View (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/BleSettingPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/BleSettingPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/BleSettingPage/View (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/BleSettingPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/BleSettingPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -529,7 +506,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/BleSettingPage/View
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/BleSettingPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/BleSettingPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -538,7 +515,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/BleSettingPage/View (1.0.3):
+  - MKLoRaWAN-PIR/Functions/BleSettingPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -547,18 +524,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DebuggerPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DebuggerPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/DebuggerPage/View (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/DebuggerPage/View (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -568,7 +545,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/DebuggerPage/View
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DebuggerPage/View (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DebuggerPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -577,18 +554,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceInfoPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DeviceInfoPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -601,7 +578,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/UpdatePage/Controller
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -610,18 +587,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceSettingPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DeviceSettingPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -632,7 +609,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -641,18 +618,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/GeneralPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/GeneralPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/GeneralPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/GeneralPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/GeneralPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/GeneralPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/GeneralPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/GeneralPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -665,7 +642,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/GeneralPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/GeneralPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -674,18 +651,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/HallSettingsPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/HallSettingsPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -695,7 +672,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -704,18 +681,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaApplicationPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaApplicationPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -725,7 +702,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -734,18 +711,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/LoRaPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/LoRaPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/LoRaPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -757,7 +734,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -766,18 +743,18 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaSettingPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaSettingPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -787,7 +764,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -796,19 +773,19 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/PIRSettingsPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/PIRSettingsPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -819,7 +796,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -828,7 +805,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View (1.0.3):
+  - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -837,19 +814,19 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/ScanPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/ScanPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/ScanPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/ScanPage/Model (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/ScanPage/View (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/ScanPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/ScanPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/ScanPage/View (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/ScanPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/ScanPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -861,7 +838,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/TabBarPage/Controller
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/ScanPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/ScanPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -870,7 +847,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/ScanPage/View (1.0.3):
+  - MKLoRaWAN-PIR/Functions/ScanPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -880,19 +857,19 @@ PODS:
     - MKLoRaWAN-PIR/Functions/ScanPage/Model
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/SelftestPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/SelftestPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/SelftestPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/SelftestPage/Model (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/SelftestPage/View (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/SelftestPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/SelftestPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/SelftestPage/View (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/SelftestPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/SelftestPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -903,7 +880,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/SelftestPage/View
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/SelftestPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/SelftestPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -912,7 +889,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/SelftestPage/View (1.0.3):
+  - MKLoRaWAN-PIR/Functions/SelftestPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -921,17 +898,17 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/TabBarPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/TabBarPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/TabBarPage/Controller (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/TabBarPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/TabBarPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/TabBarPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -944,19 +921,19 @@ PODS:
     - MKLoRaWAN-PIR/Functions/LoRaPage/Controller
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/THSettingsPage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/THSettingsPage (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/THSettingsPage/Model (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/THSettingsPage/View (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/THSettingsPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/THSettingsPage/View (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -967,7 +944,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/THSettingsPage/View
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/THSettingsPage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/THSettingsPage/Model (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -976,7 +953,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/THSettingsPage/View (1.0.3):
+  - MKLoRaWAN-PIR/Functions/THSettingsPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -985,21 +962,21 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/UpdatePage (1.0.3):
+  - MKLoRaWAN-PIR/Functions/UpdatePage (1.0.4):
     - HHTransition
-    - iOSDFULibrary
+    - iOSDFULibrary (= 4.13.0)
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
-    - MKLoRaWAN-PIR/Functions/UpdatePage/Controller (= 1.0.3)
-    - MKLoRaWAN-PIR/Functions/UpdatePage/Model (= 1.0.3)
+    - MKLoRaWAN-PIR/Functions/UpdatePage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/UpdatePage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/UpdatePage/Controller (1.0.3):
+  - MKLoRaWAN-PIR/Functions/UpdatePage/Controller (1.0.4):
     - HHTransition
-    - iOSDFULibrary
+    - iOSDFULibrary (= 4.13.0)
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
@@ -1008,9 +985,9 @@ PODS:
     - MKLoRaWAN-PIR/Functions/UpdatePage/Model
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/Functions/UpdatePage/Model (1.0.3):
+  - MKLoRaWAN-PIR/Functions/UpdatePage/Model (1.0.4):
     - HHTransition
-    - iOSDFULibrary
+    - iOSDFULibrary (= 4.13.0)
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MKLoRaWAN-PIR/ConnectModule
@@ -1018,9 +995,9 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
-  - MKLoRaWAN-PIR/SDK (1.0.3):
+  - MKLoRaWAN-PIR/SDK (1.0.4):
     - MKBaseBleModule
-  - MKLoRaWAN-PIR/Target (1.0.3):
+  - MKLoRaWAN-PIR/Target (1.0.4):
     - MKLoRaWAN-PIR/Functions
   - MLInputDodger (1.5.2)
   - SSZipArchive (2.4.3)
@@ -1064,17 +1041,17 @@ SPEC CHECKSUMS:
   libxlsxwriter: 07cdc00cf0edb30ce9773efbbb49a03459a6e0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
+  MJRefresh: 2fe7fb43a5167ceda20bb7e63f130c04fd1814a5
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
-  MKBaseModuleLibrary: 9ab75dfc3c79d88aa3ad13068cc5d47cba77bdd2
-  MKCustomUIModule: 83b76a0ccd1ac855157091b389154bd6a309c414
-  MKLoRaWAN-PIR: 006bde4ed3c7df5066c0515c7d8ee2400b843d3f
+  MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
+  MKCustomUIModule: 3c7038a6c5f5841c7894e6647ecff78482723947
+  MKLoRaWAN-PIR: af724180100b3fd015027c892aaf8746e215b822
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: 52cab15bd25cb022b0609a040607950a0945460a
+PODFILE CHECKSUM: c66222b0493c54d6830141de589061b13e0bde47
 
-COCOAPODS: 1.12.0
+COCOAPODS: 1.11.3

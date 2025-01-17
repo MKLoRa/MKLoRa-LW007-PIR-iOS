@@ -230,6 +230,11 @@ MKButtonMsgCellDelegate>
         cellModel2.isOn = self.dataModel.payload;
         
         [self.tableView reloadData];
+        
+        //让MKPickView消失
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_customUIModule_dismissPickView"
+                                                            object:nil
+                                                          userInfo:nil];
     } failedBlock:^(NSError * _Nonnull error) {
         @strongify(self);
         [[MKHudManager share] hide];

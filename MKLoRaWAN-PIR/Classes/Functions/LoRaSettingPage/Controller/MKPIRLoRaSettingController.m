@@ -184,7 +184,7 @@ MKPIRLoRaSettingAccountCellDelegate>
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if (section == 0) {
+    if (section == 0 && (self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 0)) {
         //LoRaWAN Mode
         return 10.f;
     }
@@ -236,9 +236,12 @@ MKPIRLoRaSettingAccountCellDelegate>
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (section == 0) {
-        return self.section0List.count;
+        return (self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 0) ? self.section0List.count : 0;
     }
     if (section == 1) {
+        if (self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 1) {
+            return 0;
+        }
         if (self.dataModel.modem == 1) {
             //ABP
             return self.abpDataList.count;

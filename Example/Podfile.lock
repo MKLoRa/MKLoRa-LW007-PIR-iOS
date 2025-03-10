@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
   - CircleProgressBar (0.32)
   - CTMediator (46)
   - FMDB (2.7.5):
@@ -470,11 +485,38 @@ PODS:
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
+  - MKIotCloudManager (0.0.5):
+    - MKIotCloudManager/SDK (= 0.0.5)
+    - MKIotCloudManager/View (= 0.0.5)
+  - MKIotCloudManager/SDK (0.0.5):
+    - MKIotCloudManager/SDK/Config (= 0.0.5)
+    - MKIotCloudManager/SDK/MKNetwork (= 0.0.5)
+    - MKIotCloudManager/SDK/NetworkService (= 0.0.5)
+  - MKIotCloudManager/SDK/Config (0.0.5)
+  - MKIotCloudManager/SDK/MKNetwork (0.0.5):
+    - AFNetworking
+    - MKBaseModuleLibrary
+    - MKIotCloudManager/SDK/Config
+  - MKIotCloudManager/SDK/NetworkService (0.0.5):
+    - AFNetworking
+    - MKBaseModuleLibrary
+    - MKIotCloudManager/SDK/Config
+    - MKIotCloudManager/SDK/MKNetwork
+  - MKIotCloudManager/View (0.0.5):
+    - MKIotCloudManager/View/AccountLoginAlertView (= 0.0.5)
+    - MKIotCloudManager/View/ExitAccountAlertView (= 0.0.5)
+  - MKIotCloudManager/View/AccountLoginAlertView (0.0.5):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+  - MKIotCloudManager/View/ExitAccountAlertView (0.0.5):
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
   - MKLoRaWAN-PIR (1.0.4):
     - MKLoRaWAN-PIR/ConnectModule (= 1.0.4)
     - MKLoRaWAN-PIR/CTMediator (= 1.0.4)
     - MKLoRaWAN-PIR/Expand (= 1.0.4)
     - MKLoRaWAN-PIR/Functions (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager (= 1.0.4)
     - MKLoRaWAN-PIR/SDK (= 1.0.4)
     - MKLoRaWAN-PIR/Target (= 1.0.4)
   - MKLoRaWAN-PIR/ConnectModule (1.0.4):
@@ -517,6 +559,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/TabBarPage (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/THSettingsPage (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/UpdatePage (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/AboutPage (1.0.4):
@@ -527,6 +570,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/AboutPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/AboutPage/Controller (1.0.4):
@@ -536,6 +580,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/BleSettingPage (1.0.4):
@@ -548,6 +593,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/BleSettingPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/BleSettingPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/BleSettingPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/BleSettingPage/Controller (1.0.4):
@@ -559,6 +605,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/BleSettingPage/Model
     - MKLoRaWAN-PIR/Functions/BleSettingPage/View
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/BleSettingPage/Model (1.0.4):
@@ -568,6 +615,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/BleSettingPage/View (1.0.4):
@@ -577,6 +625,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DebuggerPage (1.0.4):
@@ -588,6 +637,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/DebuggerPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller (1.0.4):
@@ -598,6 +648,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DebuggerPage/View
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DebuggerPage/View (1.0.4):
@@ -607,6 +658,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceInfoPage (1.0.4):
@@ -618,6 +670,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller (1.0.4):
@@ -631,6 +684,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model
     - MKLoRaWAN-PIR/Functions/SelftestPage/Controller
     - MKLoRaWAN-PIR/Functions/UpdatePage/Controller
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model (1.0.4):
@@ -640,6 +694,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceSettingPage (1.0.4):
@@ -651,6 +706,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller (1.0.4):
@@ -662,6 +718,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Controller
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Model (1.0.4):
@@ -671,6 +728,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/GeneralPage (1.0.4):
@@ -682,6 +740,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/GeneralPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/GeneralPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/GeneralPage/Controller (1.0.4):
@@ -695,6 +754,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller
     - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/GeneralPage/Model (1.0.4):
@@ -704,6 +764,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/HallSettingsPage (1.0.4):
@@ -715,6 +776,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/HallSettingsPage/Controller (1.0.4):
@@ -725,6 +787,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/HallSettingsPage/Model (1.0.4):
@@ -734,6 +797,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaApplicationPage (1.0.4):
@@ -745,6 +809,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller (1.0.4):
@@ -755,6 +820,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Model (1.0.4):
@@ -764,6 +830,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaPage (1.0.4):
@@ -775,6 +842,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/LoRaPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/LoRaPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaPage/Controller (1.0.4):
@@ -787,6 +855,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/LoRaApplicationPage/Controller
     - MKLoRaWAN-PIR/Functions/LoRaPage/Model
     - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaPage/Model (1.0.4):
@@ -796,6 +865,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaSettingPage (1.0.4):
@@ -807,6 +877,8 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/LoRaSettingPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Controller (1.0.4):
@@ -817,6 +889,8 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model
+    - MKLoRaWAN-PIR/Functions/LoRaSettingPage/View
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/LoRaSettingPage/Model (1.0.4):
@@ -826,6 +900,17 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
+    - MKLoRaWAN-PIR/SDK
+    - MLInputDodger
+  - MKLoRaWAN-PIR/Functions/LoRaSettingPage/View (1.0.4):
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKLoRaWAN-PIR/ConnectModule
+    - MKLoRaWAN-PIR/CTMediator
+    - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/PIRSettingsPage (1.0.4):
@@ -838,6 +923,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Controller (1.0.4):
@@ -849,6 +935,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model
     - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/PIRSettingsPage/Model (1.0.4):
@@ -858,6 +945,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/PIRSettingsPage/View (1.0.4):
@@ -867,6 +955,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/ScanPage (1.0.4):
@@ -879,6 +968,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/ScanPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/ScanPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/ScanPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/ScanPage/Controller (1.0.4):
@@ -891,6 +981,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/ScanPage/Model
     - MKLoRaWAN-PIR/Functions/ScanPage/View
     - MKLoRaWAN-PIR/Functions/TabBarPage/Controller
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/ScanPage/Model (1.0.4):
@@ -900,6 +991,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/ScanPage/View (1.0.4):
@@ -910,6 +1002,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/ScanPage/Model
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/SelftestPage (1.0.4):
@@ -922,6 +1015,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/SelftestPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/SelftestPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/SelftestPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/SelftestPage/Controller (1.0.4):
@@ -933,6 +1027,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/SelftestPage/Model
     - MKLoRaWAN-PIR/Functions/SelftestPage/View
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/SelftestPage/Model (1.0.4):
@@ -942,6 +1037,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/SelftestPage/View (1.0.4):
@@ -951,6 +1047,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/TabBarPage (1.0.4):
@@ -961,6 +1058,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/TabBarPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/TabBarPage/Controller (1.0.4):
@@ -974,6 +1072,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/DeviceSettingPage/Controller
     - MKLoRaWAN-PIR/Functions/GeneralPage/Controller
     - MKLoRaWAN-PIR/Functions/LoRaPage/Controller
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/THSettingsPage (1.0.4):
@@ -986,6 +1085,7 @@ PODS:
     - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/THSettingsPage/Model (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/THSettingsPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/THSettingsPage/Controller (1.0.4):
@@ -997,6 +1097,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/THSettingsPage/Model
     - MKLoRaWAN-PIR/Functions/THSettingsPage/View
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/THSettingsPage/Model (1.0.4):
@@ -1006,6 +1107,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/THSettingsPage/View (1.0.4):
@@ -1015,6 +1117,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/UpdatePage (1.0.4):
@@ -1027,6 +1130,7 @@ PODS:
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/UpdatePage/Controller (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/UpdatePage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/UpdatePage/Controller (1.0.4):
@@ -1038,6 +1142,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/UpdatePage/Model
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/UpdatePage/Model (1.0.4):
@@ -1048,8 +1153,11 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
+  - MKLoRaWAN-PIR/LoginManager (1.0.4):
+    - MKIotCloudManager
   - MKLoRaWAN-PIR/SDK (1.0.4):
     - MKBaseBleModule
   - MKLoRaWAN-PIR/Target (1.0.4):
@@ -1065,6 +1173,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - AFNetworking
     - CircleProgressBar
     - CTMediator
     - FMDB
@@ -1077,6 +1186,7 @@ SPEC REPOS:
     - MKBaseBleModule
     - MKBaseModuleLibrary
     - MKCustomUIModule
+    - MKIotCloudManager
     - MLInputDodger
     - SSZipArchive
     - Toast
@@ -1088,11 +1198,12 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
   CTMediator: f1cf58d509fb3192086c367711f039efd769b907
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   HHTransition: ca5035c126a6a2dc1eb9a90d084013784bf4bf0a
-  iOSDFULibrary: 3b9de67ed4bfb901b5f09c2fea843f65e152612d
+  iOSDFULibrary: ae1bcb1cb921e6e3ff551755f6fdff1b77e07e15
   libxlsxwriter: 07cdc00cf0edb30ce9773efbbb49a03459a6e0f0
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
@@ -1100,7 +1211,8 @@ SPEC CHECKSUMS:
   MKBaseBleModule: 15aa067c4e408a473e025b1a768ebce00a7e5949
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKCustomUIModule: bbc862397ad4ffad0a88de756265a29aad5ddaab
-  MKLoRaWAN-PIR: af724180100b3fd015027c892aaf8746e215b822
+  MKIotCloudManager: 2d80758d19191e83977c12313842d0febb047dab
+  MKLoRaWAN-PIR: d18ae7cb303c544754d66b04ce781bb39b52ee5e
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: ec33c32b8688982cecc6348adeae667c1b9938da
@@ -1109,4 +1221,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: c66222b0493c54d6830141de589061b13e0bde47
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.16.1

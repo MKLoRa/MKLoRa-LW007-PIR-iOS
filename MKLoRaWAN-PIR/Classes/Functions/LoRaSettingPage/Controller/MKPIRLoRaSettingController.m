@@ -28,10 +28,11 @@
 
 #import "MKIoTCloudExitAccountAlert.h"
 #import "MKIoTCloudAccountLoginAlertView.h"
-#import "MKNormalService.h"
+#import "MKIoTLoginService.h"
 
 #import "MKPIRConnectModel.h"
 #import "MKPIRUserLoginManager.h"
+#import "MKPIRNetworkService.h"
 
 #import "MKPIRLoRaSettingModel.h"
 
@@ -738,7 +739,7 @@ MKPIRLoRaSettingAccountCellDelegate>
 #pragma mark - interface
 - (void)login:(BOOL)isHome username:(NSString *)username password:(NSString *)password {
     [[MKHudManager share] showHUDWithTitle:@"Login..." inView:self.view isPenetration:NO];
-    [[MKNormalService share] loginWithUsername:username password:password isHome:isHome sucBlock:^(id returnData) {
+    [[MKIoTLoginService share] loginWithUsername:username password:password isHome:isHome sucBlock:^(id returnData) {
         [[MKHudManager share] hide];
         [[MKPIRUserLoginManager shared] syncLoginDataWithHome:isHome username:username password:password];
         [self addDeviceToCloud:SafeStr(returnData[@"data"][@"access_token"])];
@@ -750,14 +751,13 @@ MKPIRLoRaSettingAccountCellDelegate>
 
 - (void)addDeviceToCloud:(NSString *)token {
     [[MKHudManager share] showHUDWithTitle:@"Loading..." inView:self.view isPenetration:NO];
-    MKUserCreateLoRaDeviceModel *createModel = [[MKUserCreateLoRaDeviceModel alloc] init];
+    MKPIRCreateLoRaDeviceModel *createModel = [[MKPIRCreateLoRaDeviceModel alloc] init];
     createModel.macAddress = [MKPIRConnectModel shared].macAddress;
     createModel.isHome = [MKPIRUserLoginManager shared].isHome;
-    createModel.deviceType = 4;
     createModel.gwId = self.dataModel.gatewayEUI;
     createModel.region = self.dataModel.region;
     createModel.username = [MKPIRUserLoginManager shared].username;
-    [[MKNormalService share] addLoRaDeviceToCloud:createModel token:token sucBlock:^(id returnData) {
+    [[MKPIRNetworkService share] addLoRaDeviceToCloud:createModel token:token sucBlock:^(id returnData) {
         [[MKHudManager share] hide];
         [self saveDataToDevice];
     } failBlock:^(NSError *error) {

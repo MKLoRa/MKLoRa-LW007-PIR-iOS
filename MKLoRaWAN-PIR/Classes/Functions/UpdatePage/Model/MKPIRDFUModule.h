@@ -1,6 +1,6 @@
 //
 //  MKPIRDFUModule.h
-//  MKLoRaWAN-BG_Example
+//  MKLoRaWAN-PIR_Example
 //
 //  Created by aa on 2021/6/18.
 //  Copyright © 2021 aadyx2007@163.com. All rights reserved.

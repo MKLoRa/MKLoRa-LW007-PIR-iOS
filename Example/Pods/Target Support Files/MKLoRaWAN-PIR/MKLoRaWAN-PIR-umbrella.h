@@ -55,6 +55,7 @@
 #import "MKPIRTabBarController.h"
 #import "MKPIRUpdateController.h"
 #import "MKPIRDFUModule.h"
+#import "MKPIRNetworkService.h"
 #import "MKPIRUserLoginManager.h"
 #import "CBPeripheral+MKPIRAdd.h"
 #import "MKPIRCentralManager.h"

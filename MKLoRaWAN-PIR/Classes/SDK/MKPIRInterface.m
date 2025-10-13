@@ -190,6 +190,22 @@
                  failedBlock:failedBlock];
 }
 
++ (void)pir_readEU868SingleChannelStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                                         failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pir_taskReadEU868SingleChannelStatusOperation
+                     cmdFlag:@"11"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)pir_readEU868SingleChannelSelectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                            failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pir_taskReadEU868SingleChannelSelectionOperation
+                     cmdFlag:@"12"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
 #pragma mark **************************************** BLE Params ************************************************
 
 + (void)pir_readBeaconModeStatusWithSucBlock:(void (^)(id returnData))sucBlock
@@ -425,6 +441,30 @@
                  failedBlock:failedBlock];
 }
 
++ (void)pir_readLowPowerCondition1VoltageThresholdWithSucBlock:(void (^)(id returnData))sucBlock
+                                                   failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pir_taskReadLowPowerCondition1VoltageThresholdOperation
+                     cmdFlag:@"4b"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)pir_readLowPowerCondition1MinSampleIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                                    failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pir_taskReadLowPowerCondition1MinSampleIntervalOperation
+                     cmdFlag:@"4c"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
++ (void)pir_readLowPowerCondition1SampleTimesWithSucBlock:(void (^)(id returnData))sucBlock
+                                              failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDataWithTaskID:mk_pir_taskReadLowPowerCondition1SampleTimesOperation
+                     cmdFlag:@"4d"
+                    sucBlock:sucBlock
+                 failedBlock:failedBlock];
+}
+
 #pragma mark - 配置
 + (void)pir_readLorawanNetworkStatusWithSucBlock:(void (^)(id returnData))sucBlock
                                      failedBlock:(void (^)(NSError *error))failedBlock {
@@ -482,10 +522,34 @@
                               failedBlock:failedBlock];
 }
 
++ (void)pir_readSelftestStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                               failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDeviceControlDataWithTaskID:mk_pir_taskReadSelftestStatusOperation
+                                  cmdFlag:@"5d"
+                                 sucBlock:sucBlock
+                              failedBlock:failedBlock];
+}
+
 + (void)pir_readBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
                                    failedBlock:(void (^)(NSError *error))failedBlock {
     [self readDeviceControlDataWithTaskID:mk_pir_taskReadBatteryInformationOperation
                                   cmdFlag:@"5e"
+                                 sucBlock:sucBlock
+                              failedBlock:failedBlock];
+}
+
++ (void)pir_readLastCycleBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
+                                            failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDeviceControlDataWithTaskID:mk_pir_taskReadLastCycleBatteryInformationOperation
+                                  cmdFlag:@"60"
+                                 sucBlock:sucBlock
+                              failedBlock:failedBlock];
+}
+
++ (void)pir_readAllCycleBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
+                                           failedBlock:(void (^)(NSError *error))failedBlock {
+    [self readDeviceControlDataWithTaskID:mk_pir_taskReadAllCycleBatteryInformationOperation
+                                  cmdFlag:@"61"
                                  sucBlock:sucBlock
                               failedBlock:failedBlock];
 }

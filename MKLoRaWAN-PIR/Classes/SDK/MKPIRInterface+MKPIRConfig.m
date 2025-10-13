@@ -243,6 +243,27 @@
                    failedBlock:failedBlock];
 }
 
++ (void)pir_configEU868SingleChannelStatus:(BOOL)isOn
+                                  sucBlock:(void (^)(void))sucBlock
+                               failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *commandString = (isOn ? @"ed01110101" : @"ed01110100");
+    [self configDataWithTaskID:mk_pir_taskConfigEU868SingleChannelStatusOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)pir_configEU868SingleChannelSelection:(mk_pir_eu868SingleChannelType)channel
+                                     sucBlock:(void (^)(void))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock {
+    NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:channel byteLen:1];
+    NSString *commandString = [@"ed011201" stringByAppendingString:value];
+    [self configDataWithTaskID:mk_pir_taskConfigEU868SingleChannelSelectionOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
 #pragma mark **************************************** BLE Params ************************************************
 
 + (void)pir_configBeaconModeStatus:(BOOL)isOn
@@ -620,6 +641,51 @@
                       failedBlock:(void (^)(NSError *error))failedBlock {
     NSString *commandString = (isOn ? @"ed01480101" : @"ed01480100");
     [self configDataWithTaskID:mk_pir_taskConfigLowPowerPayloadOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)pir_configLowPowerCondition1VoltageThreshold:(NSInteger)threshold
+                                            sucBlock:(void (^)(void))sucBlock
+                                         failedBlock:(void (^)(NSError *error))failedBlock {
+    if (threshold < 44 || threshold > 64) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:threshold byteLen:1];
+    NSString *commandString = [@"ed014b01" stringByAppendingString:value];
+    [self configDataWithTaskID:mk_pir_taskConfigLowPowerCondition1VoltageThresholdOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)pir_configLowPowerCondition1MinSampleInterval:(NSInteger)interval
+                                             sucBlock:(void (^)(void))sucBlock
+                                          failedBlock:(void (^)(NSError *error))failedBlock {
+    if (interval < 1 || interval > 1440) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:interval byteLen:2];
+    NSString *commandString = [@"ed014c02" stringByAppendingString:value];
+    [self configDataWithTaskID:mk_pir_taskConfigLowPowerCondition1MinSampleIntervalOperation
+                          data:commandString
+                      sucBlock:sucBlock
+                   failedBlock:failedBlock];
+}
+
++ (void)pir_configLowPowerCondition1SampleTimes:(NSInteger)times
+                                       sucBlock:(void (^)(void))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock {
+    if (times < 1 || times > 100) {
+        [MKBLEBaseSDKAdopter operationParamsErrorBlock:failedBlock];
+        return;
+    }
+    NSString *value = [MKBLEBaseSDKAdopter fetchHexValue:times byteLen:1];
+    NSString *commandString = [@"ed014d01" stringByAppendingString:value];
+    [self configDataWithTaskID:mk_pir_taskConfigLowPowerCondition1SampleTimesOperation
                           data:commandString
                       sucBlock:sucBlock
                    failedBlock:failedBlock];

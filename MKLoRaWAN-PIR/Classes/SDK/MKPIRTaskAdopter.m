@@ -195,6 +195,19 @@
             @"interval":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
         };
         operationID = mk_pir_taskReadLorawanNetworkCheckIntervalOperation;
+    }else if ([cmd isEqualToString:@"11"]) {
+        //读取EU868单通道开关状态
+        BOOL isOn = ([content isEqualToString:@"01"]);
+        resultDic = @{
+            @"isOn":@(isOn)
+        };
+        operationID = mk_pir_taskReadEU868SingleChannelStatusOperation;
+    }else if ([cmd isEqualToString:@"12"]) {
+        //读取EU868单通道频点类型
+        resultDic = @{
+            @"channel":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_pir_taskReadEU868SingleChannelSelectionOperation;
     }else if ([cmd isEqualToString:@"20"]) {
         //读取Beacon使能
         BOOL isOn = ([content isEqualToString:@"01"]);
@@ -391,6 +404,24 @@
             @"isOn":@(isOn)
         };
         operationID = mk_pir_taskReadLowPowerPayloadOperation;
+    }else if ([cmd isEqualToString:@"4b"]) {
+        //读取低电判定条件1对应低电电压值
+        resultDic = @{
+            @"threshold":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_pir_taskReadLowPowerCondition1VoltageThresholdOperation;
+    }else if ([cmd isEqualToString:@"4c"]) {
+        //读取低电判定条件1对应最小采样间隔
+        resultDic = @{
+            @"interval":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_pir_taskReadLowPowerCondition1MinSampleIntervalOperation;
+    }else if ([cmd isEqualToString:@"4d"]) {
+        //读取低电判定条件1对应连续采样次数
+        resultDic = @{
+            @"times":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
+        };
+        operationID = mk_pir_taskReadLowPowerCondition1SampleTimesOperation;
     }else if ([cmd isEqualToString:@"54"]) {
         //读取LoRaWAN网络状态
         resultDic = @{
@@ -444,24 +475,144 @@
             @"status":status,
         };
         operationID = mk_pir_taskReadPCBAStatusOperation;
+    }else if ([cmd isEqualToString:@"5d"]) {
+        //读取自检故障原因
+        resultDic = @{
+            @"status":content,
+        };
+        operationID = mk_pir_taskReadSelftestStatusOperation;
     }else if ([cmd isEqualToString:@"5e"]) {
         //读取电池信息
-        NSString *workTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, 8)];
-        NSString *advCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(8, 8)];
-        NSString *thSamplingCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(16, 8)];
-        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(24, 8)];
-        NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(32, 8)];
-        NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(40, 8)];
+        if (content.length == 48) {
+            //旧版本
+            NSInteger index = 0;
+            NSString *workTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *advCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *thSamplingCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            
+            resultDic = @{
+                @"workTimes":workTimes,
+                @"advCount":advCount,
+                @"thSamplingCount":thSamplingCount,
+                @"loraPowerConsumption":loraPowerConsumption,
+                @"loraSendCount":loraSendCount,
+                @"batteryPower":batteryPower
+            };
+        }else if (content.length == 72) {
+            //新版本
+            NSInteger index = 0;
+            NSString *workTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *advCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *thSamplingCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *pirWorkTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *doorMagneticTriggerCloseTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *doorMagneticTriggerOpenTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            
+            resultDic = @{
+                @"workTimes":workTimes,
+                @"advCount":advCount,
+                @"thSamplingCount":thSamplingCount,
+                @"pirWorkTimes":pirWorkTimes,
+                @"doorMagneticTriggerCloseTimes":doorMagneticTriggerCloseTimes,
+                @"doorMagneticTriggerOpenTimes":doorMagneticTriggerOpenTimes,
+                @"loraPowerConsumption":loraPowerConsumption,
+                @"loraSendCount":loraSendCount,
+                @"batteryPower":batteryPower
+            };
+        }
+        
+        operationID = mk_pir_taskReadBatteryInformationOperation;
+    }else if ([cmd isEqualToString:@"60"]) {
+        //读取上周期电池电量消耗
+        NSInteger index = 0;
+        NSString *workTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *advCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *thSamplingCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *pirWorkTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *doorMagneticTriggerCloseTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *doorMagneticTriggerOpenTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
         
         resultDic = @{
             @"workTimes":workTimes,
             @"advCount":advCount,
             @"thSamplingCount":thSamplingCount,
+            @"pirWorkTimes":pirWorkTimes,
+            @"doorMagneticTriggerCloseTimes":doorMagneticTriggerCloseTimes,
+            @"doorMagneticTriggerOpenTimes":doorMagneticTriggerOpenTimes,
             @"loraPowerConsumption":loraPowerConsumption,
             @"loraSendCount":loraSendCount,
             @"batteryPower":batteryPower
         };
-        operationID = mk_pir_taskReadBatteryInformationOperation;
+        
+        operationID = mk_pir_taskReadLastCycleBatteryInformationOperation;
+    }else if ([cmd isEqualToString:@"61"]) {
+        //读取总周期电池电量消耗
+        NSInteger index = 0;
+        NSString *workTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *advCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *thSamplingCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *pirWorkTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *doorMagneticTriggerCloseTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *doorMagneticTriggerOpenTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        
+        resultDic = @{
+            @"workTimes":workTimes,
+            @"advCount":advCount,
+            @"thSamplingCount":thSamplingCount,
+            @"pirWorkTimes":pirWorkTimes,
+            @"doorMagneticTriggerCloseTimes":doorMagneticTriggerCloseTimes,
+            @"doorMagneticTriggerOpenTimes":doorMagneticTriggerOpenTimes,
+            @"loraPowerConsumption":loraPowerConsumption,
+            @"loraSendCount":loraSendCount,
+            @"batteryPower":batteryPower
+        };
+        
+        operationID = mk_pir_taskReadAllCycleBatteryInformationOperation;
     }else if ([cmd isEqualToString:@"68"]) {
         //读取MAC地址
         NSString *macAddress = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[content substringWithRange:NSMakeRange(0, 2)],[content substringWithRange:NSMakeRange(2, 2)],[content substringWithRange:NSMakeRange(4, 2)],[content substringWithRange:NSMakeRange(6, 2)],[content substringWithRange:NSMakeRange(8, 2)],[content substringWithRange:NSMakeRange(10, 2)]];
@@ -524,6 +675,12 @@
     }else if ([cmd isEqualToString:@"10"]) {
         //配置LoRaWAN LinkCheckReq指令间隔
         operationID = mk_pir_taskConfigNetworkCheckIntervalOperation;
+    }else if ([cmd isEqualToString:@"11"]) {
+        //配置EU868单通道开关状态
+        operationID = mk_pir_taskConfigEU868SingleChannelStatusOperation;
+    }else if ([cmd isEqualToString:@"12"]) {
+        //配置EU868单通道频点类型
+        operationID = mk_pir_taskConfigEU868SingleChannelSelectionOperation;
     }else if ([cmd isEqualToString:@"20"]) {
         //配置Beacon Mode开关
         operationID = mk_pir_taskConfigBeaconModeStatusOperation;
@@ -611,6 +768,15 @@
     }else if ([cmd isEqualToString:@"48"]) {
         //配置低电上报
         operationID = mk_pir_taskConfigLowPowerPayloadOperation;
+    }else if ([cmd isEqualToString:@"4b"]) {
+        //配置低电判定条件1对应低电电压值
+        operationID = mk_pir_taskConfigLowPowerCondition1VoltageThresholdOperation;
+    }else if ([cmd isEqualToString:@"4c"]) {
+        //配置低电判定条件1对应最小采样间隔
+        operationID = mk_pir_taskConfigLowPowerCondition1MinSampleIntervalOperation;
+    }else if ([cmd isEqualToString:@"4d"]) {
+        //配置低电判定条件1对应连续采样次数
+        operationID = mk_pir_taskConfigLowPowerCondition1SampleTimesOperation;
     }else if ([cmd isEqualToString:@"50"]) {
         //配置LoRaWAN 入网
         operationID = mk_pir_taskRestartDeviceOperation;

@@ -188,6 +188,31 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_readLorawanNetworkCheckIntervalWithSucBlock:(void (^)(id returnData))sucBlock
                                             failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// EU868 Single Channel Function.(Device type is 01.Only for region is EU868)
+/*
+ @{
+    @"isOn":@(YES)
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readEU868SingleChannelStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                                         failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Single Channel Selection.(Device type is 01.Only for region is EU868)
+/*
+ @{
+    @"channel":@"0"
+ }
+ @"0":868.1MHz
+ @"1":868.3MHz
+ @"2":868.4MHz
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readEU868SingleChannelSelectionWithSucBlock:(void (^)(id returnData))sucBlock
+                                            failedBlock:(void (^)(NSError *error))failedBlock;
+
 #pragma mark **************************************** BLE Params ************************************************
 
 /// Read the Beacon Mode switch status of the device.
@@ -413,6 +438,40 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_readLowPowerPayloadWithSucBlock:(void (^)(id returnData))sucBlock
                                 failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Low Power Condition1 Voltage Threshold.
+/*
+ @{
+    @"threshold":@"58",  //Unit:0.05v   58=2.9v
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readLowPowerCondition1VoltageThresholdWithSucBlock:(void (^)(id returnData))sucBlock
+                                                   failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Low Power Condition1 Min. Sample Interval.
+/*
+ @{
+    @"interval":@"60",  //Unit:mins
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readLowPowerCondition1MinSampleIntervalWithSucBlock:(void (^)(id returnData))sucBlock
+                                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Low Power Condition1 Sample Times.
+/*
+ @{
+    @"times":@"10",  //Unit:times
+ }
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readLowPowerCondition1SampleTimesWithSucBlock:(void (^)(id returnData))sucBlock
+                                              failedBlock:(void (^)(NSError *error))failedBlock;
+
+
 #pragma mark - 配置
 /// Read the current network status of LoRaWAN.
 /*
@@ -460,12 +519,31 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_readPCBAStatusWithSucBlock:(void (^)(id returnData))sucBlock
                            failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// Read the Selftest Status of the device.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readSelftestStatusWithSucBlock:(void (^)(id returnData))sucBlock
+                               failedBlock:(void (^)(NSError *error))failedBlock;
+
 /// Information of the battery.
 /*
+ If the device type is 0, the result is
  @{
      @"workTimes":@"65535",         //Device working times.(Unit:s)
      @"advCount":@"65535",          //The number of Bluetooth broadcasts by the device.
      @"thSamplingCount":@"3000",    //The temperature and humidity sampling times of the equipment.
+     @"loraPowerConsumption":@"50000",      //Power consumption of LoRaWAN sending and receiving data.(Unit:mAS)
+     @"loraSendCount":@"10000",     //Number of LoRaWAN transmissions.
+     @"batteryPower":@"33500"       //Total battery power consumption.(Unit:0.001mAH)
+ };
+ If the device type is 1, the result is
+ @{
+     @"workTimes":@"65535",         //Device working times.(Unit:s)
+     @"advCount":@"65535",          //The number of Bluetooth broadcasts by the device.
+     @"thSamplingCount":@"3000",    //The temperature and humidity sampling times of the equipment.
+     @"pirWorkTimes":@"1000",       //The pir sensor working times.(Unit:s)
+     @"doorMagneticTriggerCloseTimes":@"1000", //Door magnetic trigger is closed time.(Unit:s)
+     @"doorMagneticTriggerOpenTimes":@"1000", //Door magnetic trigger is Open time.(Unit:s)
      @"loraPowerConsumption":@"50000",      //Power consumption of LoRaWAN sending and receiving data.(Unit:mAS)
      @"loraSendCount":@"10000",     //Number of LoRaWAN transmissions.
      @"batteryPower":@"33500"       //Total battery power consumption.(Unit:0.001mAH)
@@ -475,6 +553,44 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param failedBlock Failure callback
 + (void)pir_readBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
                                    failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Last Cycle Battery Information.
+/*
+ @{
+     @"workTimes":@"65535",         //Device working times.(Unit:s)
+     @"advCount":@"65535",          //The number of Bluetooth broadcasts by the device.
+     @"thSamplingCount":@"3000",    //The temperature and humidity sampling times of the equipment.
+     @"pirWorkTimes":@"1000",       //The pir sensor working times.(Unit:s)
+     @"doorMagneticTriggerCloseTimes":@"1000", //Door magnetic trigger is closed time.(Unit:s)
+     @"doorMagneticTriggerOpenTimes":@"1000", //Door magnetic trigger is Open time.(Unit:s)
+     @"loraPowerConsumption":@"50000",      //Power consumption of LoRaWAN sending and receiving data.(Unit:mAS)
+     @"loraSendCount":@"10000",     //Number of LoRaWAN transmissions.
+     @"batteryPower":@"33500"       //Total battery power consumption.(Unit:0.001mAH)
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readLastCycleBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
+                                            failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// All Cycles Battery Information.
+/*
+ @{
+     @"workTimes":@"65535",         //Device working times.(Unit:s)
+     @"advCount":@"65535",          //The number of Bluetooth broadcasts by the device.
+     @"thSamplingCount":@"3000",    //The temperature and humidity sampling times of the equipment.
+     @"pirWorkTimes":@"1000",       //The pir sensor working times.(Unit:s)
+     @"doorMagneticTriggerCloseTimes":@"1000", //Door magnetic trigger is closed time.(Unit:s)
+     @"doorMagneticTriggerOpenTimes":@"1000", //Door magnetic trigger is Open time.(Unit:s)
+     @"loraPowerConsumption":@"50000",      //Power consumption of LoRaWAN sending and receiving data.(Unit:mAS)
+     @"loraSendCount":@"10000",     //Number of LoRaWAN transmissions.
+     @"batteryPower":@"33500"       //Total battery power consumption.(Unit:0.001mAH)
+ };
+ */
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_readAllCycleBatteryInformationWithSucBlock:(void (^)(id returnData))sucBlock
+                                           failedBlock:(void (^)(NSError *error))failedBlock;
 
 @end
 

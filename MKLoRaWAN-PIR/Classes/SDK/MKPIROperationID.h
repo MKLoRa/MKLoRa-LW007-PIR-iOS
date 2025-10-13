@@ -31,6 +31,8 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskReadLorawanDutyCycleStatusOperation,  //读取dutycyle
     mk_pir_taskReadLorawanDevTimeSyncIntervalOperation,  //读取同步时间同步间隔
     mk_pir_taskReadLorawanNetworkCheckIntervalOperation, //读取网络确认间隔
+    mk_pir_taskReadEU868SingleChannelStatusOperation,    //读取EU868单通道开关状态
+    mk_pir_taskReadEU868SingleChannelSelectionOperation, //读取EU868单通道频点类型
     
 #pragma mark - 蓝牙参数读取
     mk_pir_taskReadBeaconModeStatusOperation,            //读取Beacon Mode状态
@@ -64,6 +66,9 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskReadHeartbeatIntervalOperation,          //读取设备心跳间隔
     mk_pir_taskReadLowPowerPromptOperation,             //读取低电档位
     mk_pir_taskReadLowPowerPayloadOperation,            //读取低点上报状态
+    mk_pir_taskReadLowPowerCondition1VoltageThresholdOperation,  //读取低电判定条件1对应低电电压值
+    mk_pir_taskReadLowPowerCondition1MinSampleIntervalOperation, //读取低电判定条件1对应最小采样间隔
+    mk_pir_taskReadLowPowerCondition1SampleTimesOperation,       //读取低电判定条件1对应连续采样次数
     
 #pragma mark - 设备控制参数读取
     mk_pir_taskReadLorawanNetworkStatusOperation,    //读取LoRaWAN网络状态
@@ -73,7 +78,10 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskReadDoorSensorDatasOperation,         //读取门磁传感器数据
     mk_pir_taskReadTHDatasSensorDatasOperation,     //读取温湿度数据
     mk_pir_taskReadPCBAStatusOperation,              //读取产测标志
+    mk_pir_taskReadSelftestStatusOperation,         //读取自检故障
     mk_pir_taskReadBatteryInformationOperation,     //读取电池信息
+    mk_pir_taskReadLastCycleBatteryInformationOperation,    //读取上周期电池电量消耗
+    mk_pir_taskReadAllCycleBatteryInformationOperation,     //读取总周期电池电量消耗
     
 #pragma mark - 设备LoRa参数配置
     mk_pir_taskConfigRegionOperation,                    //配置LoRaWAN的region
@@ -92,6 +100,8 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskConfigUplinkStrategyOperation,            //配置LoRaWAN数据发送策略
     mk_pir_taskConfigTimeSyncIntervalOperation,          //配置LoRaWAN的同步指令间隔
     mk_pir_taskConfigNetworkCheckIntervalOperation,      //配置LoRaWAN的LinkCheckReq间隔
+    mk_pir_taskConfigEU868SingleChannelStatusOperation,  //配置EU868单通道开关状态
+    mk_pir_taskConfigEU868SingleChannelSelectionOperation,  //配置EU868单通道频点类型
     
 #pragma mark - 蓝牙参数
     mk_pir_taskConfigBeaconModeStatusOperation,          //配置Beacon Mode使能
@@ -125,6 +135,9 @@ typedef NS_ENUM(NSInteger, mk_pir_taskOperationID) {
     mk_pir_taskConfigHeartbeatIntervalOperation,         //配置心跳间隔
     mk_pir_taskConfigLowPowerPromptOperation,           //配置低电档位
     mk_pir_taskConfigLowPowerPayloadOperation,          //配置低电上报
+    mk_pir_taskConfigLowPowerCondition1VoltageThresholdOperation,  //配置低电判定条件1对应低电电压值
+    mk_pir_taskConfigLowPowerCondition1MinSampleIntervalOperation, //配置低电判定条件1对应最小采样间隔
+    mk_pir_taskConfigLowPowerCondition1SampleTimesOperation,       //配置低电判定条件1对应连续采样次数
     
 #pragma mark - 配置设备状态参数
     mk_pir_taskRestartDeviceOperation,                   //重启设备

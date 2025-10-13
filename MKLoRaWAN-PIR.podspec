@@ -96,6 +96,24 @@ TODO: Add long description of the pod here.
       end
     end
     
+    ss.subspec 'BatteryConsumptionPage' do |sss|
+      sss.subspec 'Controller' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/BatteryConsumptionPage/Controller/**'
+      
+        ssss.dependency 'MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Model'
+        ssss.dependency 'MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/View'
+      
+      end
+    
+      sss.subspec 'Model' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/BatteryConsumptionPage/Model/**'
+      end
+    
+      sss.subspec 'View' do |ssss|
+        ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/BatteryConsumptionPage/View/**'
+      end
+    end
+    
     ss.subspec 'BleSettingPage' do |sss|
       sss.subspec 'Controller' do |ssss|
         ssss.source_files = 'MKLoRaWAN-PIR/Classes/Functions/BleSettingPage/Controller/**'
@@ -135,6 +153,8 @@ TODO: Add long description of the pod here.
         ssss.dependency 'MKLoRaWAN-PIR/Functions/DebuggerPage/Controller'
         ssss.dependency 'MKLoRaWAN-PIR/Functions/UpdatePage/Controller'
         ssss.dependency 'MKLoRaWAN-PIR/Functions/SelftestPage/Controller'
+        ssss.dependency 'MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Controller'
+        
       end
     
       sss.subspec 'Model' do |ssss|

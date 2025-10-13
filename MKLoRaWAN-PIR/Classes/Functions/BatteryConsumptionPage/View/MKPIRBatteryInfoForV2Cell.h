@@ -1,5 +1,5 @@
 //
-//  MKPIRBatteryInfoCell.h
+//  MKPIRBatteryInfoForV2Cell.h
 //  MKLoRaWAN-PIR_Example
 //
 //  Created by aa on 2021/5/24.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MKPIRBatteryInfoCellModel : NSObject
+@interface MKPIRBatteryInfoForV2CellModel : NSObject
 
 @property (nonatomic, copy)NSString *msg;
 
@@ -34,11 +34,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @end
 
-@interface MKPIRBatteryInfoCell : MKBaseCell
+@interface MKPIRBatteryInfoForV2Cell : MKBaseCell
 
-@property (nonatomic, strong)MKPIRBatteryInfoCellModel *dataModel;
+@property (nonatomic, strong)MKPIRBatteryInfoForV2CellModel *dataModel;
 
-+ (MKPIRBatteryInfoCell *)initCellWithTableView:(UITableView *)tableView;
++ (MKPIRBatteryInfoForV2Cell *)initCellWithTableView:(UITableView *)tableView;
 
 @end
 

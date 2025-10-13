@@ -25,6 +25,8 @@
 
 @property (nonatomic, copy)NSString *macAddress;
 
+@property (nonatomic, assign)NSInteger deviceType;
+
 @end
 
 @implementation MKPIRConnectModel
@@ -41,6 +43,7 @@
 }
 
 - (void)connectDevice:(CBPeripheral *)peripheral
+           deviceType:(NSString *)deviceType
              password:(NSString *)password
            macAddress:(NSString *)macAddress
              sucBlock:(void (^)(void))sucBlock
@@ -66,6 +69,7 @@
             return;
         }
         self.macAddress = macAddress;
+        self.deviceType = [deviceType integerValue];
         moko_dispatch_main_safe(^{
             if (sucBlock) {
                 sucBlock();

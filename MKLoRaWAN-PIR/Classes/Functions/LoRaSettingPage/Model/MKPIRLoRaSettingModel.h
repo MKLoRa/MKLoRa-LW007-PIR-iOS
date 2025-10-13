@@ -123,6 +123,11 @@ NS_ASSUME_NONNULL_BEGIN
 /// 1~255        目前不支持
 @property (nonatomic, copy)NSString *ackDelay;
 
+@property (nonatomic, assign)BOOL eu868SignleChannelStatus;
+
+/// 0: 868.1MHz 1:868.3MHz 2:868.5MHz
+@property (nonatomic, assign)NSInteger eu868SignleChannel;
+
 - (void)readDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;
 
 - (void)configDataWithSucBlock:(void (^)(void))sucBlock failedBlock:(void (^)(NSError *error))failedBlock;

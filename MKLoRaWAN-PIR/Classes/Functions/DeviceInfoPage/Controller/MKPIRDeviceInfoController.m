@@ -19,6 +19,8 @@
 
 #import "MKTableSectionLineHeader.h"
 
+#import "MKPIRConnectModel.h"
+
 #import "MKPIRTextButtonCell.h"
 
 #import "MKPIRDeviceInfoModel.h"
@@ -26,6 +28,8 @@
 #import "MKPIRUpdateController.h"
 #import "MKPIRDebuggerController.h"
 #import "MKPIRSelftestController.h"
+#import "MKPIRSelftestV2Controller.h"
+#import "MKPIRBatteryConsumptionController.h"
 
 @interface MKPIRDeviceInfoController ()<UITableViewDelegate,
 UITableViewDataSource,
@@ -44,6 +48,8 @@ MKPIRTextButtonCellDelegate>
 @property (nonatomic, strong)NSMutableArray *section4List;
 
 @property (nonatomic, strong)NSMutableArray *section5List;
+
+@property (nonatomic, strong)NSMutableArray *section6List;
 
 @property (nonatomic, strong)NSMutableArray *headerList;
 
@@ -101,6 +107,11 @@ MKPIRTextButtonCellDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 5 && indexPath.row == 0) {
+        MKPIRBatteryConsumptionController *vc = [[MKPIRBatteryConsumptionController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
+    if (indexPath.section == 6 && indexPath.row == 0) {
         MKPIRDebuggerController *vc = [[MKPIRDebuggerController alloc] init];
         vc.macAddress = self.dataModel.macAddress;
         [self.navigationController pushViewController:vc animated:YES];
@@ -130,7 +141,10 @@ MKPIRTextButtonCellDelegate>
         return self.section4List.count;
     }
     if (section == 5) {
-        return self.section5List.count;
+        return ([MKPIRConnectModel shared].deviceType == 1 ? self.section5List.count : 0);
+    }
+    if (section == 6) {
+        return self.section6List.count;
     }
     return 0;
 }
@@ -162,8 +176,13 @@ MKPIRTextButtonCellDelegate>
         cell.dataModel =  self.section4List[indexPath.row];
         return cell;
     }
+    if (indexPath.section == 5) {
+        MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
+        cell.dataModel =  self.section5List[indexPath.row];
+        return cell;
+    }
     MKNormalTextCell *cell = [MKNormalTextCell initCellWithTableView:tableView];
-    cell.dataModel =  self.section5List[indexPath.row];
+    cell.dataModel =  self.section6List[indexPath.row];
     return cell;
 }
 
@@ -186,6 +205,11 @@ MKPIRTextButtonCellDelegate>
 
 #pragma mark - event method
 - (void)pushSelftestInterface {
+    if ([MKPIRConnectModel shared].deviceType == 1) {
+        MKPIRSelftestV2Controller *vc = [[MKPIRSelftestV2Controller alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return;
+    }
     MKPIRSelftestController *vc = [[MKPIRSelftestController alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -250,8 +274,9 @@ MKPIRTextButtonCellDelegate>
     [self loadSection3Datas];
     [self loadSection4Datas];
     [self loadSection5Datas];
+    [self loadSection6Datas];
     
-    for (NSInteger i = 0; i < 6; i ++) {
+    for (NSInteger i = 0; i < 7; i ++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         [self.headerList addObject:headerModel];
     }
@@ -301,9 +326,16 @@ MKPIRTextButtonCellDelegate>
 
 - (void)loadSection5Datas {
     MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
-    cellModel.leftMsg = @"Debugger Mode";
+    cellModel.leftMsg = @"Battery Consumption Information";
     cellModel.showRightIcon = YES;
     [self.section5List addObject:cellModel];
+}
+
+- (void)loadSection6Datas {
+    MKNormalTextCellModel *cellModel = [[MKNormalTextCellModel alloc] init];
+    cellModel.leftMsg = @"Debugger Mode";
+    cellModel.showRightIcon = YES;
+    [self.section6List addObject:cellModel];
 }
 
 #pragma mark - UI
@@ -373,6 +405,13 @@ MKPIRTextButtonCellDelegate>
         _section5List = [NSMutableArray array];
     }
     return _section5List;
+}
+
+- (NSMutableArray *)section6List {
+    if (!_section6List) {
+        _section6List = [NSMutableArray array];
+    }
+    return _section6List;
 }
 
 - (NSMutableArray *)headerList {

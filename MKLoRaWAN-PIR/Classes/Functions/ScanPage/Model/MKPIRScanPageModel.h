@@ -24,6 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy)NSString *deviceName;
 
+@property (nonatomic, copy)NSString *deviceType;
+
 @property (nonatomic, copy)NSString *macAddress;
 
 /// PIR传感器灵敏度.00:低灵敏度   01:中灵敏度     10:高灵敏度    11:未使能

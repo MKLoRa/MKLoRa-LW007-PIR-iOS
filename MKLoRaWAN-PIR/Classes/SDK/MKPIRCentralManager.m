@@ -539,6 +539,7 @@ static dispatch_once_t onceToken;
     if (![[header uppercaseString] isEqualToString:@"05AA"]) {
         return @{};
     }
+    NSData *deviceTypeData = advDic[@"kCBAdvDataServiceData"][[CBUUID UUIDWithString:@"AA05"]];
     NSString *content = [[MKBLEBaseSDKAdopter hexStringFromData:manufacturerData] substringFromIndex:4];
     
     NSString *state = [content substringWithRange:NSMakeRange(0, 2)];
@@ -586,6 +587,7 @@ static dispatch_once_t onceToken;
     return @{
         @"rssi":rssi,
         @"peripheral":peripheral,
+        @"deviceType":[MKBLEBaseSDKAdopter hexStringFromData:deviceTypeData],
         @"deviceName":(advDic[CBAdvertisementDataLocalNameKey] ? advDic[CBAdvertisementDataLocalNameKey] : @""),
         @"macAddress":macAddress,
         @"pirSensitivity":pirSensitivity,

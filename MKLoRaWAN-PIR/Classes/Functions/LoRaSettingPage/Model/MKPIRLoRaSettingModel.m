@@ -10,6 +10,8 @@
 
 #import "MKMacroDefines.h"
 
+#import "MKPIRConnectModel.h"
+
 #import "MKPIRInterface.h"
 #import "MKPIRInterface+MKPIRConfig.h"
 
@@ -124,6 +126,17 @@
             [self operationFailedBlockWithMsg:@"Read Uplink  Strategy Error" block:failedBlock];
             return;
         }
+        if ([MKPIRConnectModel shared].deviceType == 1) {
+            if (![self readEU868SingleStatus]) {
+                [self operationFailedBlockWithMsg:@"Read EU868 Single Status Error" block:failedBlock];
+                return;
+            }
+            if (![self readEU868SingleChannel]) {
+                [self operationFailedBlockWithMsg:@"Read EU868 Single Channel Error" block:failedBlock];
+                return;
+            }
+        }
+        
         moko_dispatch_main_safe(^{
             if (sucBlock) {
                 sucBlock();
@@ -223,6 +236,17 @@
         if (![self configRetransmission]) {
             [self operationFailedBlockWithMsg:@"Config Max retransmission times Error" block:failedBlock];
             return;
+        }
+        if ([MKPIRConnectModel shared].deviceType == 1 && [self currentRegion] == 5) {
+            //EU868
+            if (![self configEU868SingleStatus]) {
+                [self operationFailedBlockWithMsg:@"Config EU868 Single Status Error" block:failedBlock];
+                return;
+            }
+            if (![self configEU868SingleChannel]) {
+                [self operationFailedBlockWithMsg:@"Config EU868 Single Channel Error" block:failedBlock];
+                return;
+            }
         }
         if (![self restartDevice]) {
             [self operationFailedBlockWithMsg:@"Connect network error" block:failedBlock];
@@ -719,6 +743,56 @@
 - (BOOL)configRetransmission {
     __block BOOL success = NO;
     [MKPIRInterface pir_configLorawanMaxRetransmissionTimes:(self.retransmission + 1) sucBlock:^{
+        success = YES;
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readEU868SingleStatus {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_readEU868SingleChannelStatusWithSucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.eu868SignleChannelStatus = [returnData[@"result"][@"isOn"] boolValue];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)configEU868SingleStatus {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_configEU868SingleChannelStatus:self.eu868SignleChannelStatus sucBlock:^{
+        success = YES;
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readEU868SingleChannel {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_readEU868SingleChannelSelectionWithSucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.eu868SignleChannel = [returnData[@"result"][@"channel"] integerValue];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)configEU868SingleChannel {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_configEU868SingleChannelSelection:self.eu868SignleChannel sucBlock:^{
         success = YES;
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {

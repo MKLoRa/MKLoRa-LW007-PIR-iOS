@@ -108,6 +108,12 @@ MKPIRLoRaSettingAccountCellDelegate>
 /// ADR_ACK_LIMIT/ADR_ACK_DELAY
 @property (nonatomic, strong)NSMutableArray *optionsList9;
 
+/// EU868 Single Channel Function
+@property (nonatomic, strong)NSMutableArray *optionsList10;
+
+/// Single Channel Selection
+@property (nonatomic, strong)NSMutableArray *optionsList11;
+
 @property (nonatomic, strong)NSMutableArray *headerList;
 
 @property (nonatomic, strong)MKPIRLoRaSettingModel *dataModel;
@@ -184,6 +190,11 @@ MKPIRLoRaSettingAccountCellDelegate>
         MKTextButtonCellModel *cellModel = self.optionsList3[indexPath.row];
         return [cellModel cellHeightWithContentWidth:kViewWidth];
     }
+    if (indexPath.section == 19) {
+        //EU868 Single Channel Function
+        MKTextSwitchCellModel *cellModel = self.optionsList10[indexPath.row];
+        return [cellModel cellHeightWithContentWidth:kViewWidth];
+    }
     return 44.f;
 }
 
@@ -220,7 +231,7 @@ MKPIRLoRaSettingAccountCellDelegate>
         //Gateway EUI(Gateway ID)
         return 10.f;
     }
-    if (section == 13 || section == 18) {
+    if (section == 13 || section == 18 || section == 19) {
         return 10.f;
     }
     
@@ -342,6 +353,15 @@ MKPIRLoRaSettingAccountCellDelegate>
         //ADR_ACK_LIMIT、ADR_ACK_DELAY
 //        return self.optionsList9.count;
         return 0;
+    }
+    if ([MKPIRConnectModel shared].deviceType == 1 && self.dataModel.currentRegion == 5) {
+        //广播类型为1并且Region为EU868
+        if (section == 19) {
+            return self.optionsList10.count;
+        }
+        if (section == 20) {
+            return self.optionsList11.count;
+        }
     }
     return 0;
 }
@@ -472,8 +492,22 @@ MKPIRLoRaSettingAccountCellDelegate>
         cell.delegate = self;
         return cell;
     }
-    MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:tableView];
-    cell.dataModel = self.optionsList9[indexPath.row];
+    if (indexPath.section == 18) {
+        MKTextFieldCell *cell = [MKTextFieldCell initCellWithTableView:tableView];
+        cell.dataModel = self.optionsList9[indexPath.row];
+        cell.delegate = self;
+        return cell;
+    }
+    if (indexPath.section == 19) {
+        //EU868 Single Channel Function
+        MKTextSwitchCell *cell = [MKTextSwitchCell initCellWithTableView:tableView];
+        cell.dataModel = self.optionsList10[indexPath.row];
+        cell.delegate = self;
+        return cell;
+    }
+    //Single Channel Selection
+    MKTextButtonCell *cell = [MKTextButtonCell initCellWithTableView:tableView];
+    cell.dataModel = self.optionsList11[indexPath.row];
     cell.delegate = self;
     return cell;
 }
@@ -552,6 +586,13 @@ MKPIRLoRaSettingAccountCellDelegate>
         //Max retransmission times
         self.dataModel.retransmission = dataListIndex;
         MKTextButtonCellModel *drModel = self.optionsList8[0];
+        drModel.dataListIndex = dataListIndex;
+        return;
+    }
+    if (index == 8) {
+        //Single Channel Selection
+        self.dataModel.eu868SignleChannel = dataListIndex;
+        MKTextButtonCellModel *drModel = self.optionsList11[0];
         drModel.dataListIndex = dataListIndex;
         return;
     }
@@ -638,6 +679,13 @@ MKPIRLoRaSettingAccountCellDelegate>
         [self.tableView reloadData];
         return;
     }
+    if (index == 2) {
+        //EU868 Single Channel Function
+        self.dataModel.eu868SignleChannelStatus = isOn;
+        MKTextSwitchCellModel *adrModel = self.optionsList10[0];
+        adrModel.isOn = isOn;
+        return;
+    }
 }
 
 #pragma mark - MKLoRaSettingCHCellDelegate
@@ -716,7 +764,7 @@ MKPIRLoRaSettingAccountCellDelegate>
     
     [self.headerList removeAllObjects];
     
-    NSInteger sections = (self.dataModel.advancedStatus ? 19 : 10);
+    NSInteger sections = (self.dataModel.advancedStatus ? 21 : 10);
     for (NSInteger i = 0; i < sections; i ++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         [self.headerList addObject:headerModel];
@@ -822,6 +870,12 @@ MKPIRLoRaSettingAccountCellDelegate>
     //Max retransmission times
     MKTextButtonCellModel *trModel = self.optionsList8[0];
     trModel.dataListIndex = self.dataModel.retransmission;
+    //EU868 Single Channel Function
+    MKTextSwitchCellModel *eu868ChannelStatusModel = self.optionsList10[0];
+    eu868ChannelStatusModel.isOn = self.dataModel.eu868SignleChannelStatus;
+    //Single Channel Selection
+    MKTextButtonCellModel *eu868ChanneModel = self.optionsList11[0];
+    eu868ChanneModel.dataListIndex = self.dataModel.eu868SignleChannel;
         
     [self.tableView reloadData];
 }
@@ -1027,6 +1081,8 @@ MKPIRLoRaSettingAccountCellDelegate>
     [self loadOptionsList7];
     [self loadOptionsList8];
     [self loadOptionsList9];
+    [self loadOptionsList10];
+    [self loadOptionsList11];
 }
 
 - (void)loadOptionsList0 {
@@ -1133,6 +1189,24 @@ MKPIRLoRaSettingAccountCellDelegate>
     cellModel2.maxLength = 3;
     cellModel2.textFieldValue = self.dataModel.ackDelay;
     [self.optionsList9 addObject:cellModel2];
+}
+
+- (void)loadOptionsList10 {
+    MKTextSwitchCellModel *dataModel = [[MKTextSwitchCellModel alloc] init];
+    dataModel.index = 2;
+    dataModel.msg = @"EU868 Single Channel Function";
+    dataModel.isOn = self.dataModel.eu868SignleChannelStatus;
+    [self.optionsList10 addObject:dataModel];
+}
+
+- (void)loadOptionsList11 {
+    MKTextButtonCellModel *dataModel = [[MKTextButtonCellModel alloc] init];
+    dataModel.index = 8;
+    dataModel.msg = @"Single Channel Selection";
+    dataModel.dataList = @[@"868.1MHz",@"868.3MHz",@"868.4MHz"];
+    dataModel.buttonLabelFont = MKFont(13.f);
+    dataModel.dataListIndex = self.dataModel.eu868SignleChannel;
+    [self.optionsList11 addObject:dataModel];
 }
 
 - (NSInteger)getCurrentCHLIndex {
@@ -1349,6 +1423,20 @@ MKPIRLoRaSettingAccountCellDelegate>
         _optionsList9 = [NSMutableArray array];
     }
     return _optionsList9;
+}
+
+- (NSMutableArray *)optionsList10 {
+    if (!_optionsList10) {
+        _optionsList10 = [NSMutableArray array];
+    }
+    return _optionsList10;
+}
+
+- (NSMutableArray *)optionsList11 {
+    if (!_optionsList11) {
+        _optionsList11 = [NSMutableArray array];
+    }
+    return _optionsList11;
 }
 
 - (NSMutableArray *)headerList {

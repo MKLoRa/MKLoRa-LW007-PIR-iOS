@@ -472,6 +472,7 @@ PODS:
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
     - MKLoRaWAN-PIR/Functions/AboutPage (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/BleSettingPage (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/DebuggerPage (= 1.0.4)
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage (= 1.0.4)
@@ -502,6 +503,51 @@ PODS:
     - MKLoRaWAN-PIR/SDK
     - MLInputDodger
   - MKLoRaWAN-PIR/Functions/AboutPage/Controller (1.0.4):
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKLoRaWAN-PIR/ConnectModule
+    - MKLoRaWAN-PIR/CTMediator
+    - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
+    - MKLoRaWAN-PIR/SDK
+    - MLInputDodger
+  - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage (1.0.4):
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKLoRaWAN-PIR/ConnectModule
+    - MKLoRaWAN-PIR/CTMediator
+    - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Controller (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Model (= 1.0.4)
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/View (= 1.0.4)
+    - MKLoRaWAN-PIR/LoginManager
+    - MKLoRaWAN-PIR/SDK
+    - MLInputDodger
+  - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Controller (1.0.4):
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKLoRaWAN-PIR/ConnectModule
+    - MKLoRaWAN-PIR/CTMediator
+    - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Model
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/View
+    - MKLoRaWAN-PIR/LoginManager
+    - MKLoRaWAN-PIR/SDK
+    - MLInputDodger
+  - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Model (1.0.4):
+    - HHTransition
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKLoRaWAN-PIR/ConnectModule
+    - MKLoRaWAN-PIR/CTMediator
+    - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/LoginManager
+    - MKLoRaWAN-PIR/SDK
+    - MLInputDodger
+  - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/View (1.0.4):
     - HHTransition
     - MKBaseModuleLibrary
     - MKCustomUIModule
@@ -608,6 +654,7 @@ PODS:
     - MKLoRaWAN-PIR/ConnectModule
     - MKLoRaWAN-PIR/CTMediator
     - MKLoRaWAN-PIR/Expand
+    - MKLoRaWAN-PIR/Functions/BatteryConsumptionPage/Controller
     - MKLoRaWAN-PIR/Functions/DebuggerPage/Controller
     - MKLoRaWAN-PIR/Functions/DeviceInfoPage/Model
     - MKLoRaWAN-PIR/Functions/SelftestPage/Controller
@@ -1100,7 +1147,7 @@ DEPENDENCIES:
   - MKLoRaWAN-PIR (from `../`)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  trunk:
     - CircleProgressBar
     - CTMediator
     - FMDB
@@ -1136,13 +1183,13 @@ SPEC CHECKSUMS:
   MKBaseModuleLibrary: 2b79bcae588c755588413fbb643b510253271b23
   MKCustomUIModule: 8426eba1d3178b06d92741d31da32502920fb8fa
   MKIotCloudManager: 241bd4bb7fae48e6b031c69a40c26637aabe67be
-  MKLoRaWAN-PIR: d18ae7cb303c544754d66b04ce781bb39b52ee5e
+  MKLoRaWAN-PIR: fedbc918c67541339970b884ee86c9c770e23535
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Toast: 1f5ea13423a1e6674c4abdac5be53587ae481c4e
   WRNavigationBar: 10bfdf96addf14d640d07c2ef08a029c18d8af10
   ZIPFoundation: b1f0de4eed33e74a676f76e12559ab6b75990197
 
-PODFILE CHECKSUM: c66222b0493c54d6830141de589061b13e0bde47
+PODFILE CHECKSUM: c2b0512c6b4e1e2866d87337a3c765934798100e
 
-COCOAPODS: 1.16.1
+COCOAPODS: 1.16.2

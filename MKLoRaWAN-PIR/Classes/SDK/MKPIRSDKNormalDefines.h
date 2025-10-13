@@ -73,6 +73,11 @@ typedef NS_ENUM(NSInteger, mk_pir_productModel) {
     mk_pir_productModel_UK,                      //UK
 };
 
+typedef NS_ENUM(NSInteger, mk_pir_eu868SingleChannelType) {
+    mk_pir_eu868SingleChannelType_8681,                        //868.1MHz
+    mk_pir_eu868SingleChannelType_8683,                        //868.3MHz
+    mk_pir_eu868SingleChannelType_8684,                        //868.5MHz
+};
 
 #pragma mark ****************************************Delegate************************************************
 

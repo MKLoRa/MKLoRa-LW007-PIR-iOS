@@ -20,13 +20,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy, readonly)NSString *macAddress;
 
+@property (nonatomic, assign, readonly)NSInteger deviceType;
+
 /// 连接设备
 /// @param peripheral 设备
+/// @param deviceType 设备类型，目前00是旧版本，01为最新版本
 /// @param password 密码
 /// @param macAddress macAddress
 /// @param sucBlock 成功回调
 /// @param failedBlock 失败回调
 - (void)connectDevice:(CBPeripheral *)peripheral
+           deviceType:(NSString *)deviceType
              password:(NSString *)password
            macAddress:(NSString *)macAddress
              sucBlock:(void (^)(void))sucBlock

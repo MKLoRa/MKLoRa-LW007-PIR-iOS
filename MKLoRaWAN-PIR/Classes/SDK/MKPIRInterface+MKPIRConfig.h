@@ -148,6 +148,22 @@ NS_ASSUME_NONNULL_BEGIN
                                      sucBlock:(void (^)(void))sucBlock
                                   failedBlock:(void (^)(NSError *error))failedBlock;
 
+/// EU868 Single Channel Function.(Device type is 01.Only for region is EU868)
+/// @param isOn isOn.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_configEU868SingleChannelStatus:(BOOL)isOn
+                                  sucBlock:(void (^)(void))sucBlock
+                               failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// EU868 Single Channel Function.(Device type is 01.Only for region is EU868)
+/// @param channel channel.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_configEU868SingleChannelSelection:(mk_pir_eu868SingleChannelType)channel
+                                     sucBlock:(void (^)(void))sucBlock
+                                  failedBlock:(void (^)(NSError *error))failedBlock;
+
 #pragma mark **************************************** BLE Params ************************************************
 
 /// Configure the Beacon Mode switch status of the device.
@@ -387,6 +403,30 @@ NS_ASSUME_NONNULL_BEGIN
 + (void)pir_configLowPowerPayload:(BOOL)isOn
                          sucBlock:(void (^)(void))sucBlock
                       failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Low Power Condition1 Voltage Threshold.
+/// @param threshold 44~64,unit:0.05v. 44=2.2v, 64=3.2v.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_configLowPowerCondition1VoltageThreshold:(NSInteger)threshold
+                                            sucBlock:(void (^)(void))sucBlock
+                                         failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Low Power Condition1 Min. Sample Interval.
+/// @param interval 1Min~1440Mins.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_configLowPowerCondition1MinSampleInterval:(NSInteger)interval
+                                             sucBlock:(void (^)(void))sucBlock
+                                          failedBlock:(void (^)(NSError *error))failedBlock;
+
+/// Low Power Condition1 Sample Times.
+/// @param times 1~100.
+/// @param sucBlock Success callback
+/// @param failedBlock Failure callback
++ (void)pir_configLowPowerCondition1SampleTimes:(NSInteger)times
+                                       sucBlock:(void (^)(void))sucBlock
+                                    failedBlock:(void (^)(NSError *error))failedBlock;
 
 #pragma mark ****************************************Device System Params************************************************
 

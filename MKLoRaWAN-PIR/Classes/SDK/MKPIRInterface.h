@@ -106,6 +106,10 @@ NS_ASSUME_NONNULL_BEGIN
  7:IN865
  8:US915
  9:RU864
+ 10:AS923-1
+ 11:AS923-2
+ 12:AS923-3
+ 13:AS923-4
  */
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
@@ -486,8 +490,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// Read battery voltage.
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback
-//+ (void)pir_readBatteryVoltageWithSucBlock:(void (^)(id returnData))sucBlock
-//                               failedBlock:(void (^)(NSError *error))failedBlock;
++ (void)pir_readBatteryVoltageWithSucBlock:(void (^)(id returnData))sucBlock
+                               failedBlock:(void (^)(NSError *error))failedBlock;
 
 /// Read the mac address of the device.
 /// @param sucBlock Success callback

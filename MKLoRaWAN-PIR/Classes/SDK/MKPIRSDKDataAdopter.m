@@ -35,6 +35,14 @@
             return @"08";
         case mk_pir_loraWanRegionRU864:
             return @"09";
+        case mk_pir_loraWanRegionAS923_1:
+            return @"0a";
+        case mk_pir_loraWanRegionAS923_2:
+            return @"0b";
+        case mk_pir_loraWanRegionAS923_3:
+            return @"0c";
+        case mk_pir_loraWanRegionAS923_4:
+            return @"0d";
     }
 }
 

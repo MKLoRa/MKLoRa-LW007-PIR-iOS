@@ -268,7 +268,7 @@ MKPIRLoRaSettingAccountCellDelegate>
     }
     if (section == 2) {
         //mokoDevEUI，只有当platform=MOKO IoT DM的时候才有
-        return ((self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 1) ? self.section2List.count : 0);
+        return ((self.dataModel.configModel.supportServerPlatform && self.dataModel.platform == 1) ? self.section1List.count : 0);
     }
     if (section == 3) {
         //Region
@@ -523,16 +523,16 @@ MKPIRLoRaSettingAccountCellDelegate>
     if (index == 0) {
         //modem
         self.dataModel.modem = (dataListIndex + 1);
-        MKTextButtonCellModel *modeModel = self.section0List[0];
-        modeModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.section0List[0];
+        dataModel.dataListIndex = dataListIndex;
         [self.tableView mk_reloadSection:1 withRowAnimation:UITableViewRowAnimationNone];
         return;
     }
     if (index == 1) {
         //region
         self.dataModel.region = dataListIndex;
-        MKTextButtonCellModel *regionModel = self.section2List[0];
-        regionModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.section2List[0];
+        dataModel.dataListIndex = dataListIndex;
         //刷新了region，如果当前是存在高级设置的，需要同步更新所有的高级设置
         if (self.dataModel.needAdvanceSetting) {
             [self regionValueChanged];
@@ -542,16 +542,16 @@ MKPIRLoRaSettingAccountCellDelegate>
     if (index == 2) {
         //Device type
         self.dataModel.classType = dataListIndex;
-        MKTextButtonCellModel *regionModel = self.section3List[0];
-        regionModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.section3List[0];
+        dataModel.dataListIndex = dataListIndex;
         return;
     }
     if (index == 3) {
         //Message type
         self.dataModel.messageType = dataListIndex;
-        MKTextButtonCellModel *regionModel = self.section4List[0];
-        regionModel.dataListIndex = dataListIndex;
-        [self.tableView mk_reloadSection:17 withRowAnimation:UITableViewRowAnimationNone];
+        MKTextButtonCellModel *dataModel = self.section4List[0];
+        dataModel.dataListIndex = dataListIndex;
+        [self.tableView reloadData];
         return;
     }
     if (index == 4) {
@@ -571,29 +571,29 @@ MKPIRLoRaSettingAccountCellDelegate>
     if (index == 5) {
         //DR For Join
         self.dataModel.join = dataListIndex;
-        MKTextButtonCellModel *classModel = self.optionsList3[0];
-        classModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.optionsList3[0];
+        dataModel.dataListIndex = dataListIndex;
         return;
     }
     if (index == 6) {
         //Transmissions
         self.dataModel.transmissions = dataListIndex;
-        MKTextButtonCellModel *drModel = self.optionsList6[0];
-        drModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.optionsList6[0];
+        dataModel.dataListIndex = dataListIndex;
         return;
     }
     if (index == 7) {
         //Max retransmission times
         self.dataModel.retransmission = dataListIndex;
-        MKTextButtonCellModel *drModel = self.optionsList8[0];
-        drModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.optionsList8[0];
+        dataModel.dataListIndex = dataListIndex;
         return;
     }
     if (index == 8) {
         //Single Channel Selection
         self.dataModel.eu868SignleChannel = dataListIndex;
-        MKTextButtonCellModel *drModel = self.optionsList11[0];
-        drModel.dataListIndex = dataListIndex;
+        MKTextButtonCellModel *dataModel = self.optionsList11[0];
+        dataModel.dataListIndex = dataListIndex;
         return;
     }
 }
@@ -885,7 +885,7 @@ MKPIRLoRaSettingAccountCellDelegate>
     [self loadLoRaDataList];
     [self loadOptionsDataList];
     //底部需要高级设置
-    NSInteger sections = (self.dataModel.advancedStatus ? 19 : 10);
+    NSInteger sections = (self.dataModel.advancedStatus ? 21 : 10);
     for (NSInteger i = 0; i < sections; i ++) {
         MKTableSectionLineHeaderModel *headerModel = [[MKTableSectionLineHeaderModel alloc] init];
         [self.headerList addObject:headerModel];

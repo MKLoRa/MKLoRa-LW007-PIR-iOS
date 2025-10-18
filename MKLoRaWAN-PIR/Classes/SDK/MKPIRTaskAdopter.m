@@ -430,10 +430,8 @@
         operationID = mk_pir_taskReadLorawanNetworkStatusOperation;
     }else if ([cmd isEqualToString:@"56"]) {
         //读取电池电量
-        NSInteger value = [MKBLEBaseSDKAdopter getDecimalWithHex:content range:NSMakeRange(0, content.length)];
-        
         resultDic = @{
-            @"voltage":[NSString stringWithFormat:@"%.3f",(value * 0.001)],
+            @"voltage":[MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(0, content.length)],
         };
         operationID = mk_pir_taskReadBatteryVoltageOperation;
     }else if ([cmd isEqualToString:@"57"]) {
@@ -522,9 +520,9 @@
             index += 8;
             NSString *doorMagneticTriggerOpenTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
             index += 8;
-            NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
-            index += 8;
             NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+            index += 8;
+            NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
             index += 8;
             NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
             index += 8;
@@ -558,9 +556,9 @@
         index += 8;
         NSString *doorMagneticTriggerOpenTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
         index += 8;
-        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
-        index += 8;
         NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
         index += 8;
         NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
         index += 8;
@@ -593,9 +591,9 @@
         index += 8;
         NSString *doorMagneticTriggerOpenTimes = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
         index += 8;
-        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
-        index += 8;
         NSString *loraSendCount = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
+        index += 8;
+        NSString *loraPowerConsumption = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
         index += 8;
         NSString *batteryPower = [MKBLEBaseSDKAdopter getDecimalStringWithHex:content range:NSMakeRange(index, 8)];
         index += 8;

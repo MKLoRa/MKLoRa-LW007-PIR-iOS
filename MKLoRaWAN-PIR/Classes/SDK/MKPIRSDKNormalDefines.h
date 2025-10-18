@@ -26,6 +26,10 @@ typedef NS_ENUM(NSInteger, mk_pir_loraWanRegion) {
     mk_pir_loraWanRegionIN865,
     mk_pir_loraWanRegionUS915,
     mk_pir_loraWanRegionRU864,
+    mk_pir_loraWanRegionAS923_1,
+    mk_pir_loraWanRegionAS923_2,
+    mk_pir_loraWanRegionAS923_3,
+    mk_pir_loraWanRegionAS923_4
 };
 
 typedef NS_ENUM(NSInteger, mk_pir_loraWanModem) {

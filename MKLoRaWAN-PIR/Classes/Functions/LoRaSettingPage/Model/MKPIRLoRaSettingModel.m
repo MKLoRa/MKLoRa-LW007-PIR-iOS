@@ -276,8 +276,8 @@
         }else if (self.currentRegion == 3 || self.currentRegion == 4 || self.currentRegion == 5 || self.currentRegion == 6 || self.currentRegion == 7) {
             //CN779、EU433、EU868、KR920、IN865
             self.CHH = 2;
-        }else if (self.currentRegion == 0 || self.currentRegion == 9) {
-            //RU864、AS923
+        }else if (self.currentRegion == 0 || self.currentRegion == 9 || self.currentRegion == 10 || self.currentRegion == 11 || self.currentRegion == 12 || self.currentRegion == 13) {
+            //RU864、AS923、AS923-1、AS923-2、AS923-3、AS923-4
             self.CHH = 1;
         }
     }else {
@@ -299,8 +299,8 @@
     
     self.adrIsOn = YES;
 //    self.retransmission = 0;
-    if (self.currentRegion == 0 || self.currentRegion == 1) {
-        //AS923、AU915
+    if (self.currentRegion == 0 || self.currentRegion == 1 || self.currentRegion == 10 || self.currentRegion == 11 || self.currentRegion == 12 || self.currentRegion == 13) {
+        //AS923、AU915、AS923-1、AS923-2、AS923-3、AS923-4
         self.join = 2;
         self.DRL = 2;
         self.DRH = 2;
@@ -336,7 +336,10 @@
 - (NSArray <NSString *>*)RegionList {
     if (self.platform == 0) {
         //Third Party NS
-        return @[@"AS923",@"AU915",@"CN470",@"CN779",@"EU433",@"EU868",@"KR920",@"IN865",@"US915",@"RU864"];
+        return @[@"AS923",@"AU915",@"CN470",@"CN779",
+                 @"EU433",@"EU868",@"KR920",@"IN865",
+                 @"US915",@"RU864",@"AS923-1",@"AS923-2",
+                 @"AS923-3",@"AS923-4"];
     }
     //MOKO IoT DM
     return @[@"AS923",@"EU868",@"US915 FSB1",@"US915 FSB2",@"AU915 FSB1",@"AU915 FSB2"];
@@ -365,8 +368,8 @@
 }
 
 - (NSArray <NSString *>*)DRValueList; {
-    if (self.currentRegion == 0) {
-        //AS923、AU915
+    if (self.currentRegion == 0 || self.currentRegion == 10 || self.currentRegion == 11 || self.currentRegion == 12 || self.currentRegion == 13) {
+        //AS923、AU915、AS923-1、AS923-2、AS923-3、AS923-4
         return @[@"2",@"3",@"4",@"5"];
     }
     if (self.currentRegion == 1) {
@@ -852,7 +855,7 @@
             return NO;
         }
     }
-    if (self.currentRegion < 0 || self.currentRegion > 9) {
+    if (self.currentRegion < 0 || self.currentRegion > 13) {
         return NO;
     }
 
@@ -866,8 +869,8 @@
             }
         }
         if (self.currentRegion == 0 || self.currentRegion == 2 || self.currentRegion == 3
-            || self.currentRegion == 4 || self.currentRegion == 5 || self.currentRegion == 6 || self.currentRegion == 7) {
-            //CN470, CN779, EU433, EU868,KR920, IN865, RU864
+            || self.currentRegion == 4 || self.currentRegion == 5 || self.currentRegion == 6 || self.currentRegion == 7 || self.currentRegion == 10 || self.currentRegion == 11 || self.currentRegion == 12 || self.currentRegion == 13) {
+            //CN470, CN779, EU433, EU868,KR920, IN865, RU864、AS923、AS923-1、AS923-2、AS923-3、AS923-4
             if (self.join < 0 || self.join > 5) {
                 return NO;
             }

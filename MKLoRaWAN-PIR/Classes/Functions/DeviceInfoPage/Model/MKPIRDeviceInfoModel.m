@@ -10,6 +10,8 @@
 
 #import "MKMacroDefines.h"
 
+#import "MKPIRConnectModel.h"
+
 #import "MKPIRInterface.h"
 
 @interface MKPIRDeviceInfoModel ()
@@ -46,6 +48,12 @@
         if (![self readManu]) {
             [self operationFailedBlockWithMsg:@"Read manu error" block:failedBlock];
             return ;
+        }
+        if ([MKPIRConnectModel shared].deviceType == 1) {
+            if (![self readVoltage]) {
+                [self operationFailedBlockWithMsg:@"Read Volatage error" block:failedBlock];
+                return ;
+            }
         }
         moko_dispatch_main_safe(^{
             sucBlock();
@@ -124,6 +132,19 @@
     [MKPIRInterface pir_readManufacturerWithSucBlock:^(id  _Nonnull returnData) {
         success = YES;
         self.manu = returnData[@"result"][@"manufacturer"];
+        dispatch_semaphore_signal(self.semaphore);
+    } failedBlock:^(NSError * _Nonnull error) {
+        dispatch_semaphore_signal(self.semaphore);
+    }];
+    dispatch_semaphore_wait(self.semaphore, DISPATCH_TIME_FOREVER);
+    return success;
+}
+
+- (BOOL)readVoltage {
+    __block BOOL success = NO;
+    [MKPIRInterface pir_readBatteryVoltageWithSucBlock:^(id  _Nonnull returnData) {
+        success = YES;
+        self.voltage = returnData[@"result"][@"voltage"];
         dispatch_semaphore_signal(self.semaphore);
     } failedBlock:^(NSError * _Nonnull error) {
         dispatch_semaphore_signal(self.semaphore);

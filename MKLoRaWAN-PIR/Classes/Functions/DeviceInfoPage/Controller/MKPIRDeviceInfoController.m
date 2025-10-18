@@ -135,7 +135,7 @@ MKPIRTextButtonCellDelegate>
         return self.section2List.count;
     }
     if (section == 3) {
-        return 0;
+        return (([MKPIRConnectModel shared].deviceType == 1) ? self.section3List.count : 0);
     }
     if (section == 4) {
         return self.section4List.count;
@@ -245,10 +245,10 @@ MKPIRTextButtonCellDelegate>
         MKNormalTextCellModel *hardware = self.section2List[0];
         hardware.rightMsg = self.dataModel.hardware;
     }
-//    if (ValidStr(self.dataModel.voltage)) {
-//        MKNormalTextCellModel *hardware = self.section3List[0];
-//        hardware.rightMsg = [self.dataModel.voltage stringByAppendingString:@"V"];
-//    }
+    if (ValidStr(self.dataModel.voltage)) {
+        MKNormalTextCellModel *voltageModel = self.section3List[0];
+        voltageModel.rightMsg = [self.dataModel.voltage stringByAppendingString:@"mV"];
+    }
     
     if (ValidStr(self.dataModel.macAddress)) {
         MKNormalTextCellModel *mac = self.section4List[0];

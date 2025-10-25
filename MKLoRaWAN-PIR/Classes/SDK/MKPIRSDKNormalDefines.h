@@ -80,7 +80,7 @@ typedef NS_ENUM(NSInteger, mk_pir_productModel) {
 typedef NS_ENUM(NSInteger, mk_pir_eu868SingleChannelType) {
     mk_pir_eu868SingleChannelType_8681,                        //868.1MHz
     mk_pir_eu868SingleChannelType_8683,                        //868.3MHz
-    mk_pir_eu868SingleChannelType_8684,                        //868.5MHz
+    mk_pir_eu868SingleChannelType_8685,                        //868.5MHz
 };
 
 #pragma mark ****************************************Delegate************************************************

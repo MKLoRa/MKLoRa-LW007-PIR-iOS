@@ -210,7 +210,7 @@ NS_ASSUME_NONNULL_BEGIN
  }
  @"0":868.1MHz
  @"1":868.3MHz
- @"2":868.4MHz
+ @"2":868.5MHz
  */
 /// @param sucBlock Success callback
 /// @param failedBlock Failure callback

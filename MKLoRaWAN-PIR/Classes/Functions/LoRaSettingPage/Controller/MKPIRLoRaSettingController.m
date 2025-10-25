@@ -1203,7 +1203,7 @@ MKPIRLoRaSettingAccountCellDelegate>
     MKTextButtonCellModel *dataModel = [[MKTextButtonCellModel alloc] init];
     dataModel.index = 8;
     dataModel.msg = @"Single Channel Selection";
-    dataModel.dataList = @[@"868.1MHz",@"868.3MHz",@"868.4MHz"];
+    dataModel.dataList = @[@"868.1MHz",@"868.3MHz",@"868.5MHz"];
     dataModel.buttonLabelFont = MKFont(13.f);
     dataModel.dataListIndex = self.dataModel.eu868SignleChannel;
     [self.optionsList11 addObject:dataModel];
